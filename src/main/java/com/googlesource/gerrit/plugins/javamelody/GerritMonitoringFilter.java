@@ -21,26 +21,52 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import net.bull.javamelody.MonitoringFilter;
 
+import com.google.gerrit.extensions.annotations.PluginName;
 import com.google.gerrit.httpd.AllRequestFilter;
+import com.google.gerrit.server.CurrentUser;
+import com.google.gerrit.server.account.CapabilityControl;
 import com.google.inject.Inject;
+import com.google.inject.Provider;
 import com.google.inject.Singleton;
 
 @Singleton
 class GerritMonitoringFilter extends AllRequestFilter {
-  private final MonitoringFilter monitoring;
+  private final JavamelodyFilter monitoring;
+  private final Provider<CurrentUser> userProvider;
+  private final String pluginName;
 
   @Inject
-  GerritMonitoringFilter(MonitoringFilter monitoring) {
+  GerritMonitoringFilter(JavamelodyFilter monitoring,
+      Provider<CurrentUser> userProvider,
+      @PluginName String pluginName) {
     this.monitoring = monitoring;
+    this.userProvider = userProvider;
+    this.pluginName = pluginName;
   }
 
   @Override
   public void doFilter(ServletRequest request, ServletResponse response,
       FilterChain chain) throws IOException, ServletException {
-    monitoring.doFilter(request, response, chain);
+    if (!(request instanceof HttpServletRequest)
+        || !(response instanceof HttpServletResponse)) {
+      chain.doFilter(request, response);
+      return;
+    }
+
+    HttpServletResponse httpResponse = (HttpServletResponse) response;
+    HttpServletRequest httpRequest = (HttpServletRequest) request;
+
+    if (canMonitor(httpRequest)) {
+      monitoring.doFilter(request, response, chain);
+    } else {
+      httpResponse.sendError(HttpServletResponse.SC_FORBIDDEN,
+          "Forbidden access");
+    }
   }
 
   @Override
@@ -51,5 +77,25 @@ class GerritMonitoringFilter extends AllRequestFilter {
   @Override
   public void destroy() {
     monitoring.destroy();
+  }
+
+  private boolean canMonitor(HttpServletRequest httpRequest) {
+    if (httpRequest.getRequestURI().equals(monitoring
+        .getJavamelodyUrl(httpRequest))) {
+      if (userProvider.get().isIdentifiedUser()) {
+        CapabilityControl ctl = userProvider.get().getCapabilities();
+        return ctl.canAdministrateServer()
+            || ctl.canPerform(String.format("%s-%s",
+               pluginName, MonitoringCapability.ID));
+      }
+      return false;
+    }
+    return true;
+  }
+
+  static class JavamelodyFilter extends MonitoringFilter {
+    public String getJavamelodyUrl(HttpServletRequest httpRequest) {
+      return getMonitoringUrl(httpRequest);
+    }
   }
 }

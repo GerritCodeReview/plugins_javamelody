@@ -1,4 +1,4 @@
-// Copyright (C) 2013 The Android Open Source Project
+// Copyright (C) 2014 The Android Open Source Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,20 +14,13 @@
 
 package com.googlesource.gerrit.plugins.javamelody;
 
-import com.google.gerrit.extensions.annotations.Exports;
 import com.google.gerrit.extensions.config.CapabilityDefinition;
-import com.google.gerrit.extensions.registration.DynamicSet;
-import com.google.gerrit.extensions.webui.TopMenu;
-import com.google.inject.AbstractModule;
 
-public class Module extends AbstractModule {
+public class MonitoringCapability extends CapabilityDefinition {
+  static final String ID = "monitoring";
 
   @Override
-  protected void configure() {
-    bind(CapabilityDefinition.class)
-      .annotatedWith(Exports.named(MonitoringCapability.ID))
-      .to(MonitoringCapability.class);
-    DynamicSet.bind(binder(), TopMenu.class)
-      .to(MonitoringTopMenu.class);
+  public String getDescription() {
+    return "Javamelody Monitoring";
   }
 }
