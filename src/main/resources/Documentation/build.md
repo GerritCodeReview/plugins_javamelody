@@ -9,6 +9,15 @@ and issue the command:
   buck build plugins/javamelody:javamelody
 ```
 
+If [database interception](database-monitoring.html) should be activated,
+then the following targets must be used:
+
+```
+  buck build plugins/javamelody:javamelody-nodep
+  buck build plugins/javamelody:javamelody-deps
+  buck build plugins/javamelody:javamelody-datasource-interceptor
+```
+
 The output is created in
 
 ```
