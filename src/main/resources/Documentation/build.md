@@ -9,6 +9,13 @@ and issue the command:
   buck build plugins/javamelody:javamelody
 ```
 
+If database interception should be activated, then the nodep target
+must be used:
+
+```
+  buck build plugins/javamelody:javamelody-nodep
+```
+
 The output is created in
 
 ```
