@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "cd1c8154_a35bba44",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2014-01-17T03:01:59Z",
+      "side": 1,
+      "message": "Please add clarification.\n\n\"then the following targets must be used instead.\"",
+      "parentUuid": "4dbc1132_afdbb98d",
+      "revId": "2fd29354fb88e57e3dee5388fef5957de7309a8e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8de44952_81133a71",
         "filename": "src/main/resources/Documentation/build.md",
         "patchSetId": 3
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "three different jars are created in the same directory.",
       "parentUuid": "8de44952_81133a71",
+      "revId": "2fd29354fb88e57e3dee5388fef5957de7309a8e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cd1c8154_c350b623",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2014-01-17T03:01:59Z",
+      "side": 1,
+      "message": "Please add clarification.",
+      "parentUuid": "2da19d0c_aedbb78d",
       "revId": "2fd29354fb88e57e3dee5388fef5957de7309a8e",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
