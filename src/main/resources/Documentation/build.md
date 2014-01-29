@@ -9,27 +9,10 @@ and issue the command:
   buck build plugins/javamelody:javamelody
 ```
 
-If [database interception](database-monitoring.html) should be activated,
-then the following targets must be used instead:
-
-```
-  buck build plugins/javamelody:javamelody-nodep
-  buck build plugins/javamelody:javamelody-deps
-  buck build plugins/javamelody:javamelody-datasource-interceptor
-```
-
-The output from the former target is:
+The output is created in
 
 ```
   buck-out/gen/plugins/javamelody/javamelody.jar
-```
-
-The output from the later targets are:
-
-```
-  buck-out/gen/plugins/javamelody/javamelody-nodep.jar
-  buck-out/gen/plugins/javamelody/javamelody-deps.jar
-  buck-out/gen/plugins/javamelody/javamelody-datasource-interceptor.jar
 ```
 
 This project can be imported into the Eclipse IDE:
