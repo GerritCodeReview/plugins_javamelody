@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a595abbe_dbf7d3f4",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1012623
+      },
+      "writtenOn": "2014-04-29T21:01:47Z",
+      "side": 1,
+      "message": "why set default to false?  I think most people would want the monitoring menu?",
+      "revId": "aa752657de93d016fc9ff039860927271d490399",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
