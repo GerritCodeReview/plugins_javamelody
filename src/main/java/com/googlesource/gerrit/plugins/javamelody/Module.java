@@ -15,19 +15,33 @@
 package com.googlesource.gerrit.plugins.javamelody;
 
 import com.google.gerrit.extensions.annotations.Exports;
+import com.google.gerrit.extensions.annotations.PluginName;
 import com.google.gerrit.extensions.config.CapabilityDefinition;
 import com.google.gerrit.extensions.registration.DynamicSet;
 import com.google.gerrit.extensions.webui.TopMenu;
+import com.google.gerrit.server.config.PluginConfig;
+import com.google.gerrit.server.config.PluginConfigFactory;
 import com.google.inject.AbstractModule;
+import com.google.inject.Inject;
 
 public class Module extends AbstractModule {
+
+  private final PluginConfig cfg;
+
+  @Inject
+  public Module(PluginConfigFactory cfgFactory,
+      @PluginName String pluginName) {
+    this.cfg = cfgFactory.getFromGerritConfig(pluginName);
+  }
 
   @Override
   protected void configure() {
     bind(CapabilityDefinition.class)
       .annotatedWith(Exports.named(MonitoringCapability.ID))
       .to(MonitoringCapability.class);
-    DynamicSet.bind(binder(), TopMenu.class)
-      .to(MonitoringTopMenu.class);
+    if (cfg.getBoolean("allowTopMenu", true)) {
+      DynamicSet.bind(binder(), TopMenu.class)
+        .to(MonitoringTopMenu.class);
+    }
   }
 }
