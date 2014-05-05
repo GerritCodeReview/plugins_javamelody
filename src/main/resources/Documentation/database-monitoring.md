@@ -1,60 +1,68 @@
 Database-Monitoring
 ===================
 
-JavaMelody supports out of the box JNDI DataSource in Web container (Tomcat).
+This feature is experimental and is not supported out of the box for Gerrit
+monitoring on Jetty.
+
+Background: JavaMelody only supports JNDI DataSource in Web container (Tomcat).
 Because Gerrit instantiates its data source on its own, JavaMelody can not
 intercept it and therefore no SQL statistic reports can be gathered.
 
-To overcome that problem a data source proxy must be installed.
+To overcome that problem a data source proxy must be installed. Because the
+instantiation of the data source takes place in Gerrit core, it must be patched.
 
-Datasource interceptor JAR (that creates the data source proxy) must be
-available in the bootstrap classpath for Gerrit core to load it. Moreover,
-because the interceptor depends on javamelody core library, it must be
-provided in the bootstrap classpath too. In this case the plugin must
-not contain the javamelody core library (shaded jar).
+Next problem: JavaMelody JARs (that creates the data source proxies) must be
+available in the bootstrap classpath for Gerrit core to load it.
 
-Thus the javamelody dependencies must not be packaged in the plugin itself.
+Last problem: we shouldn't package the plugin dependencies inside the
+plugin itself (shaded jar in Maven jargon) and in $gerrit_site/lib. We would
+need to strip it from the plugin.
 
-Add the following line to `$gerrit_site/etc/gerrit.config` under `database` section:
+Cherry-pick this change and compile Gerrit:
+
+https://gerrit-review.googlesource.com/#/c/52747
+
+Add the following target to BUCK in javamelody plugin:
 
 ```
-dataSourceInterceptorClass = com.googlesource.gerrit.plugins.javamelody.MonitoringDataSourceInterceptor
+gerrit_plugin(
+  name = 'javamelody-no-deps',
+  srcs = glob(['src/main/java/**/*.java']),
+  resources = glob(['src/main/resources/**/*']),
+  manifest_entries = [
+    'Gerrit-PluginName: javamelody',
+    'Gerrit-Module: com.googlesource.gerrit.plugins.javamelody.Module',
+    'Gerrit-HttpModule: com.googlesource.gerrit.plugins.javamelody.HttpModule',
+  ],
+  compile_deps = [
+    '//plugins/javamelody/lib:javamelody',
+    '//plugins/javamelody/lib:jrobin',
+  ],
+)
 ```
 
 Compile the plugin without dependencies:
 
 ```
-buck build plugins/javamelody:javamelody-nodep
+buck build plugins/javamelody:javamelody-no-deps
 ```
 
-Compile the plugin dependencies:
+Copy the dependencies manually to $gerrit_site/libs:
 
 ```
-buck build plugins/javamelody:javamelody-deps
-```
-
-Compile datasource interceptor:
-
-```
-buck build plugins/javamelody:javamelody-datasource-interceptor
-```
-
-Deploy the datasource-interceptor to `$gerrit_site/libs`:
+cp
+~/.gerritcodereview/buck-cache/jrobin-1.5.9.jar-bd9a84484c67de930fa841f23cd6a93108b05cd0
+$gerrit_site/lib/jrobin.jar
+cp
+~/.gerritcodereview/buck-cache/javamelody-core-1.48.0.jar-4c573306061019430a735d9d58f93639f4a0ff0b
+$gerrit_site/lib/javamelody.jar
 
 ```
-cp buck-out/gen/plugins/javamelody/javamelody-datasource-interceptor.jar `$gerrit_site/libs`
-```
 
-Deploy the javamelody dependencies to `$gerrit_site/libs`:
+Deploy plugin without dependencies:
 
 ```
-cp buck-out/gen/plugins/javamelody/javamelody-deps.jar `$gerrit_site/libs`
-```
-
-Deploy the plugin without dependencies:
-
-```
-cp buck-out/gen/plugins/javamelody/javamelody-nodep.jar `$gerrit_site/plugins`
+cp buck-out/gen/plugins/javamelody/javamelody-no-deps.jar $gerrit_site/plugins
 ```
 
 Run Gerrit@Jetty and enjoy SQL statistics, a lá:
