@@ -25,7 +25,7 @@ gerrit_plugin(
   srcs = SRCS,
   resources = RSRC,
   manifest_entries = manifest_entries,
-  compile_deps = DEPS,
+  provided_deps = DEPS,
 )
 
 java_binary(
@@ -38,8 +38,8 @@ java_binary(
   deps = [':javamelody-datasource-interceptor-lib'],
 )
 
-java_library2(
+java_library(
   name = 'javamelody-datasource-interceptor-lib',
   srcs = INTERCEPTOR,
-  compile_deps = DEPS + ['//gerrit-extension-api:lib'],
+  provided_deps = DEPS + ['//gerrit-extension-api:lib'],
 )
