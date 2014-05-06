@@ -10,6 +10,8 @@ manifest_entries = [
   'Gerrit-PluginName: javamelody',
   'Gerrit-Module: com.googlesource.gerrit.plugins.javamelody.Module',
   'Gerrit-HttpModule: com.googlesource.gerrit.plugins.javamelody.HttpModule',
+  'Implementation-Title: Javamelody plugin',
+  'Implementation-URL: https://gerrit-review.googlesource.com/#/admin/projects/plugins/javamelody',
 ]
 
 gerrit_plugin(
