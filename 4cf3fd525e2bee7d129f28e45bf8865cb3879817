@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a443f132_2be5d943",
+        "filename": "src/main/resources/Documentation/database-monitoring.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2014-07-07T13:16:40Z",
+      "side": 1,
+      "message": "Good catch! You are probably the first one who verified that advanced setup ;-)",
+      "revId": "4cf3fd525e2bee7d129f28e45bf8865cb3879817",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
