@@ -24,7 +24,7 @@ The output from the former target is:
   buck-out/gen/plugins/javamelody/javamelody.jar
 ```
 
-The output from the later targets are:
+The output from the latter targets are:
 
 ```
   buck-out/gen/plugins/javamelody/javamelody-nodep.jar
