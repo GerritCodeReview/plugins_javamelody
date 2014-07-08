@@ -39,10 +39,10 @@ Compile datasource interceptor:
 buck build plugins/javamelody:javamelody-datasource-interceptor
 ```
 
-Deploy the datasource-interceptor to `$gerrit_site/libs`:
+Deploy the datasource-interceptor to `$gerrit_site/lib`:
 
 ```
-cp buck-out/gen/plugins/javamelody/javamelody-datasource-interceptor.jar `$gerrit_site/libs`
+cp buck-out/gen/plugins/javamelody/javamelody-datasource-interceptor.jar `$gerrit_site/lib`
 ```
 
 Deploy the javamelody dependencies to `$gerrit_site/lib`:
