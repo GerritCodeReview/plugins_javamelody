@@ -2,8 +2,8 @@ include_defs('//lib/maven.defs')
 
 maven_jar(
   name = 'javamelody',
-  id = 'net.bull.javamelody:javamelody-core:1.53.0',
-  sha1 = 'c3692ae48f9a363baac3bc52ab0a9ed55c2662c5',
+  id = 'net.bull.javamelody:javamelody-core:1.54.0',
+  sha1 = '609896ea66c008d47258539641f7ba7511a06456',
   license = 'DO_NOT_DISTRIBUTE',
 )
 
