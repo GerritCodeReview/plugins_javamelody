@@ -14,6 +14,16 @@
 
 package com.googlesource.gerrit.plugins.javamelody;
 
+import com.google.gerrit.extensions.annotations.PluginName;
+import com.google.gerrit.httpd.AllRequestFilter;
+import com.google.gerrit.server.CurrentUser;
+import com.google.gerrit.server.account.CapabilityControl;
+import com.google.inject.Inject;
+import com.google.inject.Provider;
+import com.google.inject.Singleton;
+
+import net.bull.javamelody.MonitoringFilter;
+
 import java.io.IOException;
 
 import javax.servlet.FilterChain;
@@ -23,16 +33,6 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import net.bull.javamelody.MonitoringFilter;
-
-import com.google.gerrit.extensions.annotations.PluginName;
-import com.google.gerrit.httpd.AllRequestFilter;
-import com.google.gerrit.server.CurrentUser;
-import com.google.gerrit.server.account.CapabilityControl;
-import com.google.inject.Inject;
-import com.google.inject.Provider;
-import com.google.inject.Singleton;
 
 @Singleton
 class GerritMonitoringFilter extends AllRequestFilter {

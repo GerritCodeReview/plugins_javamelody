@@ -14,11 +14,11 @@
 
 package com.googlesource.gerrit.plugins.javamelody;
 
-import javax.sql.DataSource;
+import com.google.gerrit.extensions.persistence.DataSourceInterceptor;
 
 import net.bull.javamelody.JdbcWrapper;
 
-import com.google.gerrit.extensions.persistence.DataSourceInterceptor;
+import javax.sql.DataSource;
 
 public class MonitoringDataSourceInterceptor implements DataSourceInterceptor {
 
