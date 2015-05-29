@@ -51,8 +51,8 @@ java_library(
 
 maven_jar(
   name = 'javamelody-lib',
-  id = 'net.bull.javamelody:javamelody-core:1.55.0',
-  sha1 = '65c4f7cec7f499ac312e57704d3e37f39ee940ee',
+  id = 'net.bull.javamelody:javamelody-core:1.56.0',
+  sha1 = '0ae378effb19d2ad2db6f352ed91548f338b7c46',
   license = 'DO_NOT_DISTRIBUTE',
 )
 
