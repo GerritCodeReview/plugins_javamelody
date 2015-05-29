@@ -1,9 +1,12 @@
+include_defs('//bucklets/gerrit_plugin.bucklet')
+include_defs('//bucklets/maven_jar.bucklet')
+
 INTERCEPTOR = ['src/main/java/com/googlesource/gerrit/plugins/javamelody/MonitoringDataSourceInterceptor.java']
 SRCS = glob(['src/main/java/**/*.java'], excludes = INTERCEPTOR)
 RSRC = glob(['src/main/resources/**/*'])
 DEPS = [
-  '//plugins/javamelody/lib:javamelody',
-  '//plugins/javamelody/lib:jrobin',
+  ':javamelody-lib',
+  ':jrobin',
 ]
 
 manifest_entries = [
@@ -43,5 +46,19 @@ java_binary(
 java_library(
   name = 'javamelody-datasource-interceptor-lib',
   srcs = INTERCEPTOR,
-  provided_deps = DEPS + ['//gerrit-extension-api:lib'],
+  provided_deps = DEPS + ['//lib/gerrit:extension-api'],
+)
+
+maven_jar(
+  name = 'javamelody-lib',
+  id = 'net.bull.javamelody:javamelody-core:1.55.0',
+  sha1 = '65c4f7cec7f499ac312e57704d3e37f39ee940ee',
+  license = 'DO_NOT_DISTRIBUTE',
+)
+
+maven_jar(
+  name = 'jrobin',
+  id = 'org.jrobin:jrobin:1.5.9',
+  sha1 = 'bd9a84484c67de930fa841f23cd6a93108b05cd0',
+  license = 'DO_NOT_DISTRIBUTE',
 )
