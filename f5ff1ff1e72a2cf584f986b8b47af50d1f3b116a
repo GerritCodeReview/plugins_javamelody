@@ -1,0 +1,147 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "59e6bc29_f204484f",
+        "filename": ".buckconfig",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-06-07T20:50:51Z",
+      "side": 1,
+      "message": "Keep this list alphabetically sorted.",
+      "range": {
+        "startLine": 2,
+        "startChar": 2,
+        "endLine": 5,
+        "endChar": 74
+      },
+      "revId": "f5ff1ff1e72a2cf584f986b8b47af50d1f3b116a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "39e908fb_51ef94fa",
+        "filename": ".buckconfig",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-06-07T20:50:51Z",
+      "side": 1,
+      "message": "Add \u0027all\u0027 target to simplify building of all supported artifacts and interceptor library?\n\n  all \u003d //:all\n\nAnd the genrule can be defined like this:\n\n  genrule(\n    name \u003d \u0027all\u0027,\n    cmd \u003d \u0027echo done \u003e$OUT\u0027,\n    deps \u003d [\n      \u0027:javamelody\u0027,\n      \u0027:javamelody-datasource-interceptor\u0027,\n      \u0027:javamelody-deps\u0027,\n      \u0027:javamelody-nodep\u0027,\n    ],\n    out \u003d \u0027__fake.all__\u0027,\n  )",
+      "revId": "f5ff1ff1e72a2cf584f986b8b47af50d1f3b116a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "59e6bc29_72f298e6",
+        "filename": ".gitignore",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-06-07T20:50:51Z",
+      "side": 1,
+      "message": ".buckd is missing",
+      "revId": "f5ff1ff1e72a2cf584f986b8b47af50d1f3b116a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "59e6bc29_52ef94fa",
+        "filename": "BUCK",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-06-07T20:50:51Z",
+      "side": 1,
+      "message": "OK, \"-lib\" suffix is needed to prevent name collision with plugin target.",
+      "range": {
+        "startLine": 8,
+        "startChar": 4,
+        "endLine": 8,
+        "endChar": 18
+      },
+      "revId": "f5ff1ff1e72a2cf584f986b8b47af50d1f3b116a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "39e908fb_71f298e6",
+        "filename": "BUCK",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-06-07T20:50:51Z",
+      "side": 1,
+      "message": "To be consistent, I would prefer to use the same \"-lib\" suffix for jrobin as well.",
+      "range": {
+        "startLine": 9,
+        "startChar": 4,
+        "endLine": 9,
+        "endChar": 10
+      },
+      "revId": "f5ff1ff1e72a2cf584f986b8b47af50d1f3b116a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "59e6bc29_32ec1004",
+        "filename": "BUCK",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-06-07T20:50:51Z",
+      "side": 1,
+      "message": "In standalone mode we are always adding classpath rule, otherwise bucklets/tools/eclipse.py would fail:\n\n  $ bucklets/tools/eclipse.py \n  Using buckd.\n  [-] PARSING BUCK FILES...FINISHED 0,1s\n  BUILD FAILED: No rule found when resolving target //:classpath in   \n  build file //BUCK\n\nadding something like that should fix it:\n\n  java_library(\n  name \u003d \u0027classpath\u0027,\n  deps \u003d [\n    \u0027:javamelody-nodep__plugin\u0027,\n    \u0027:javamelody__plugin\u0027,\n    ],\n  )\n\nAlso note, that it\u0027s unclear, if it\u0027s doing something that makes sense for now. But in case it would one day, we always add it in stanalone build, so it should be added here as well.",
+      "revId": "f5ff1ff1e72a2cf584f986b8b47af50d1f3b116a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "59e6bc29_d2094467",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-06-07T20:50:51Z",
+      "side": 1,
+      "message": "This could be shortened when `buck build all` was added.",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 52
+      },
+      "revId": "f5ff1ff1e72a2cf584f986b8b47af50d1f3b116a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
