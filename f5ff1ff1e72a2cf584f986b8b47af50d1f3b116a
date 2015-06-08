@@ -224,6 +224,24 @@
     },
     {
       "key": {
+        "uuid": "39e908fb_f139e805",
+        "filename": "BUCK",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-06-08T15:05:33Z",
+      "side": 1,
+      "message": "As I mentioned in my comment, this is probably aknown issue, or you are the first one who tried it ;-) We should fix it, bit this is not related to this change.",
+      "parentUuid": "79b0e009_db305329",
+      "revId": "f5ff1ff1e72a2cf584f986b8b47af50d1f3b116a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "59e6bc29_d2094467",
         "filename": "src/main/resources/Documentation/build.md",
         "patchSetId": 1
