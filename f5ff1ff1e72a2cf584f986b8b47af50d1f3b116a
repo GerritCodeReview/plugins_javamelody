@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "79b0e009_3b03b742",
+        "filename": ".buckconfig",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1012987
+      },
+      "writtenOn": "2015-06-08T14:58:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "59e6bc29_f204484f",
+      "range": {
+        "startLine": 2,
+        "startChar": 2,
+        "endLine": 5,
+        "endChar": 74
+      },
+      "revId": "f5ff1ff1e72a2cf584f986b8b47af50d1f3b116a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "39e908fb_51ef94fa",
         "filename": ".buckconfig",
         "patchSetId": 1
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "99b594fa_9c13e595",
+        "filename": ".buckconfig",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1012987
+      },
+      "writtenOn": "2015-06-08T14:58:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "39e908fb_51ef94fa",
+      "revId": "f5ff1ff1e72a2cf584f986b8b47af50d1f3b116a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "59e6bc29_72f298e6",
         "filename": ".gitignore",
         "patchSetId": 1
@@ -53,6 +95,24 @@
       "writtenOn": "2015-06-07T20:50:51Z",
       "side": 1,
       "message": ".buckd is missing",
+      "revId": "f5ff1ff1e72a2cf584f986b8b47af50d1f3b116a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "99b594fa_7cf939c0",
+        "filename": ".gitignore",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1012987
+      },
+      "writtenOn": "2015-06-08T14:58:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "59e6bc29_72f298e6",
       "revId": "f5ff1ff1e72a2cf584f986b8b47af50d1f3b116a",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
@@ -105,6 +165,30 @@
     },
     {
       "key": {
+        "uuid": "79b0e009_1b00fb31",
+        "filename": "BUCK",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1012987
+      },
+      "writtenOn": "2015-06-08T14:58:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "39e908fb_71f298e6",
+      "range": {
+        "startLine": 9,
+        "startChar": 4,
+        "endLine": 9,
+        "endChar": 10
+      },
+      "revId": "f5ff1ff1e72a2cf584f986b8b47af50d1f3b116a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "59e6bc29_32ec1004",
         "filename": "BUCK",
         "patchSetId": 1
@@ -122,6 +206,24 @@
     },
     {
       "key": {
+        "uuid": "79b0e009_db305329",
+        "filename": "BUCK",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1012987
+      },
+      "writtenOn": "2015-06-08T14:58:03Z",
+      "side": 1,
+      "message": "Done but when I import the generated project in eclipse, there is no source folder(and files) and javamelody-nodep__plugin.jar and javamelody__plugin.jar are in the referenced librairies, is this a known issue, am I doing something wrong?",
+      "parentUuid": "59e6bc29_32ec1004",
+      "revId": "f5ff1ff1e72a2cf584f986b8b47af50d1f3b116a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "59e6bc29_d2094467",
         "filename": "src/main/resources/Documentation/build.md",
         "patchSetId": 1
@@ -133,6 +235,30 @@
       "writtenOn": "2015-06-07T20:50:51Z",
       "side": 1,
       "message": "This could be shortened when `buck build all` was added.",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 52
+      },
+      "revId": "f5ff1ff1e72a2cf584f986b8b47af50d1f3b116a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "99b594fa_1c00f531",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1012987
+      },
+      "writtenOn": "2015-06-08T14:58:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "59e6bc29_d2094467",
       "range": {
         "startLine": 39,
         "startChar": 0,
