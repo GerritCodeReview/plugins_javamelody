@@ -60,12 +60,6 @@ java_library(
 genrule(
   name = 'all',
   cmd = 'echo done >$OUT',
-  deps = [
-    ':javamelody',
-    ':javamelody-datasource-interceptor',
-    ':javamelody-deps',
-    ':javamelody-nodep',
-  ],
   out = '__fake.all__',
 )
 
