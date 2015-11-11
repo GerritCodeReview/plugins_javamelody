@@ -57,16 +57,14 @@ java_library(
   provided_deps = DEPS + ['//lib/gerrit:extension-api'],
 )
 
-genrule(
+zip_file(
   name = 'all',
-  cmd = 'echo done >$OUT',
-  deps = [
+  srcs = [
     ':javamelody',
     ':javamelody-datasource-interceptor',
     ':javamelody-deps',
     ':javamelody-nodep',
   ],
-  out = '__fake.all__',
 )
 
 maven_jar(
