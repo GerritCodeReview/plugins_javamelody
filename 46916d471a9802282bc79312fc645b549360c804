@@ -52,6 +52,24 @@
       "revId": "46916d471a9802282bc79312fc645b549360c804",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fb485fa2_fe57bd4d",
+        "filename": "gerrit-extension-api/BUCK",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2015-11-27T08:13:59Z",
+      "side": 1,
+      "message": "I know, I stopped using watchman a while ago as it wasn\u0027t reliable at all.\nI was thinking about start spamming the changes from gerrit-ci.gerritforge.com when a plugin build breaks.\nThat would help to avoid having broken builds unnoticed.",
+      "parentUuid": "9b53e354_5b4997b1",
+      "revId": "46916d471a9802282bc79312fc645b549360c804",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
