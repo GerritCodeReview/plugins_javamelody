@@ -34,6 +34,24 @@
       "revId": "46916d471a9802282bc79312fc645b549360c804",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9b53e354_5b4997b1",
+        "filename": "gerrit-extension-api/BUCK",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-11-27T06:58:05Z",
+      "side": 1,
+      "message": "You are right. I\u0027m very sorry for breaking the build. Being undiscovered for months even sucks more. However, I can eplxain you how this was possible: There is one really annoying bug in Buck: [1] in combination with using watchman (I do use watchman) and symbolic links. Buck ignores the changes in this case. So the only explanation i have, why the build was broken and change owner and reviewer of original change havn\u0027t discovered that is:\n\n* build in tree base version\n* introduce standalone build\n* break in tree build\n* test standalone build, correct\n* test broken in tree, still (erroneously) correct, because of : [1]\n\nSo again, I\u0027m sorry, but let\u0027s blame Buck for that and not the change owner and (never) the reviewer ;-)\n\n* [1] https://github.com/facebook/buck/issues/341",
+      "parentUuid": "9b53e354_dbff6780",
+      "revId": "46916d471a9802282bc79312fc645b549360c804",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
