@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fb485fa2_7e0f2d79",
+        "filename": "lib/gerrit/BUCK",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-11-27T05:55:43Z",
+      "side": 0,
+      "message": "Sorry, but this is wrong fix. We are not duplicating gerrit tree in plugin directory for standalone build mode to work. Instead, we defining constants in this file: bucklets/gerrit_plugin.bucklet where to find the constants in tree and standalone modes. Here is in tree version:\n\n  #\n  # Dummy to make the co-existence of core and standalone plugins possible.\n  # Intentionaly left empty as this doesn\u0027t suppose to have any side effects\n  # in tree build, i. e.:\n  #\n  # cookbook-plugin/BUCK include this line:\n  # include_defs(\u0027//bucklets/gerrit_plugin.bucklet\u0027)\n  #\n  # When executing from the Gerrit tree:\n  # buck build plugins/cookbook-plugin\n  #\n  # this line has no effect.\n  #\n  # When compiling from standalone cookbook-plugin, bucklets directory points\n  # to cloned bucklets library that includes real gerrit_plugin.bucklet code.\n  GERRIT_GWT_API \u003d [\u0027//gerrit-plugin-gwtui/gerrit:gwtui-api\u0027]\n  GERRIT_PLUGIN_API \u003d [\u0027//gerrit-plugin-api:lib\u0027]\n  GERRIT_TESTS \u003d [\u0027//gerrit-acceptance-framework:lib\u0027]\n  STANDALONE_MODE \u003d False\n\nAnd in bucklets we have another version that routes all constants to lib/gerrit:foo",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 1
+      },
+      "revId": "c26365f1d908575a54074070c38d13b50a4f13d5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
