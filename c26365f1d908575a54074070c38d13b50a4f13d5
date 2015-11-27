@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fb485fa2_dee64104",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2015-11-27T04:44:58Z",
+      "side": 1,
+      "message": "Are we sure about that? I think we should have buckets as submodule so that it can always point to the *correct* version of it.\n\nIf you follow the instructions TODAY for building a JavaMelody plugin for Gerrit 2.11 ... would it work? Don\u0027t think so :-(\n\nI had to \"find out by myself\" the correct SHA1 for buckets and check that version out. By using submodules we would avoid this manual step.",
+      "range": {
+        "startLine": 16,
+        "startChar": 2,
+        "endLine": 16,
+        "endChar": 52
+      },
+      "revId": "c26365f1d908575a54074070c38d13b50a4f13d5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
