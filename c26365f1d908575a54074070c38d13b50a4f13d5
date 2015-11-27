@@ -22,6 +22,30 @@
       "revId": "c26365f1d908575a54074070c38d13b50a4f13d5",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9b53e354_7b0f3b79",
+        "filename": "lib/gerrit/BUCK",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2015-11-27T06:05:51Z",
+      "side": 0,
+      "message": "It is not clear to me where the gerrit extension api are mentioned and are supposed to be found in bucklets :-O\n\nI see only the GERRIT_PLUGIN_API and that\u0027s why possibly the JeavaMelody plugin have it explicitly (wrongly) mentioned and hardcoded to the standalone build.\n\nShall we fix buckets instead?",
+      "parentUuid": "fb485fa2_7e0f2d79",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 1
+      },
+      "revId": "c26365f1d908575a54074070c38d13b50a4f13d5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
