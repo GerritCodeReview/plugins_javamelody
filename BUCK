@@ -54,7 +54,7 @@ java_binary(
 java_library(
   name = 'javamelody-datasource-interceptor-lib',
   srcs = INTERCEPTOR,
-  provided_deps = DEPS + ['//lib/gerrit:extension-api'],
+  provided_deps = DEPS + ['//gerrit-extension-api:api'],
 )
 
 zip_file(
