@@ -4,9 +4,9 @@ VER = '2.11.5'
 REPO = MAVEN_CENTRAL
 
 maven_jar(
-  name = 'plugin-api',
-  id = 'com.google.gerrit:gerrit-plugin-api:' + VER,
-  sha1 = '768ab4bcf49d3809c4558a1532b44368337f8e6f',
+  name = 'api',
+  id = 'com.google.gerrit:gerrit-extension-api:' + VER,
+  sha1 = 'ace9da7464e0c89e412d8b53313e846b4b74b137',
   license = 'Apache2.0',
   attach_source = False,
   repository = REPO,
