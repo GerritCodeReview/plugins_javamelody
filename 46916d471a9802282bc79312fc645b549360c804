@@ -16,6 +16,24 @@
       "revId": "46916d471a9802282bc79312fc645b549360c804",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9b53e354_dbff6780",
+        "filename": "gerrit-extension-api/BUCK",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2015-11-27T06:39:28Z",
+      "side": 1,
+      "message": "Indeed ... and I would add:\n- Never again submitting a broken change and leave the build broken for over 2 months :o)",
+      "parentUuid": "fb485fa2_5e4991b1",
+      "revId": "46916d471a9802282bc79312fc645b549360c804",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
