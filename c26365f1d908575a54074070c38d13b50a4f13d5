@@ -46,6 +46,30 @@
       "revId": "c26365f1d908575a54074070c38d13b50a4f13d5",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9b53e354_bb08b36e",
+        "filename": "lib/gerrit/BUCK",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-11-27T06:25:47Z",
+      "side": 0,
+      "message": "You don\u0027t need to change/extend Bucklets. The correct fix to switch to consume plugin api instead of extension api. For plugin API we have constant already, atht is correctly substitued in both build modes. All you want is rvert this change, and replace one line instead:\n\n  diff --git a/BUCK b/BUCK\n  index 1bd5073..0cfa8ca 100644\n  --- a/BUCK\n  +++ b/BUCK\n  @@ -54,7 +54,7 @@ java_binary(\n   java_library(\n     name \u003d \u0027javamelody-datasource-interceptor-lib\u0027,\n     srcs \u003d INTERCEPTOR,\n  -  provided_deps \u003d DEPS + [\u0027//gerrit-extension-api:api\u0027],\n  +  provided_deps \u003d DEPS + GERRIT_PLUGIN_API,\n   )",
+      "parentUuid": "9b53e354_7b0f3b79",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 1
+      },
+      "revId": "c26365f1d908575a54074070c38d13b50a4f13d5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
