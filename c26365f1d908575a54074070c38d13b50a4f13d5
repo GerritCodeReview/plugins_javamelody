@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fb485fa2_5e14f18d",
+        "filename": "BUCK",
+        "patchSetId": 3
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2015-11-27T06:09:23Z",
+      "side": 1,
+      "message": "Actually even before wasn\u0027t correct as it is supposed to be //gerrit-extension-api:api.",
+      "parentUuid": "9b53e354_dbe64704",
+      "range": {
+        "startLine": 57,
+        "startChar": 26,
+        "endLine": 57,
+        "endChar": 54
+      },
+      "revId": "c26365f1d908575a54074070c38d13b50a4f13d5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fb485fa2_dee64104",
         "filename": "src/main/resources/Documentation/build.md",
         "patchSetId": 3
@@ -60,6 +84,30 @@
       "side": 1,
       "message": "It\u0027s the same for all plugins with standalone mode.\n\nI got around it by making sure core Gerrit was on the correct branch and correct buck version, and then adding .nobuckcheck in the plugin folder before running buck build in standalone mode.\n\nSorry to have to say that this is where Maven is actually better :(",
       "parentUuid": "fb485fa2_dee64104",
+      "range": {
+        "startLine": 16,
+        "startChar": 2,
+        "endLine": 16,
+        "endChar": 52
+      },
+      "revId": "c26365f1d908575a54074070c38d13b50a4f13d5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fb485fa2_9e05d958",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2015-11-27T06:09:23Z",
+      "side": 1,
+      "message": "Yes, that\u0027s exactly my workaround as well and it worked.\n\nI have to say that the standalone build mode is *MUCH MORE COMPLEX * to manage and use than a Gerrit tree mode. Just look at the instructions to follow (longer than the tree mode) and the workarounds that we all have to go through to make it work.",
+      "parentUuid": "3b3f57ea_9dfe831e",
       "range": {
         "startLine": 16,
         "startChar": 2,
