@@ -70,6 +70,30 @@
       "revId": "c26365f1d908575a54074070c38d13b50a4f13d5",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fb485fa2_7e444d9d",
+        "filename": "lib/gerrit/BUCK",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-11-27T06:27:19Z",
+      "side": 0,
+      "message": "By bad. extension-api must be removed here indeed. So this change must not be completely reverted.",
+      "parentUuid": "9b53e354_bb08b36e",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 1
+      },
+      "revId": "c26365f1d908575a54074070c38d13b50a4f13d5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
