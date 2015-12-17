@@ -54,7 +54,7 @@ java_binary(
 java_library(
   name = 'javamelody-datasource-interceptor-lib',
   srcs = INTERCEPTOR,
-  provided_deps = DEPS + ['//gerrit-extension-api:api'],
+  provided_deps = DEPS + GERRIT_PLUGIN_API,
 )
 
 zip_file(
@@ -69,8 +69,8 @@ zip_file(
 
 maven_jar(
   name = 'javamelody-lib',
-  id = 'net.bull.javamelody:javamelody-core:1.56.0',
-  sha1 = '0ae378effb19d2ad2db6f352ed91548f338b7c46',
+  id = 'net.bull.javamelody:javamelody-core:1.58.0',
+  sha1 = '5f1b3c3c1d037e4d62605b9ca6e15da390f8bc6a',
   license = 'DO_NOT_DISTRIBUTE',
 )
 
