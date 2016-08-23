@@ -46,7 +46,7 @@ The output of the target is:
   buck-out/gen/javamelody.jar
 ```
 
-If [database interception](database-monitoring.html) should be activated,
+If [database interception](database-monitoring.md) should be activated,
 then the following artifacts must be used instead:
 
 ```
@@ -65,7 +65,7 @@ and issue the command:
   buck build plugins/javamelody:javamelody
 ```
 
-If [database interception](database-monitoring.html) should be activated,
+If [database interception](database-monitoring.md) should be activated,
 then the following targets must be used instead:
 
 ```
