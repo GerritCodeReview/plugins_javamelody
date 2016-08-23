@@ -71,8 +71,8 @@ genrule(
 
 maven_jar(
   name = 'javamelody-lib',
-  id = 'net.bull.javamelody:javamelody-core:1.55.0',
-  sha1 = '65c4f7cec7f499ac312e57704d3e37f39ee940ee',
+  id = 'net.bull.javamelody:javamelody-core:1.60.0',
+  sha1 = 'd76f6013a81d0c3762da6fe69fa0f93bb7ec08b1',
   license = 'DO_NOT_DISTRIBUTE',
 )
 
