@@ -22,6 +22,30 @@
       "revId": "a2d947469b51a4c1049a9771c9ea8ba5889972a0",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "682da7d5_a9be9da1",
+        "filename": "BUCK",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2016-08-23T06:47:02Z",
+      "side": 1,
+      "message": "I was also wondering about it. We should instead define its own lisense here, in own change.",
+      "parentUuid": "08d6eb36_56bc14a9",
+      "range": {
+        "startLine": 74,
+        "startChar": 13,
+        "endLine": 74,
+        "endChar": 30
+      },
+      "revId": "a2d947469b51a4c1049a9771c9ea8ba5889972a0",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
