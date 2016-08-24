@@ -69,8 +69,8 @@ zip_file(
 
 maven_jar(
   name = 'javamelody-lib',
-  id = 'net.bull.javamelody:javamelody-core:1.58.0',
-  sha1 = '5f1b3c3c1d037e4d62605b9ca6e15da390f8bc6a',
+  id = 'net.bull.javamelody:javamelody-core:1.60.0',
+  sha1 = 'd76f6013a81d0c3762da6fe69fa0f93bb7ec08b1',
   license = 'DO_NOT_DISTRIBUTE',
 )
 
