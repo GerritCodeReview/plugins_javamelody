@@ -15,29 +15,19 @@
 package com.googlesource.gerrit.plugins.javamelody;
 
 import com.google.common.collect.Lists;
-import com.google.gerrit.extensions.annotations.PluginName;
 import com.google.gerrit.extensions.client.MenuItem;
 import com.google.gerrit.extensions.webui.TopMenu;
-import com.google.gerrit.server.CurrentUser;
-import com.google.gerrit.server.account.CapabilityControl;
 import com.google.inject.Inject;
-import com.google.inject.Provider;
 
 import java.util.Collections;
 import java.util.List;
 
 public class MonitoringTopMenu implements TopMenu {
-  private final List<MenuEntry> menuEntries;
-  private final Provider<CurrentUser> userProvider;
-  private final String pluginName;
+  private final List<MenuEntry> menuEntries = Lists.newArrayList();
 
   @Inject
-  public MonitoringTopMenu(Provider<CurrentUser> userProvider,
-      @PluginName String pluginName) {
-    this.userProvider = userProvider;
-    this.pluginName = pluginName;
-    menuEntries = Lists.newArrayList();
-    if (canMonitor()) {
+  public MonitoringTopMenu(CapabilityChecker capabilityChecker) {
+    if (capabilityChecker.canMonitor()) {
       menuEntries.add(new MenuEntry("Monitoring", Collections
           .singletonList(new MenuItem("JavaMelody", "monitoring"))));
     }
@@ -46,15 +36,5 @@ public class MonitoringTopMenu implements TopMenu {
   @Override
   public List<MenuEntry> getEntries() {
     return menuEntries;
-  }
-
-  private boolean canMonitor() {
-    if (userProvider.get().isIdentifiedUser()) {
-      CapabilityControl ctl = userProvider.get().getCapabilities();
-      return ctl.canAdministrateServer()
-          || ctl.canPerform(String.format("%s-%s",
-             pluginName, MonitoringCapability.ID));
-    }
-    return false;
   }
 }

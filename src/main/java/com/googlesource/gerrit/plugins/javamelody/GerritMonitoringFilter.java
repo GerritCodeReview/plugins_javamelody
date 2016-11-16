@@ -14,12 +14,8 @@
 
 package com.googlesource.gerrit.plugins.javamelody;
 
-import com.google.gerrit.extensions.annotations.PluginName;
 import com.google.gerrit.httpd.AllRequestFilter;
-import com.google.gerrit.server.CurrentUser;
-import com.google.gerrit.server.account.CapabilityControl;
 import com.google.inject.Inject;
-import com.google.inject.Provider;
 import com.google.inject.Singleton;
 
 import net.bull.javamelody.MonitoringFilter;
@@ -37,16 +33,13 @@ import javax.servlet.http.HttpServletResponse;
 @Singleton
 class GerritMonitoringFilter extends AllRequestFilter {
   private final JavamelodyFilter monitoring;
-  private final Provider<CurrentUser> userProvider;
-  private final String pluginName;
+  private final CapabilityChecker capabilityChecker;
 
   @Inject
   GerritMonitoringFilter(JavamelodyFilter monitoring,
-      Provider<CurrentUser> userProvider,
-      @PluginName String pluginName) {
+      CapabilityChecker capabilityChecker) {
     this.monitoring = monitoring;
-    this.userProvider = userProvider;
-    this.pluginName = pluginName;
+    this.capabilityChecker = capabilityChecker;
   }
 
   @Override
@@ -82,13 +75,7 @@ class GerritMonitoringFilter extends AllRequestFilter {
   private boolean canMonitor(HttpServletRequest httpRequest) {
     if (httpRequest.getRequestURI().equals(monitoring
         .getJavamelodyUrl(httpRequest))) {
-      if (userProvider.get().isIdentifiedUser()) {
-        CapabilityControl ctl = userProvider.get().getCapabilities();
-        return ctl.canAdministrateServer()
-            || ctl.canPerform(String.format("%s-%s",
-               pluginName, MonitoringCapability.ID));
-      }
-      return false;
+      return capabilityChecker.canMonitor();
     }
     return true;
   }
