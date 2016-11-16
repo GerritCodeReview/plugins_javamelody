@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b031d818_a88a1f38",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/CapabilityChecker.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2016-11-16T12:51:02Z",
+      "side": 1,
+      "message": "[Optional] This can be generalized and put in Gerrit core. The class name can be PluginCapabilityCheker, and the canPerformPluginAction methode can be like this:\n\n    public static boolean canPerformPluginAction(\n      Provider\u003cCurrentUser\u003e userProvider, String pluginName,\n      String capabilityName) {\n    String fullCapabilityName \u003d\n        String.format(\"%s-%s\", pluginName, capabilityName);\n    if (userProvider.get().isIdentifiedUser()) {\n      CapabilityControl ctl \u003d userProvider.get().getCapabilities();\n      return ctl.canAdministrateServer() || ctl.canPerform(fullCapabilityName);\n    }\n    return false;\n  }",
+      "range": {
+        "startLine": 23,
+        "startChar": 13,
+        "endLine": 23,
+        "endChar": 30
+      },
+      "revId": "657501eff1523e3e84bcbec24c3b7e8a1c5a21ed",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f0a51083_4ac5f74c",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/CapabilityChecker.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2016-11-16T12:51:02Z",
+      "side": 1,
+      "message": "[Optional] Move the capability name construction and the  implementation of this method in Gerrit core, in CapabilityUtils, with the same code example as above.",
+      "range": {
+        "startLine": 35,
+        "startChar": 2,
+        "endLine": 42,
+        "endChar": 3
+      },
+      "revId": "657501eff1523e3e84bcbec24c3b7e8a1c5a21ed",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
