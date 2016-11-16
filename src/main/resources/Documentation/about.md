@@ -1,6 +1,6 @@
 This plugin allows to monitor the Gerrit server.
 
-This plugin integrates [JavaMelody](https://code.google.com/p/javamelody) in
+This plugin integrates [JavaMelody](https://github.com/javamelody/javamelody) in
 Gerrit in order to retrieve live instrumentation data from Gerrit.
 
 To access the monitoring URL a user must be a member of a group that is
