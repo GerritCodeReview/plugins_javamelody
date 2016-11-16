@@ -45,6 +45,30 @@
       "revId": "657501eff1523e3e84bcbec24c3b7e8a1c5a21ed",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b031d818_e83267ac",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/CapabilityChecker.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2016-11-16T16:22:26Z",
+      "side": 1,
+      "message": "I\u0027m not sure it makes sense to do that.  What about cases where we want to allow anonymous users, or not allow admins by default?\n\nAnyway, it can be done in a follow up change if it makes sense to do so.",
+      "parentUuid": "f0a51083_4ac5f74c",
+      "range": {
+        "startLine": 35,
+        "startChar": 2,
+        "endLine": 42,
+        "endChar": 3
+      },
+      "revId": "657501eff1523e3e84bcbec24c3b7e8a1c5a21ed",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
