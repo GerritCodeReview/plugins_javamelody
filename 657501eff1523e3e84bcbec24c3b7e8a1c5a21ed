@@ -69,6 +69,30 @@
       "revId": "657501eff1523e3e84bcbec24c3b7e8a1c5a21ed",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b031d818_c80a03d3",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/CapabilityChecker.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2016-11-16T16:26:44Z",
+      "side": 1,
+      "message": "There is no capability checks for anonymous users. Good point, this could be extracted as a bool argument to the function.",
+      "parentUuid": "b031d818_e83267ac",
+      "range": {
+        "startLine": 35,
+        "startChar": 2,
+        "endLine": 42,
+        "endChar": 3
+      },
+      "revId": "657501eff1523e3e84bcbec24c3b7e8a1c5a21ed",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
