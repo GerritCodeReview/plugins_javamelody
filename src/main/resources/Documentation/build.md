@@ -1,98 +1,51 @@
 Build
 =====
 
-This plugin is built with Buck.
+This plugin is built with Bazel.
 
-Two build modes are supported: Standalone and in Gerrit tree. Standalone
-build mode is recommended, as this mode doesn't require local Gerrit
-tree to exist.
+Clone (or link) this plugin to the `plugins` directory of Gerrit's source tree.
 
-Build standalone
-----------------
-
-Clone bucklets library:
+Put the external dependency Bazel build file into the Gerrit /plugins directory,
+replacing the existing empty one.
 
 ```
-  git clone https://gerrit.googlesource.com/bucklets
-
-```
-and link to bucklets directory:
-
-```
-  cd javamelody && ln -s ../bucklets .
+  cd gerrit/plugins
+  rm external_plugin_deps.bzl
+  ln -s javamelody/external_plugin_deps.bzl .
 ```
 
-Add link to the .buckversion file:
+Then issue
 
 ```
-  cd javamelody && ln -s bucklets/buckversion .buckversion
+  bazel build plugins/javamelody:javamelody
 ```
 
-Add link to the .watchmanconfig file:
+Note, that the plugin dependencies with arethe [database interception](database-monitoring.md)
+are built separately. To do that, issue this command:
 
 ```
-  cd javamelody && ln -s bucklets/watchmanconfig .watchmanconfig
-```
-
-To build the plugin, issue the following commands:
-
-```
-  buck build all
-```
-
-The output of the target is:
-
-```
-  buck-out/gen/javamelody.jar
-```
-
-If [database interception](database-monitoring.md) should be activated,
-then the following artifacts must be used instead:
-
-```
-  buck-out/gen/javamelody-nodep.jar
-  buck-out/gen/javamelody-deps.jar
-  buck-out/gen/javamelody-datasource-interceptor.jar
-```
-
-Build in Gerrit tree
---------------------
-
-Clone or link this plugin to the plugins directory of the Gerrit tree
-and issue the command:
-
-```
-  buck build plugins/javamelody:javamelody
-```
-
-If [database interception](database-monitoring.md) should be activated,
-then the following targets must be used instead:
-
-```
-  buck build plugins/javamelody:javamelody-nodep
-  buck build plugins/javamelody:javamelody-deps
-  buck build plugins/javamelody:javamelody-datasource-interceptor
+  bazel build plugins/javamelody:javamelody-deps_deploy.jar
 ```
 
 The output from the former target is:
 
 ```
-  buck-out/gen/plugins/javamelody/javamelody.jar
+  bazel-genfiles/plugins/javamelody/javamelody.jar
 ```
 
 The output from the latter targets are:
 
 ```
-  buck-out/gen/plugins/javamelody/javamelody-nodep.jar
-  buck-out/gen/plugins/javamelody/javamelody-deps.jar
-  buck-out/gen/plugins/javamelody/javamelody-datasource-interceptor.jar
+  bazel-bin/plugins/javamelody/javamelody-deps_deploy.jar
 ```
 
-This project can be imported into the Eclipse IDE:
+This project can be imported into the Eclipse IDE.
+Add the plugin name to the `CUSTOM_PLUGINS` set in
+Gerrit core in `tools/bzl/plugins.bzl`, and execute:
 
 ```
   ./tools/eclipse/project.py
 ```
 
 More information about Buck can be found in the [Gerrit
-documentation](../../../Documentation/dev-buck.html).
+documentation](../../../Documentation/dev-bazel.html).
