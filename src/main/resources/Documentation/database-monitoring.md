@@ -21,40 +21,28 @@ Add the following line to `$gerrit_site/etc/gerrit.config` under `database` sect
 dataSourceInterceptorClass = com.googlesource.gerrit.plugins.javamelody.MonitoringDataSourceInterceptor
 ```
 
-Compile the plugin without dependencies:
+Compile the plugin:
 
 ```
-buck build plugins/javamelody:javamelody-nodep
+bazel build plugins/javamelody:javamelody
 ```
 
 Compile the plugin dependencies:
 
 ```
-buck build plugins/javamelody:javamelody-deps
+bazel build plugins/javamelody:javamelody-deps_deploy.jar
 ```
 
-Compile datasource interceptor:
+Deploy the plugin dependencies with datasource-interceptor to `$gerrit_site/lib`:
 
 ```
-buck build plugins/javamelody:javamelody-datasource-interceptor
-```
-
-Deploy the datasource-interceptor to `$gerrit_site/lib`:
-
-```
-cp buck-out/gen/plugins/javamelody/javamelody-datasource-interceptor.jar `$gerrit_site/lib`
-```
-
-Deploy the javamelody dependencies to `$gerrit_site/lib`:
-
-```
-cp buck-out/gen/plugins/javamelody/javamelody-deps.jar `$gerrit_site/lib`
+cp bazel-bin/plugins/javamelody/javamelody-deps_deploy.jar `$gerrit_site/lib`
 ```
 
 Deploy the plugin without dependencies:
 
 ```
-cp buck-out/gen/plugins/javamelody/javamelody-nodep.jar `$gerrit_site/plugins`
+cp bazel-genfiles/plugins/javamelody/javamelody.jar `$gerrit_site/plugins`
 ```
 
 Run Gerrit@Jetty and enjoy SQL statistics, a lá:
