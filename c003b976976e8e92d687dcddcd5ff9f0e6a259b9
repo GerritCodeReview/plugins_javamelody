@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "278dc82c_cdd6b2bb",
+        "filename": "BUILD",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1029953
+      },
+      "writtenOn": "2017-02-19T16:54:41Z",
+      "side": 1,
+      "message": "Thanks, done.",
+      "parentUuid": "9836af99_68721466",
+      "range": {
+        "startLine": 37,
+        "startChar": 4,
+        "endLine": 37,
+        "endChar": 17
+      },
+      "revId": "c003b976976e8e92d687dcddcd5ff9f0e6a259b9",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4fb4a833_e622af91",
         "filename": "BUILD",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2017-02-19T15:17:29Z",
       "side": 1,
       "message": "@javamelody_lib//jar:neverlink",
+      "range": {
+        "startLine": 38,
+        "startChar": 9,
+        "endLine": 38,
+        "endChar": 29
+      },
+      "revId": "c003b976976e8e92d687dcddcd5ff9f0e6a259b9",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87184d4a_7c64ca05",
+        "filename": "BUILD",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1029953
+      },
+      "writtenOn": "2017-02-19T16:54:41Z",
+      "side": 1,
+      "message": "Thanks, done.",
+      "parentUuid": "4fb4a833_e622af91",
       "range": {
         "startLine": 38,
         "startChar": 9,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "ddbc16b5_a348cce5",
+        "filename": "BUILD",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1029953
+      },
+      "writtenOn": "2017-02-19T16:54:41Z",
+      "side": 1,
+      "message": "Thanks, done.",
+      "parentUuid": "e1d9d709_729314fb",
+      "range": {
+        "startLine": 39,
+        "startChar": 9,
+        "endLine": 39,
+        "endChar": 25
+      },
+      "revId": "c003b976976e8e92d687dcddcd5ff9f0e6a259b9",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8308e0c0_9ff67fa7",
         "filename": "BUILD",
         "patchSetId": 2
@@ -82,6 +154,30 @@
       "writtenOn": "2017-02-19T15:17:29Z",
       "side": 1,
       "message": "Nor needed.",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 1
+      },
+      "revId": "c003b976976e8e92d687dcddcd5ff9f0e6a259b9",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c902af74_7792d111",
+        "filename": "BUILD",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1029953
+      },
+      "writtenOn": "2017-02-19T16:54:41Z",
+      "side": 1,
+      "message": "Thanks, done.",
+      "parentUuid": "8308e0c0_9ff67fa7",
       "range": {
         "startLine": 43,
         "startChar": 0,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "578a669a_da36e2db",
+        "filename": "BUILD",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1029953
+      },
+      "writtenOn": "2017-02-19T16:54:41Z",
+      "side": 1,
+      "message": "Thanks, done.",
+      "parentUuid": "f9ad76e2_026c5e17",
+      "range": {
+        "startLine": 67,
+        "startChar": 4,
+        "endLine": 67,
+        "endChar": 17
+      },
+      "revId": "c003b976976e8e92d687dcddcd5ff9f0e6a259b9",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "562e77ac_5b27ca8c",
         "filename": "BUILD",
         "patchSetId": 2
@@ -128,6 +248,30 @@
       "writtenOn": "2017-02-19T15:17:29Z",
       "side": 1,
       "message": "@javamelody_lib//jar:neverlink",
+      "range": {
+        "startLine": 68,
+        "startChar": 9,
+        "endLine": 68,
+        "endChar": 29
+      },
+      "revId": "c003b976976e8e92d687dcddcd5ff9f0e6a259b9",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f1bd1b7a_9e329148",
+        "filename": "BUILD",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1029953
+      },
+      "writtenOn": "2017-02-19T16:54:41Z",
+      "side": 1,
+      "message": "Thanks, done.",
+      "parentUuid": "562e77ac_5b27ca8c",
       "range": {
         "startLine": 68,
         "startChar": 9,
@@ -163,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "5994d00c_26749255",
+        "filename": "BUILD",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1029953
+      },
+      "writtenOn": "2017-02-19T16:54:41Z",
+      "side": 1,
+      "message": "Thanks, done.",
+      "parentUuid": "2a52e2b6_b174cd61",
+      "range": {
+        "startLine": 69,
+        "startChar": 8,
+        "endLine": 69,
+        "endChar": 26
+      },
+      "revId": "c003b976976e8e92d687dcddcd5ff9f0e6a259b9",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "16b1af7a_231bff67",
         "filename": "external_plugin_deps.bzl",
         "patchSetId": 2
@@ -186,6 +354,30 @@
     },
     {
       "key": {
+        "uuid": "fa85d1b9_77964835",
+        "filename": "external_plugin_deps.bzl",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1029953
+      },
+      "writtenOn": "2017-02-19T16:54:41Z",
+      "side": 1,
+      "message": "Woops sorry, thanks, done.",
+      "parentUuid": "16b1af7a_231bff67",
+      "range": {
+        "startLine": 5,
+        "startChar": 22,
+        "endLine": 5,
+        "endChar": 23
+      },
+      "revId": "c003b976976e8e92d687dcddcd5ff9f0e6a259b9",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "284482dc_f5c52d50",
         "filename": "external_plugin_deps.bzl",
         "patchSetId": 2
@@ -197,6 +389,30 @@
       "writtenOn": "2017-02-19T15:17:29Z",
       "side": 1,
       "message": "\"-\" is not allowed in this context.",
+      "range": {
+        "startLine": 11,
+        "startChar": 18,
+        "endLine": 11,
+        "endChar": 19
+      },
+      "revId": "c003b976976e8e92d687dcddcd5ff9f0e6a259b9",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cf456dfa_c689d51f",
+        "filename": "external_plugin_deps.bzl",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1029953
+      },
+      "writtenOn": "2017-02-19T16:54:41Z",
+      "side": 1,
+      "message": "Thanks, done.",
+      "parentUuid": "284482dc_f5c52d50",
       "range": {
         "startLine": 11,
         "startChar": 18,
