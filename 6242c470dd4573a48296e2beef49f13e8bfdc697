@@ -19,6 +19,75 @@
     },
     {
       "key": {
+        "uuid": "a9fc2980_f63a3a21",
+        "filename": "BUILD",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2017-03-08T06:58:48Z",
+      "side": 1,
+      "message": "Not needed.",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 1
+      },
+      "revId": "6242c470dd4573a48296e2beef49f13e8bfdc697",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a479e0e2_f19b4e43",
+        "filename": "BUILD",
+        "patchSetId": 4
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2017-03-08T06:58:48Z",
+      "side": 1,
+      "message": "I know, it was used that way in Buck, but there we create another target javamelody-dep, that shipped these deps. i wonder if we could simplify this, by only exposing one single JAR, that contains all these:\n\n* MonitoringDataSourceInterceptor.class\n* @javamelody_lib//jar\n* @jrobin_lib//jar",
+      "range": {
+        "startLine": 65,
+        "startChar": 29,
+        "endLine": 65,
+        "endChar": 39
+      },
+      "revId": "6242c470dd4573a48296e2beef49f13e8bfdc697",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "664e7792_d155b8a0",
+        "filename": "BUILD",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2017-03-08T06:58:48Z",
+      "side": 1,
+      "message": "Same here.",
+      "range": {
+        "startLine": 66,
+        "startChar": 25,
+        "endLine": 66,
+        "endChar": 35
+      },
+      "revId": "6242c470dd4573a48296e2beef49f13e8bfdc697",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5c93fe45_9231cc1a",
         "filename": "BUILD",
         "patchSetId": 4
