@@ -42,6 +42,30 @@
     },
     {
       "key": {
+        "uuid": "df72f888_a426910a",
+        "filename": "BUILD",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1029953
+      },
+      "writtenOn": "2017-03-16T13:09:37Z",
+      "side": 1,
+      "message": "Thanks, done.",
+      "parentUuid": "a9fc2980_f63a3a21",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 1
+      },
+      "revId": "6242c470dd4573a48296e2beef49f13e8bfdc697",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7932171a_58230e3e",
         "filename": "BUILD",
         "patchSetId": 4
@@ -53,6 +77,30 @@
       "writtenOn": "2017-03-08T07:10:05Z",
       "side": 1,
       "message": "Doesn\u0027t work:\n\n  $ bazel build plugins/javamelody:javamelody-datasource-interceptor\nERROR: /home/davido/projects/gerrit/plugins/javamelody/BUILD:50:12: in deps attribute of java_binary rule //plugins/javamelody:javamelody-datasource-interceptor: deps not allowed without srcs; move to runtime_deps?\nERROR: /home/davido/projects/gerrit/plugins/javamelody/BUILD:48:1: in java_binary rule //plugins/javamelody:javamelody-datasource-interceptor: need at least one of \u0027main_class\u0027 or Java source files.\n\nThis works:\n\n  java_binary(\n    name \u003d \"javamelody-datasource-interceptor\",\n    main_class \u003d \"Dummy\",\n    runtime_deps \u003d [\":javamelody-datasource-interceptor-lib\"],\n)",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 1
+      },
+      "revId": "6242c470dd4573a48296e2beef49f13e8bfdc697",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "58c7de08_ee037339",
+        "filename": "BUILD",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1029953
+      },
+      "writtenOn": "2017-03-16T13:09:37Z",
+      "side": 1,
+      "message": "Thanks, done.",
+      "parentUuid": "7932171a_58230e3e",
       "range": {
         "startLine": 56,
         "startChar": 0,
