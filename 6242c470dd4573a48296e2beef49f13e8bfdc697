@@ -88,6 +88,30 @@
     },
     {
       "key": {
+        "uuid": "6c632468_e16baa13",
+        "filename": "BUILD",
+        "patchSetId": 4
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1029953
+      },
+      "writtenOn": "2017-03-16T13:08:11Z",
+      "side": 1,
+      "message": "Oh not sure. So I should remove neverlink here?",
+      "parentUuid": "a479e0e2_f19b4e43",
+      "range": {
+        "startLine": 65,
+        "startChar": 29,
+        "endLine": 65,
+        "endChar": 39
+      },
+      "revId": "6242c470dd4573a48296e2beef49f13e8bfdc697",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "664e7792_d155b8a0",
         "filename": "BUILD",
         "patchSetId": 4
