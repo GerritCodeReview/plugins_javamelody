@@ -131,6 +131,30 @@
       "revId": "6242c470dd4573a48296e2beef49f13e8bfdc697",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "275bda1f_4a9ebbfd",
+        "filename": "BUILD",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1029953
+      },
+      "writtenOn": "2017-03-16T13:05:39Z",
+      "side": 1,
+      "message": "Oh, so PLUGIN_DEPS:neverlink ?",
+      "parentUuid": "5c93fe45_9231cc1a",
+      "range": {
+        "startLine": 67,
+        "startChar": 5,
+        "endLine": 67,
+        "endChar": 20
+      },
+      "revId": "6242c470dd4573a48296e2beef49f13e8bfdc697",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
