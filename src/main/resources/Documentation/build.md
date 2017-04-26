@@ -20,11 +20,11 @@ Then issue
   bazel build plugins/javamelody:javamelody
 ```
 
-Note, that the plugin dependencies with arethe [database interception](database-monitoring.md)
+Note, that the plugin dependencies with [database interception](database-monitoring.md)
 are built separately. To do that, issue this command:
 
 ```
-  bazel build plugins/javamelody:javamelody-deps_deploy.jar
+  bazel build plugins/javamelody:javamelody-deps
 ```
 
 The output from the former target is:
@@ -36,7 +36,7 @@ The output from the former target is:
 The output from the latter targets are:
 
 ```
-  bazel-bin/plugins/javamelody/javamelody-deps_deploy.jar
+  bazel-bin/plugins/javamelody/javamelody-deps.jar
 ```
 
 This project can be imported into the Eclipse IDE.
