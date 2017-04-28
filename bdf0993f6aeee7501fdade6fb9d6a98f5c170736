@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "18a2c8d5_83405fe7",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/CapabilityChecker.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2017-04-28T10:43:12Z",
+      "side": 1,
+      "message": ".user() accepts a userProvider. The .get() is unnecessary.",
+      "range": {
+        "startLine": 46,
+        "startChar": 35,
+        "endLine": 46,
+        "endChar": 0
+      },
+      "revId": "bdf0993f6aeee7501fdade6fb9d6a98f5c170736",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
