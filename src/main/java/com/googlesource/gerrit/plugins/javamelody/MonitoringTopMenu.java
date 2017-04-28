@@ -18,7 +18,6 @@ import com.google.common.collect.Lists;
 import com.google.gerrit.extensions.client.MenuItem;
 import com.google.gerrit.extensions.webui.TopMenu;
 import com.google.inject.Inject;
-
 import java.util.Collections;
 import java.util.List;
 
@@ -28,8 +27,9 @@ public class MonitoringTopMenu implements TopMenu {
   @Inject
   public MonitoringTopMenu(CapabilityChecker capabilityChecker) {
     if (capabilityChecker.canMonitor()) {
-      menuEntries.add(new MenuEntry("Monitoring", Collections
-          .singletonList(new MenuItem("JavaMelody", "monitoring"))));
+      menuEntries.add(
+          new MenuEntry(
+              "Monitoring", Collections.singletonList(new MenuItem("JavaMelody", "monitoring"))));
     }
   }
 

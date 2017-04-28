@@ -17,11 +17,7 @@ package com.googlesource.gerrit.plugins.javamelody;
 import com.google.gerrit.httpd.AllRequestFilter;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-
-import net.bull.javamelody.MonitoringFilter;
-
 import java.io.IOException;
-
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
@@ -29,6 +25,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import net.bull.javamelody.MonitoringFilter;
 
 @Singleton
 class GerritMonitoringFilter extends AllRequestFilter {
@@ -36,17 +33,15 @@ class GerritMonitoringFilter extends AllRequestFilter {
   private final CapabilityChecker capabilityChecker;
 
   @Inject
-  GerritMonitoringFilter(JavamelodyFilter monitoring,
-      CapabilityChecker capabilityChecker) {
+  GerritMonitoringFilter(JavamelodyFilter monitoring, CapabilityChecker capabilityChecker) {
     this.monitoring = monitoring;
     this.capabilityChecker = capabilityChecker;
   }
 
   @Override
-  public void doFilter(ServletRequest request, ServletResponse response,
-      FilterChain chain) throws IOException, ServletException {
-    if (!(request instanceof HttpServletRequest)
-        || !(response instanceof HttpServletResponse)) {
+  public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+      throws IOException, ServletException {
+    if (!(request instanceof HttpServletRequest) || !(response instanceof HttpServletResponse)) {
       chain.doFilter(request, response);
       return;
     }
@@ -57,8 +52,7 @@ class GerritMonitoringFilter extends AllRequestFilter {
     if (canMonitor(httpRequest)) {
       monitoring.doFilter(request, response, chain);
     } else {
-      httpResponse.sendError(HttpServletResponse.SC_FORBIDDEN,
-          "Forbidden access");
+      httpResponse.sendError(HttpServletResponse.SC_FORBIDDEN, "Forbidden access");
     }
   }
 
@@ -73,8 +67,7 @@ class GerritMonitoringFilter extends AllRequestFilter {
   }
 
   private boolean canMonitor(HttpServletRequest httpRequest) {
-    if (httpRequest.getRequestURI().equals(monitoring
-        .getJavamelodyUrl(httpRequest))) {
+    if (httpRequest.getRequestURI().equals(monitoring.getJavamelodyUrl(httpRequest))) {
       return capabilityChecker.canMonitor();
     }
     return true;
