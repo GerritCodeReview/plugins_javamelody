@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d24f31ae_237eb051",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2017-06-02T11:41:46Z",
+      "side": 1,
+      "message": "It would be nice if we can find a solution to this so that the plugin can be included in release.war as a core plugin, without having to manage deployment of other libraries.\n\nWould it be feasible, for example, to have these dependencies in the plugin war file and use an init step to export the files into $site/lib?\n\nOr maybe have it download them like we do for sql drivers, and previously for bouncy castle?",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 52
+      },
+      "revId": "a94d313afa3b053fb2554b428245e93d45412099",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
