@@ -32,3 +32,9 @@ java_library(
         "@jrobin_lib//jar",
     ],
 )
+
+java_library(
+    name = "javamelody__plugin_test_deps",
+    visibility = ["//visibility:public"],
+    exports = ["@javamelody_lib//jar"],
+)
