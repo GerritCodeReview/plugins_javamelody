@@ -1,7 +1,8 @@
 Build
 =====
 
-This plugin is built with Bazel.
+This plugin is built with Bazel. Currently, only in Gerrit tree build is
+supported.
 
 Clone (or link) this plugin to the `plugins` directory of Gerrit's source tree.
 
@@ -20,7 +21,7 @@ Then issue
   bazel build plugins/javamelody:javamelody
 ```
 
-Note, that the plugin dependencies with arethe [database interception](database-monitoring.md)
+Note, that the plugin dependencies with [database interception](database-monitoring.md)
 are built separately. To do that, issue this command:
 
 ```
@@ -40,8 +41,9 @@ The output from the latter targets are:
 ```
 
 This project can be imported into the Eclipse IDE.
-Add the plugin name to the `CUSTOM_PLUGINS` set in
-Gerrit core in `tools/bzl/plugins.bzl`, and execute:
+Add the plugin name to the `CUSTOM_PLUGINS` and to the
+`CUSTOM_PLUGINS_TEST_DEPS` set in Gerrit core in
+`tools/bzl/plugins.bzl`, and execute:
 
 ```
   ./tools/eclipse/project.py
