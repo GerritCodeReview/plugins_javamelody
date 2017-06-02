@@ -47,5 +47,5 @@ Gerrit core in `tools/bzl/plugins.bzl`, and execute:
   ./tools/eclipse/project.py
 ```
 
-More information about Buck can be found in the [Gerrit
+More information about Bazel can be found in the [Gerrit
 documentation](../../../Documentation/dev-bazel.html).
