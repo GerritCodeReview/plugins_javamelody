@@ -22,6 +22,23 @@
       "revId": "a94d313afa3b053fb2554b428245e93d45412099",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3416afdc_fb6de234",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1031898
+      },
+      "writtenOn": "2017-06-08T07:06:23Z",
+      "side": 1,
+      "message": "test comment",
+      "revId": "a94d313afa3b053fb2554b428245e93d45412099",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
