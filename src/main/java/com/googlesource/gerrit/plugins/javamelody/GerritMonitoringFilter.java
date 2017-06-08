@@ -14,10 +14,14 @@
 
 package com.googlesource.gerrit.plugins.javamelody;
 
+import com.google.gerrit.extensions.annotations.PluginData;
 import com.google.gerrit.httpd.AllRequestFilter;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.StringJoiner;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -27,6 +31,8 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import net.bull.javamelody.MonitoringFilter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Singleton
 class GerritMonitoringFilter extends AllRequestFilter {
@@ -75,8 +81,15 @@ class GerritMonitoringFilter extends AllRequestFilter {
   }
 
   static class JavamelodyFilter extends MonitoringFilter {
+    private static final Logger log = LoggerFactory.getLogger(JavamelodyFilter.class);
+    private static final String JAVAMELODY_PREFIX = "javamelody";
     private static final String HTTP_TRANSFORM_PATTERN = "http-transform-pattern";
-    private static final String GLOBAL_HTTP_TRANSFORM_PATTERN = "javamelody." + HTTP_TRANSFORM_PATTERN;
+    private static final String GLOBAL_HTTP_TRANSFORM_PATTERN =
+        String.format("%s.%s", JAVAMELODY_PREFIX, HTTP_TRANSFORM_PATTERN);
+    private static final String STORAGE_DIR = "storage-directory";
+    private static final String GLOBAL_STORAGE_DIR =
+        String.format("%s.%s", JAVAMELODY_PREFIX, STORAGE_DIR);
+
     static final String GERRIT_GROUPING =
         new StringJoiner("|")
             .add("[0-9a-f]{64}") // Long SHA for LFS
@@ -91,11 +104,23 @@ class GerritMonitoringFilter extends AllRequestFilter {
             .add("\\d+") // various ids e.g. change id
             .toString();
 
+    private final Path defaultDataDir;
+
+    @Inject
+    JavamelodyFilter(@PluginData Path defaultDataDir) {
+      this.defaultDataDir = defaultDataDir;
+    }
+
     @Override
     public void init(FilterConfig config) throws ServletException {
-      if (isHttpTransformPatternrUndefined(config)) {
+      if (isPropertyUndefined(config, HTTP_TRANSFORM_PATTERN, GLOBAL_HTTP_TRANSFORM_PATTERN)) {
         System.setProperty(GLOBAL_HTTP_TRANSFORM_PATTERN, GERRIT_GROUPING);
       }
+
+      if (isPropertyUndefined(config, STORAGE_DIR, GLOBAL_STORAGE_DIR)) {
+        System.setProperty(GLOBAL_STORAGE_DIR, getStorageDir());
+      }
+
       super.init(config);
     }
 
@@ -103,10 +128,29 @@ class GerritMonitoringFilter extends AllRequestFilter {
       return getMonitoringUrl(httpRequest);
     }
 
-    private boolean isHttpTransformPatternrUndefined(FilterConfig config) {
-      return System.getProperty(GLOBAL_HTTP_TRANSFORM_PATTERN) == null
-          && config.getServletContext().getInitParameter(GLOBAL_HTTP_TRANSFORM_PATTERN) == null
-          && config.getInitParameter(HTTP_TRANSFORM_PATTERN) == null;
+    private String getStorageDir() {
+      // default to old path for javamelody storage-directory if it exists
+      final Path tmp = Paths.get(System.getProperty("java.io.tmpdir")).resolve(JAVAMELODY_PREFIX);
+      if (Files.isDirectory(tmp)) {
+        return tmp.toString();
+      }
+
+      // put javamelody data in default plugin data dir
+      if (!Files.isDirectory(defaultDataDir)) {
+        try {
+          Files.createDirectories(defaultDataDir);
+        } catch (IOException e) {
+          log.error("Creation of javamelody data dir [{}] failed.", defaultDataDir, e);
+          throw new RuntimeException(e);
+        }
+      }
+      return defaultDataDir.toString();
+    }
+
+    private boolean isPropertyUndefined(FilterConfig config, String name, String globalName) {
+      return System.getProperty(globalName) == null
+          && config.getServletContext().getInitParameter(globalName) == null
+          && config.getInitParameter(name) == null;
     }
   }
 }
