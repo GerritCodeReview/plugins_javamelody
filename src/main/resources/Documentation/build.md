@@ -40,6 +40,11 @@ The output from the latter targets are:
   bazel-bin/plugins/javamelody/javamelody-deps_deploy.jar
 ```
 
+[IMPORTANT]
+Both targets above are required and must be deployed to the right
+locations: `javamelody.jar` to `<gerrit_site>/plugins` directory
+and `javamelody-deps_deploy.jar` to `<gerrit_site>/lib` directory.
+
 This project can be imported into the Eclipse IDE.
 Add the plugin name to the `CUSTOM_PLUGINS` and to the
 `CUSTOM_PLUGINS_TEST_DEPS` set in Gerrit core in
