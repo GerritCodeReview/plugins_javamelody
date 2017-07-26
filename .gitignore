@@ -1,6 +1,8 @@
-/target
 /.classpath
 /.idea
 /.project
-/.settings/org.maven.ide.eclipse.prefs
-/.settings/org.eclipse.m2e.core.prefs
+/.settings/
+/.primary_build_tool
+/bazel-*
+/eclipse-out/
+
