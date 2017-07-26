@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9c41813a_7e7c80a2",
+        "filename": "BUILD",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2017-07-26T20:26:18Z",
+      "side": 1,
+      "message": "There is only one single plugin artifact and was not transitively depending on javamelody dependencies for a reason: If you deploy both javamelody-plugin.jar to gerrit_site/plugins and datasource-interceptor.jar to gerrit_site/libs (and most of the folks do just that, unless the ReviewDb is gone) you will deploy the javamelody deps stuff *twice*.\n\nIf you really want all-in-one plugin JAR and really don\u0027t want datasource-interceptor-jar you would need to produce two different plugins JAR. One with an another without transitive dependencies on javamelody deps. And provide corresponding documentation which plugin JAR to deploy in which use case. All that would be obsolete, once the ReviewDb is gone, so I\u0027m not sure it worth the efforts.",
+      "range": {
+        "startLine": 22,
+        "startChar": 11,
+        "endLine": 22,
+        "endChar": 15
+      },
+      "revId": "6efbb75d821965c2f4ba3f9e4e6d1f485c8d05c9",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
