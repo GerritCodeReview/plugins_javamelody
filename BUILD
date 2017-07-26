@@ -1,4 +1,4 @@
-load("//tools/bzl:plugin.bzl", "gerrit_plugin")
+load("//tools/bzl:plugin.bzl", "gerrit_plugin", "PLUGIN_DEPS")
 
 gerrit_plugin(
     name = "javamelody",
@@ -27,8 +27,21 @@ java_library(
     name = "javamelody-datasource-interceptor-lib",
     srcs = ["src/main/java/com/googlesource/gerrit/plugins/javamelody/MonitoringDataSourceInterceptor.java"],
     deps = [
-        "//gerrit-plugin-api:lib-neverlink",
+        ":plugin_api_neverlink",
         "@javamelody_lib//jar",
         "@jrobin_lib//jar",
     ],
+    visibility = ["//visibility:public"],
 )
+
+java_library(
+    name = "plugin_api_neverlink",
+    neverlink = 1,
+    exports = PLUGIN_DEPS,
+)
+
+# java_library(
+#     name = "javamelody__plugin_test_deps",
+#     visibility = ["//visibility:public"],
+#     exports = ["@javamelody_lib//jar"],
+# )

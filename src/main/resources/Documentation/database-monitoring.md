@@ -15,36 +15,27 @@ not contain the javamelody core library (shaded jar).
 
 Thus the javamelody dependencies must not be packaged in the plugin itself.
 
-Add the following line to `$gerrit_site/etc/gerrit.config` under `database` section:
+To enable database monitoring add the following line to
+`$gerrit_site/etc/gerrit.config` under `database` section:
 
 ```
 dataSourceInterceptorClass = com.googlesource.gerrit.plugins.javamelody.MonitoringDataSourceInterceptor
 ```
 
-Compile the plugin:
-
-```
-bazel build plugins/javamelody:javamelody
-```
-
-Compile the plugin dependencies:
-
-```
-bazel build plugins/javamelody:javamelody-deps_deploy.jar
-```
+Compile the plugin according to the instructions in the [build](build.md) page.
 
 Deploy the plugin dependencies with datasource-interceptor to `$gerrit_site/lib`:
 
 ```
-cp bazel-bin/plugins/javamelody/javamelody-deps_deploy.jar `$gerrit_site/lib`
+cp bazel-bin/plugins/@PLUGIN@/@PLUGIN@-deps_deploy.jar `$gerrit_site/lib`
 ```
 
 Deploy the plugin without dependencies:
 
 ```
-cp bazel-genfiles/plugins/javamelody/javamelody.jar `$gerrit_site/plugins`
+cp bazel-genfiles/plugins/@PLUGIN@/@PLUGIN@.jar `$gerrit_site/plugins`
 ```
 
 Run Gerrit@Jetty and enjoy SQL statistics, a lá:
 
-http://i.imgur.com/8EyAA9u.png
+[screenshot] (http://i.imgur.com/8EyAA9u.png)
