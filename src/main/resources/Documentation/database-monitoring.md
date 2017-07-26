@@ -2,18 +2,13 @@ Database-Monitoring
 ===================
 
 JavaMelody supports out of the box JNDI DataSource in Web container (Tomcat).
-Because Gerrit instantiates its data source on its own, JavaMelody can not
+Because Gerrit instantiates its data source on its own, JavaMelody cannot
 intercept it and therefore no SQL statistic reports can be gathered.
 
 To overcome that problem a data source proxy must be installed.
 
 Datasource interceptor JAR (that creates the data source proxy) must be
-available in the bootstrap classpath for Gerrit core to load it. Moreover,
-because the interceptor depends on javamelody core library, it must be
-provided in the bootstrap classpath too. In this case the plugin must
-not contain the javamelody core library (shaded jar).
-
-Thus the javamelody dependencies must not be packaged in the plugin itself.
+available in the bootstrap classpath for Gerrit core to load it.
 
 Add the following line to `$gerrit_site/etc/gerrit.config` under `database` section:
 
@@ -27,19 +22,19 @@ Compile the plugin:
 bazel build plugins/javamelody:javamelody
 ```
 
-Compile the plugin dependencies:
+Compile the datasource interceptor artifact:
 
 ```
-bazel build plugins/javamelody:javamelody-deps_deploy.jar
+bazel build plugins/javamelody:javamelody-datasource_deploy.jar
 ```
 
-Deploy the plugin dependencies with datasource-interceptor to `$gerrit_site/lib`:
+Deploy the datasource-interceptor artifact to `$gerrit_site/lib`:
 
 ```
-cp bazel-bin/plugins/javamelody/javamelody-deps_deploy.jar `$gerrit_site/lib`
+cp bazel-bin/plugins/javamelody/javamelody-datasource_deploy.jar `$gerrit_site/lib`
 ```
 
-Deploy the plugin without dependencies:
+Deploy the plugin:
 
 ```
 cp bazel-genfiles/plugins/javamelody/javamelody.jar `$gerrit_site/plugins`
