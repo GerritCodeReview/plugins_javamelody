@@ -60,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "63f9d151_541aea89",
+        "filename": "BUILD",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1019328
+      },
+      "writtenOn": "2017-07-27T18:29:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1635a911_c053adef",
+      "range": {
+        "startLine": 1,
+        "startChar": 49,
+        "endLine": 1,
+        "endChar": 60
+      },
+      "revId": "4a23971601f3abe8e1a333c9c48aa00f2a39381a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3efa832a_ea604a6d",
         "filename": "BUILD",
         "patchSetId": 2
@@ -83,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "d2132a31_6bf30a17",
+        "filename": "BUILD",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1019328
+      },
+      "writtenOn": "2017-07-27T18:29:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3efa832a_ea604a6d",
+      "range": {
+        "startLine": 30,
+        "startChar": 4,
+        "endLine": 34,
+        "endChar": 6
+      },
+      "revId": "4a23971601f3abe8e1a333c9c48aa00f2a39381a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b1b20a3c_3dea4b4d",
         "filename": "BUILD",
         "patchSetId": 2
@@ -94,6 +142,30 @@
       "writtenOn": "2017-07-27T18:11:14Z",
       "side": 1,
       "message": "This hack is not needed. Both maven_jar() implementation: bazlets and in gerrit core expose neverlink artifacts. And of course, i added a special define for those case, there non-transitive deps are needed: PLUGIN_DEPS_NEVERLINK. See e.g. tools/commons.bzl in bazlets:\n\n  PLUGIN_DEPS_NEVERLINK \u003d [\n      \"//external:gerrit-plugin-api-neverlink\",\n  ]",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 1
+      },
+      "revId": "4a23971601f3abe8e1a333c9c48aa00f2a39381a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87401fba_b3beefae",
+        "filename": "BUILD",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1019328
+      },
+      "writtenOn": "2017-07-27T18:29:17Z",
+      "side": 1,
+      "message": "Nice! Done.",
+      "parentUuid": "b1b20a3c_3dea4b4d",
       "range": {
         "startLine": 37,
         "startChar": 0,
@@ -177,6 +249,30 @@
     },
     {
       "key": {
+        "uuid": "bb2201fb_5d4cd2ad",
+        "filename": "WORKSPACE",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1019328
+      },
+      "writtenOn": "2017-07-27T18:29:17Z",
+      "side": 1,
+      "message": "Was done in patch set 3.",
+      "parentUuid": "2b648742_f32a20d3",
+      "range": {
+        "startLine": 7,
+        "startChar": 19,
+        "endLine": 7,
+        "endChar": 51
+      },
+      "revId": "4a23971601f3abe8e1a333c9c48aa00f2a39381a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d4601b20_3b696035",
         "filename": "src/main/resources/Documentation/database-monitoring.md",
         "patchSetId": 2
@@ -212,6 +308,24 @@
     },
     {
       "key": {
+        "uuid": "2b81180c_a927e07e",
+        "filename": "src/main/resources/Documentation/database-monitoring.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019328
+      },
+      "writtenOn": "2017-07-27T18:29:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fc363a3a_438a4f99",
+      "revId": "4a23971601f3abe8e1a333c9c48aa00f2a39381a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3719d5e4_d87fe8c7",
         "filename": "tools/bzl/plugin.bzl",
         "patchSetId": 2
@@ -223,6 +337,30 @@
       "writtenOn": "2017-07-27T18:11:14Z",
       "side": 1,
       "message": "PLUGIN_DEPS_NEVERLINK",
+      "range": {
+        "startLine": 4,
+        "startChar": 5,
+        "endLine": 4,
+        "endChar": 16
+      },
+      "revId": "4a23971601f3abe8e1a333c9c48aa00f2a39381a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "86291771_84129fe9",
+        "filename": "tools/bzl/plugin.bzl",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1019328
+      },
+      "writtenOn": "2017-07-27T18:29:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3719d5e4_d87fe8c7",
       "range": {
         "startLine": 4,
         "startChar": 5,
