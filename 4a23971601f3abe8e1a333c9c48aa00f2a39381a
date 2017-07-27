@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "578ae58b_9a12b238",
+        "filename": ".gitignore",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019328
+      },
+      "writtenOn": "2017-07-27T15:09:36Z",
+      "side": 1,
+      "message": "Will propose a separate change.",
+      "parentUuid": "a2aa7139_948bdf15",
+      "revId": "4a23971601f3abe8e1a333c9c48aa00f2a39381a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "23033516_4e90d467",
         "filename": "WORKSPACE",
         "patchSetId": 2
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "e46cf118_f61a19ab",
+        "filename": "WORKSPACE",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1019328
+      },
+      "writtenOn": "2017-07-27T15:09:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "23033516_4e90d467",
+      "range": {
+        "startLine": 7,
+        "startChar": 19,
+        "endLine": 7,
+        "endChar": 51
+      },
+      "revId": "4a23971601f3abe8e1a333c9c48aa00f2a39381a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d4601b20_3b696035",
         "filename": "src/main/resources/Documentation/database-monitoring.md",
         "patchSetId": 2
@@ -53,6 +95,24 @@
       "writtenOn": "2017-07-27T14:46:48Z",
       "side": 1,
       "message": "The changes in this file are not related to standalone build, they could have been done in a separate change",
+      "revId": "4a23971601f3abe8e1a333c9c48aa00f2a39381a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fc363a3a_438a4f99",
+        "filename": "src/main/resources/Documentation/database-monitoring.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019328
+      },
+      "writtenOn": "2017-07-27T15:09:36Z",
+      "side": 1,
+      "message": "ACK. That\u0027s true for the rewording and the screenshot link but at least for the building information I think it\u0027s better to link to the build page as here it was assuming only one way of building the plugin and I did not want to duplicate the information in two places.",
+      "parentUuid": "d4601b20_3b696035",
       "revId": "4a23971601f3abe8e1a333c9c48aa00f2a39381a",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
