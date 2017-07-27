@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "520234d7_70015b50",
+        "filename": "tools/eclipse/BUILD",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1012987
+      },
+      "writtenOn": "2017-07-27T19:13:25Z",
+      "side": 1,
+      "message": "@davido\nSo far, all the standalone build I implemented have the same dependencies for both classpath and main_classpath_collect.\n\nAccording to this change, it looks like it works if we do not specify PLUGIN_DEPS in classpath target.\n\nAre classpath and main_classpath_collect supposed to have the same dependencies?\n\nDo we really need both target?",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 1
+      },
+      "revId": "eb0e6bbd972b3f292984a3efb79f9daa09c23b01",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
