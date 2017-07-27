@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "173c3059_98c04862",
+        "filename": ".gitignore",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1019328
+      },
+      "writtenOn": "2017-07-27T19:11:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "80d9b1be_b8e8c795",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 20
+      },
+      "revId": "154f428fd7b4db4d467a97f285a30750373ae22d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bff4af15_c1794543",
         "filename": "tools/eclipse/BUILD",
         "patchSetId": 5
@@ -36,6 +60,24 @@
       "writtenOn": "2017-07-27T18:39:04Z",
       "side": 1,
       "message": "don\u0027t you need PLUGIN_DEPS here as well?",
+      "revId": "154f428fd7b4db4d467a97f285a30750373ae22d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "76a7ed82_3a7c9e42",
+        "filename": "tools/eclipse/BUILD",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1019328
+      },
+      "writtenOn": "2017-07-27T19:11:02Z",
+      "side": 1,
+      "message": "Project classpath is generated without this but it\u0027s a good question as just removing these runtime_deps keeps generating the project OK.",
+      "parentUuid": "bff4af15_c1794543",
       "revId": "154f428fd7b4db4d467a97f285a30750373ae22d",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
