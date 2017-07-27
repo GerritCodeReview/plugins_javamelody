@@ -46,6 +46,30 @@
       "revId": "eb0e6bbd972b3f292984a3efb79f9daa09c23b01",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bd9f6017_75771d82",
+        "filename": "tools/eclipse/BUILD",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2017-07-27T19:58:42Z",
+      "side": 1,
+      "message": "So, the project.py currently doing two independent tasks:\n\n* 1. it generates .classpath, by running:\n\n  bazel build tools/eclipse:main_classpath_collect\n\nthen the bazel-bin/tools/eclipse/main_classpath_collect.runtime_classpath is generated.\n\n* 2. it runs bazel build tools/eclipse:classpath\n\nNow, that you are asking, i try to remember, why i did second step. it seems, that during generation of:\n\n  bazel build tools/eclipse:main_classpath_collect\n\nthe artifacts correctly fetched, so it seems we don\u0027Ät really need to run:\n\n  bazel build tools/eclipse:classpath\n\nand thus could remove the call to:\n\n  bazel build tools/eclipse:classpath\n\nin project.py and could remove tools/eclipse:classpath rule from BUILD files.",
+      "parentUuid": "520234d7_70015b50",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 1
+      },
+      "revId": "eb0e6bbd972b3f292984a3efb79f9daa09c23b01",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
