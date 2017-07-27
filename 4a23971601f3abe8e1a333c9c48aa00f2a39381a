@@ -273,6 +273,30 @@
     },
     {
       "key": {
+        "uuid": "66625c9e_dcf48cfd",
+        "filename": "WORKSPACE",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2017-07-27T19:02:04Z",
+      "side": 1,
+      "message": "It was suggested \"/home/\u003cuser\u003e/projects/bazlets\", but was changed to only: \"/home/\u003cuser\u003e/workspaces/bazlets\".",
+      "parentUuid": "bb2201fb_5d4cd2ad",
+      "range": {
+        "startLine": 7,
+        "startChar": 19,
+        "endLine": 7,
+        "endChar": 51
+      },
+      "revId": "4a23971601f3abe8e1a333c9c48aa00f2a39381a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d4601b20_3b696035",
         "filename": "src/main/resources/Documentation/database-monitoring.md",
         "patchSetId": 2
