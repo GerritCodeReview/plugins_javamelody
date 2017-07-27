@@ -22,6 +22,30 @@
       "revId": "eb0e6bbd972b3f292984a3efb79f9daa09c23b01",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27c69ecf_9576840b",
+        "filename": "tools/eclipse/BUILD",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1012987
+      },
+      "writtenOn": "2017-07-27T19:49:01Z",
+      "side": 1,
+      "message": "If change project.py the way I did in https://gerrit-review.googlesource.com/#/c/bazlets/+/116270/, we no longer need to define classpath, only main_classpath_collect is required.\n\nI also tested with gitiles and it works.",
+      "parentUuid": "520234d7_70015b50",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 1
+      },
+      "revId": "eb0e6bbd972b3f292984a3efb79f9daa09c23b01",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
