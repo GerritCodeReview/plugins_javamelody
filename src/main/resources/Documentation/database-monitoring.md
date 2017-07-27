@@ -21,17 +21,7 @@ Add the following line to `$gerrit_site/etc/gerrit.config` under `database` sect
 dataSourceInterceptorClass = com.googlesource.gerrit.plugins.javamelody.MonitoringDataSourceInterceptor
 ```
 
-Compile the plugin:
-
-```
-bazel build plugins/javamelody:javamelody
-```
-
-Compile the plugin dependencies:
-
-```
-bazel build plugins/javamelody:javamelody-deps_deploy.jar
-```
+Compile the plugin according to the instructions in the [build](build.md) page.
 
 Deploy the plugin dependencies with datasource-interceptor to `$gerrit_site/lib`:
 
