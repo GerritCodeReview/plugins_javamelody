@@ -70,6 +70,30 @@
       "revId": "eb0e6bbd972b3f292984a3efb79f9daa09c23b01",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "133c1a07_b4c66cc2",
+        "filename": "tools/eclipse/BUILD",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2017-07-28T03:30:03Z",
+      "side": 1,
+      "message": "That\u0027s fine and can be cleaned up later.",
+      "parentUuid": "27c69ecf_9576840b",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 1
+      },
+      "revId": "eb0e6bbd972b3f292984a3efb79f9daa09c23b01",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
