@@ -81,8 +81,36 @@ class GerritMonitoringFilter extends AllRequestFilter {
   }
 
   static class JavamelodyFilter extends MonitoringFilter {
+    private static String HTTP_TRANSFORM_PATTERN = "http-transform-pattern";
+    private static String GLOBAL_HTTP_TRANSFORM_PATTERN = "javamelody." + HTTP_TRANSFORM_PATTERN;
+    static String GERRIT_GROUPING = "(\\w+)~(.+)~I([0-9a-f]{40})" //change id triplet
+        + "|([0-9a-f]{64})" // Long SHA for LFS
+        + "|([0-9a-f]{40})" // SHA-1
+        + "|([0-9A-F]{32})" // GWT cache ID
+        + "|(?<=files/)(.+)/" //review files part
+        + "|(?<=/projects/)(.+)/" //project name
+        + "|(?<=/accounts/)(.+)/" // account id
+        + "|(.+)(?=/git-upload-pack)" // Git fetch/clone
+        + "|(.+)(?=/git-receive-pack)" // Git push
+        + "|(.+)(?=/info/)" // Git and LFS operations
+        + "|(\\d+)"; // various ids e.g. change id
+
+    @Override
+    public void init(FilterConfig config) throws ServletException {
+      if (isHttpTransformPatternrUndefined(config)) {
+        System.setProperty(GLOBAL_HTTP_TRANSFORM_PATTERN, GERRIT_GROUPING);
+      }
+      super.init(config);
+    }
+
     public String getJavamelodyUrl(HttpServletRequest httpRequest) {
       return getMonitoringUrl(httpRequest);
     }
+
+    private boolean isHttpTransformPatternrUndefined(FilterConfig config) {
+      return System.getProperty(GLOBAL_HTTP_TRANSFORM_PATTERN) == null
+          && config.getServletContext().getInitParameter(GLOBAL_HTTP_TRANSFORM_PATTERN) == null
+          && config.getInitParameter(HTTP_TRANSFORM_PATTERN) == null;
+     }
   }
 }
