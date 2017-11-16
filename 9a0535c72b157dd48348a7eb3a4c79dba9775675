@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0c9bdaba_03ef1d42",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1003873
+      },
+      "writtenOn": "2017-11-16T20:44:24Z",
+      "side": 1,
+      "message": "optional:\ninstead of building one huge regex String at once we could have a List of small regexes\njoined by | at the end:\n\n  Joiner.on(\"|\").join(\n    \"(\\\\w+)~(.+)~I([0-9a-f]{40})\", //change id triplet\n    \"[0-9a-f]{64}\", // Long SHA for LFS\n    ...\n  );",
+      "range": {
+        "startLine": 87,
+        "startChar": 11,
+        "endLine": 87,
+        "endChar": 12
+      },
+      "revId": "9a0535c72b157dd48348a7eb3a4c79dba9775675",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "25d4c38a_4ceed2db",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1003873
+      },
+      "writtenOn": "2017-11-16T20:44:24Z",
+      "side": 1,
+      "message": "optional:\nReading some java melody documentation [1] I think that capturing groups are irrelevant\nfor the purpose of this regex. Also the or operator \"|\" has the lowest precedence.\nTherefore most of the parentheses (also in other lines) could be removed which may slightly\nimprove the readability.\n\nOr if we want to keep the parentheses we could make sure that they are inserted around\nevery single regex. This is probably less error prone than repeating the parentheses\nfor every regex:\n\n  \"(\"\n    + Joiner.on(\")|(\").join(\n      \"(\\\\w+)~(.+)~I([0-9a-f]{40})\", //change id triplet\n      \"[0-9a-f]{64}\", // Long SHA for LFS\n      ...\n    )\n    + \")\";\n\n\n[1] https://github.com/javamelody/javamelody/wiki/UserGuide#6-optional-parameters",
+      "range": {
+        "startLine": 88,
+        "startChar": 12,
+        "endLine": 88,
+        "endChar": 13
+      },
+      "revId": "9a0535c72b157dd48348a7eb3a4c79dba9775675",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4207254e_688bacb4",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilterTest.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1003873
+      },
+      "writtenOn": "2017-11-16T20:44:24Z",
+      "side": 1,
+      "message": "dollar or dollarChar",
+      "range": {
+        "startLine": 28,
+        "startChar": 11,
+        "endLine": 28,
+        "endChar": 22
+      },
+      "revId": "9a0535c72b157dd48348a7eb3a4c79dba9775675",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f0938307_2e997e56",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilterTest.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1003873
+      },
+      "writtenOn": "2017-11-16T20:44:24Z",
+      "side": 1,
+      "message": "Is there a purpose in keeping the names of the parameters here?",
+      "range": {
+        "startLine": 34,
+        "startChar": 79,
+        "endLine": 34,
+        "endChar": 86
+      },
+      "revId": "9a0535c72b157dd48348a7eb3a4c79dba9775675",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
