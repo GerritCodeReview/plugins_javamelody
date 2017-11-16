@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "30020e8e_a832181b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2017-11-16T16:15:43Z",
+      "side": 1,
+      "message": "Removed",
+      "parentUuid": "e8aba0c6_33ae29aa",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 34
+      },
+      "revId": "3626ec596fd3c3eae59ee6da1493516b1fe97d55",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1c473ac3_bb27e49c",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilter.java",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2017-11-16T13:00:39Z",
       "side": 1,
       "message": "Mention those configuration option in the plugins documentation and may be eve link to: [1]?\n\n* [1] https://github.com/javamelody/javamelody/wiki/UserGuide#6-optional-parameters",
+      "range": {
+        "startLine": 84,
+        "startChar": 26,
+        "endLine": 85,
+        "endChar": 97
+      },
+      "revId": "3626ec596fd3c3eae59ee6da1493516b1fe97d55",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ec46a49_e7de907e",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilter.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2017-11-16T16:15:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1c473ac3_bb27e49c",
       "range": {
         "startLine": 84,
         "startChar": 26,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "7bf7765b_7b40f60a",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilter.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2017-11-16T16:15:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b08904f6_25b0b840",
+      "range": {
+        "startLine": 86,
+        "startChar": 4,
+        "endLine": 96,
+        "endChar": 50
+      },
+      "revId": "3626ec596fd3c3eae59ee6da1493516b1fe97d55",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "17180358_f02a32c3",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilter.java",
         "patchSetId": 1
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "f65ed766_86c4f58c",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilter.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2017-11-16T16:15:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "17180358_f02a32c3",
+      "range": {
+        "startLine": 110,
+        "startChar": 75,
+        "endLine": 110,
+        "endChar": 76
+      },
+      "revId": "3626ec596fd3c3eae59ee6da1493516b1fe97d55",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8a6898fd_46159fa1",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilter.java",
         "patchSetId": 1
@@ -105,6 +201,30 @@
       "writtenOn": "2017-11-16T13:00:39Z",
       "side": 1,
       "message": "Nit: trailing blank.",
+      "range": {
+        "startLine": 113,
+        "startChar": 69,
+        "endLine": 113,
+        "endChar": 70
+      },
+      "revId": "3626ec596fd3c3eae59ee6da1493516b1fe97d55",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9c1ef54b_f6c25b66",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilter.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2017-11-16T16:15:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8a6898fd_46159fa1",
       "range": {
         "startLine": 113,
         "startChar": 69,
