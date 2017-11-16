@@ -3,4 +3,5 @@ load(
     "gerrit_plugin",
     "PLUGIN_DEPS",
     "PLUGIN_DEPS_NEVERLINK",
+    "PLUGIN_TEST_DEPS",
 )

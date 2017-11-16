@@ -1,4 +1,10 @@
-load("//tools/bzl:plugin.bzl", "gerrit_plugin", "PLUGIN_DEPS_NEVERLINK")
+load("//tools/bzl:junit.bzl", "junit_tests")
+load(
+    "//tools/bzl:plugin.bzl",
+    "gerrit_plugin",
+    "PLUGIN_DEPS_NEVERLINK",
+    "PLUGIN_TEST_DEPS"
+)
 
 gerrit_plugin(
     name = "javamelody",
@@ -30,5 +36,15 @@ java_library(
     deps = PLUGIN_DEPS_NEVERLINK + [
         "@javamelody_lib//jar",
         "@jrobin_lib//jar",
+    ],
+)
+
+junit_tests(
+    name = "javamelody_tests",
+    srcs = glob(["src/test/java/**/*.java"]),
+    tags = ["ljavamelody"],
+    deps = PLUGIN_DEPS_NEVERLINK + PLUGIN_TEST_DEPS + [
+        "@javamelody_lib//jar",
+        ":javamelody__plugin"
     ],
 )
