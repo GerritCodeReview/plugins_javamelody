@@ -21,6 +21,7 @@ import com.google.inject.Singleton;
 import net.bull.javamelody.MonitoringFilter;
 
 import java.io.IOException;
+import java.util.StringJoiner;
 
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -81,8 +82,37 @@ class GerritMonitoringFilter extends AllRequestFilter {
   }
 
   static class JavamelodyFilter extends MonitoringFilter {
+    private static String HTTP_TRANSFORM_PATTERN = "http-transform-pattern";
+    private static String GLOBAL_HTTP_TRANSFORM_PATTERN = "javamelody." + HTTP_TRANSFORM_PATTERN;
+    static String GERRIT_GROUPING = new StringJoiner("|")
+        .add("[0-9a-f]{64}") // Long SHA for LFS
+        .add("[0-9a-f]{40}") // SHA-1
+        .add("[0-9A-F]{32}") // GWT cache ID
+        .add("(?<=files/)(.+)/") //review files part
+        .add("(?<=/projects/)(.+)/") //project name
+        .add("(?<=/accounts/)(.+)/") // account id
+        .add("(.+)(?=/git-upload-pack)") // Git fetch/clone
+        .add("(.+)(?=/git-receive-pack)") // Git push
+        .add("(.+)(?=/info/)") // Git and LFS operations
+        .add("\\d+") // various ids e.g. change id
+        .toString();
+
+    @Override
+    public void init(FilterConfig config) throws ServletException {
+      if (isHttpTransformPatternrUndefined(config)) {
+        System.setProperty(GLOBAL_HTTP_TRANSFORM_PATTERN, GERRIT_GROUPING);
+      }
+      super.init(config);
+    }
+
     public String getJavamelodyUrl(HttpServletRequest httpRequest) {
       return getMonitoringUrl(httpRequest);
     }
+
+    private boolean isHttpTransformPatternrUndefined(FilterConfig config) {
+      return System.getProperty(GLOBAL_HTTP_TRANSFORM_PATTERN) == null
+          && config.getServletContext().getInitParameter(GLOBAL_HTTP_TRANSFORM_PATTERN) == null
+          && config.getInitParameter(HTTP_TRANSFORM_PATTERN) == null;
+     }
   }
 }

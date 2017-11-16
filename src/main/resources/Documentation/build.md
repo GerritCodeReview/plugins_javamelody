@@ -59,6 +59,12 @@ The output is created in:
   bazel-bin/lib@PLUGIN@__plugin-src.jar
 ```
 
+To execute the tests run:
+
+```
+  bazel test @PLUGIN@_tests
+```
+
 This project can be imported into the Eclipse IDE:
 
 ```
