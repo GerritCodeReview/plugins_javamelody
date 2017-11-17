@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "59e844c9_4bde3b5b",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2017-11-17T09:55:56Z",
+      "side": 1,
+      "message": "Used Java8 StringJoiner on \u0027|\u0027",
+      "parentUuid": "0c9bdaba_03ef1d42",
+      "range": {
+        "startLine": 87,
+        "startChar": 11,
+        "endLine": 87,
+        "endChar": 12
+      },
+      "revId": "9a0535c72b157dd48348a7eb3a4c79dba9775675",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "25d4c38a_4ceed2db",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilter.java",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2017-11-16T20:44:24Z",
       "side": 1,
       "message": "optional:\nReading some java melody documentation [1] I think that capturing groups are irrelevant\nfor the purpose of this regex. Also the or operator \"|\" has the lowest precedence.\nTherefore most of the parentheses (also in other lines) could be removed which may slightly\nimprove the readability.\n\nOr if we want to keep the parentheses we could make sure that they are inserted around\nevery single regex. This is probably less error prone than repeating the parentheses\nfor every regex:\n\n  \"(\"\n    + Joiner.on(\")|(\").join(\n      \"(\\\\w+)~(.+)~I([0-9a-f]{40})\", //change id triplet\n      \"[0-9a-f]{64}\", // Long SHA for LFS\n      ...\n    )\n    + \")\";\n\n\n[1] https://github.com/javamelody/javamelody/wiki/UserGuide#6-optional-parameters",
+      "range": {
+        "startLine": 88,
+        "startChar": 12,
+        "endLine": 88,
+        "endChar": 13
+      },
+      "revId": "9a0535c72b157dd48348a7eb3a4c79dba9775675",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e5d7c513_8e173dfe",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2017-11-17T09:55:56Z",
+      "side": 1,
+      "message": "I have decided to remove parenthesis when they are not needed",
+      "parentUuid": "25d4c38a_4ceed2db",
       "range": {
         "startLine": 88,
         "startChar": 12,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "11b698a1_7817bfd7",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilterTest.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2017-11-17T09:55:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4207254e_688bacb4",
+      "range": {
+        "startLine": 28,
+        "startChar": 11,
+        "endLine": 28,
+        "endChar": 22
+      },
+      "revId": "9a0535c72b157dd48348a7eb3a4c79dba9775675",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f0938307_2e997e56",
         "filename": "src/test/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilterTest.java",
         "patchSetId": 2
@@ -82,6 +154,30 @@
       "writtenOn": "2017-11-16T20:44:24Z",
       "side": 1,
       "message": "Is there a purpose in keeping the names of the parameters here?",
+      "range": {
+        "startLine": 34,
+        "startChar": 79,
+        "endLine": 34,
+        "endChar": 86
+      },
+      "revId": "9a0535c72b157dd48348a7eb3a4c79dba9775675",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e4ff3e26_922d4e4a",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilterTest.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2017-11-17T09:55:56Z",
+      "side": 1,
+      "message": "removed \u0027\u0026n\u003d\u0027 but \u0027?q\u003d\u0027 stays to prove that replacement work on change id triplet as expected",
+      "parentUuid": "f0938307_2e997e56",
       "range": {
         "startLine": 34,
         "startChar": 79,
