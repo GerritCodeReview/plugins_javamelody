@@ -210,6 +210,30 @@
       "revId": "9a0535c72b157dd48348a7eb3a4c79dba9775675",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e3fe6638_b3b45f6f",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilterTest.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2017-11-17T14:20:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3d4afd3a_3e7577f7",
+      "range": {
+        "startLine": 79,
+        "startChar": 25,
+        "endLine": 79,
+        "endChar": 32
+      },
+      "revId": "9a0535c72b157dd48348a7eb3a4c79dba9775675",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
