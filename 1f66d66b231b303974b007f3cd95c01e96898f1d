@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bba9632d_0c42ce17",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilter.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1003873
+      },
+      "writtenOn": "2017-11-17T10:20:31Z",
+      "side": 1,
+      "message": "I think that using guava joiner would produce a nicer code here:\n\n  Joiner.on(\"|\").join(\n    \"(\\\\w+)~(.+)~I([0-9a-f]{40})\",\n    \"[0-9a-f]{64}\",\n    \"[0-9a-f]{40}\",\n    ...\n  );\n\nbut using a standard JDK API also has its own advantages. You can decide :-)",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 98,
+        "endChar": 50
+      },
+      "revId": "1f66d66b231b303974b007f3cd95c01e96898f1d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
