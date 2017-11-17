@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "6929000e_1bb95df8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2017-11-17T10:40:03Z",
+      "side": 1,
+      "message": "Can you elaborate what is the Test Plan here?\n\nTest Plan:\n\n* Test gerrit site with javamelody plugin with this patch included\n* Confirm that requests are now grouped \u003d\u003e how ?\n\n^^^I\u0027m not sure how to verify that. The rrd files are created in /tmp/jevemelody/_localhost/ directory.\n\nNot related to this change, but there is also this pending change to improve this: [1].\n\n* [1] https://gerrit-review.googlesource.com/#/c/plugins/javamelody/+/109374/",
+      "revId": "1f66d66b231b303974b007f3cd95c01e96898f1d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bba9632d_0c42ce17",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilter.java",
         "patchSetId": 5
