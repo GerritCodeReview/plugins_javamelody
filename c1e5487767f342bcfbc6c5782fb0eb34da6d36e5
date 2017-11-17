@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "50dc973d_a278b86f",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilter.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2017-11-17T16:31:42Z",
+      "side": 1,
+      "message": "Let\u0027s keep the training slash: [^/]+, so that we would get for this input string:\n\n  /changes/30/revisions/05810c7a315ba6c52c150c237d84d05b2ebc3086/files/%2FCOMMIT_MSG/diff\n\nthis replacement:\n\n  /changes/$/revisions/$/files/$/diff\n\nand not this:\n\n  /changes/$/revisions/$/files/$diff\n\nHere and below.",
+      "range": {
+        "startLine": 92,
+        "startChar": 25,
+        "endLine": 92,
+        "endChar": 30
+      },
+      "revId": "c1e5487767f342bcfbc6c5782fb0eb34da6d36e5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6bd92935_225f724e",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilterTest.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2017-11-17T16:31:42Z",
+      "side": 1,
+      "message": "Javameldoy code uses two match flags: Pattern.DOTALL | Pattern.MULTILINE: [1] Should we use them here too?\n\n* [1] https://github.com/javamelody/javamelody/blob/3863b31a86c0df04f4063615f72fc6117aecf909/javamelody-core/src/main/java/net/bull/javamelody/FilterContext.java#L209",
+      "range": {
+        "startLine": 24,
+        "startChar": 6,
+        "endLine": 24,
+        "endChar": 78
+      },
+      "revId": "c1e5487767f342bcfbc6c5782fb0eb34da6d36e5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b7b5dc74_f77a5d3a",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilterTest.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2017-11-17T16:31:42Z",
+      "side": 1,
+      "message": "Query for project wouldn\u0027t be aggregated with current regex:\n\n  /changes/?q\u003dproject:plugins/javamelody\u0026n\u003d100\u0026O\u003d81\n\nwould produce the following aggregating pattern:\n\n  /changes/?q\u003dproject:plugins/javamelody\u0026n\u003d$\u0026O\u003d$",
+      "revId": "c1e5487767f342bcfbc6c5782fb0eb34da6d36e5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
