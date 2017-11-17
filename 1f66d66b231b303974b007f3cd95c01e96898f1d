@@ -22,6 +22,30 @@
       "revId": "1f66d66b231b303974b007f3cd95c01e96898f1d",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0939e712_28b8b436",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilter.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2017-11-17T10:29:17Z",
+      "side": 1,
+      "message": "I agree it is a little more concise with guava :) I am wondering why it was not done this way when it was implemented in Java8 :D\nAnyway regardless of being a little clumsier it matches the idea of using Java built in functions that I observe in Gerrit core too (e.g. JodaTime to JavaTime, etc..) so I will stick to that.",
+      "parentUuid": "bba9632d_0c42ce17",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 98,
+        "endChar": 50
+      },
+      "revId": "1f66d66b231b303974b007f3cd95c01e96898f1d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
