@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "d2b987b9_ae44b7e5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2017-11-17T14:31:27Z",
+      "side": 1,
+      "message": "Test plan is:\n1. go to HTTP statistics with current version of plugin\n2. remove http* related files from javamelody storage (/tmp/javamelody)\n3. install new version of plugin\n4. see that new statistics are based on grouped endpoints\nTo save you the effort of doing it: https://photos.app.goo.gl/5m7XkXYe6WRgwbvi2\nfirst picture shows current javamelody output whereas second picture contains grouped stats\ne.g.\nchanges/1/revisions/XXXXX/review POST\nbecomes\nchanges/$/revisions/$/review POST\n\n\u003e Not related to this change, but there is also this pending change to improve this: [1].\n\u003e [1] https://gerrit-review.googlesource.com/#/c/plugins/javamelody/+/109374/\n\nThis is kind of a related - actually change from [1] would more likely expose the issue that I am describing as RRD files would become persistent (and now they are being removed when box is being restarted ;))",
+      "parentUuid": "6929000e_1bb95df8",
+      "revId": "1f66d66b231b303974b007f3cd95c01e96898f1d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bba9632d_0c42ce17",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilter.java",
         "patchSetId": 5
