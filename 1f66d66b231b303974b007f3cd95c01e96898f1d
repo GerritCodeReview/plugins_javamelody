@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "0753799e_90c2df09",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2017-11-20T09:46:47Z",
+      "side": 1,
+      "message": "It is not one-to-one match with endpoint with regards to name - they will all be named like http22367edfd7f7edfbfb91051805212bfdf79bf67a.rrd but there will be less files as a result of grouping (at least that is my understanding of the issue description ;)) but more importantly statistics would start meaning sth and one could start observing trends (instance gets slower or faster or...)",
+      "parentUuid": "ad362ce6_deadda5b",
+      "revId": "1f66d66b231b303974b007f3cd95c01e96898f1d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bba9632d_0c42ce17",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilter.java",
         "patchSetId": 5

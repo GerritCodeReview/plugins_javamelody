@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "34c23035_7b4abb6a",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilter.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2017-11-20T09:46:47Z",
+      "side": 1,
+      "message": "unfortunately not really :/ file is a full path name e.g. test_dir/under_dir.file - I have updated the test case to reflect that scenario",
+      "parentUuid": "50dc973d_a278b86f",
+      "range": {
+        "startLine": 92,
+        "startChar": 25,
+        "endLine": 92,
+        "endChar": 30
+      },
+      "revId": "c1e5487767f342bcfbc6c5782fb0eb34da6d36e5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6bd92935_225f724e",
         "filename": "src/test/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilterTest.java",
         "patchSetId": 6
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "6e44dbec_4ee50b6f",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilterTest.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2017-11-20T09:46:47Z",
+      "side": 1,
+      "message": "yes, we should!",
+      "parentUuid": "6bd92935_225f724e",
+      "range": {
+        "startLine": 24,
+        "startChar": 6,
+        "endLine": 24,
+        "endChar": 78
+      },
+      "revId": "c1e5487767f342bcfbc6c5782fb0eb34da6d36e5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b7b5dc74_f77a5d3a",
         "filename": "src/test/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilterTest.java",
         "patchSetId": 6
@@ -59,6 +107,24 @@
       "writtenOn": "2017-11-17T16:31:42Z",
       "side": 1,
       "message": "Query for project wouldn\u0027t be aggregated with current regex:\n\n  /changes/?q\u003dproject:plugins/javamelody\u0026n\u003d100\u0026O\u003d81\n\nwould produce the following aggregating pattern:\n\n  /changes/?q\u003dproject:plugins/javamelody\u0026n\u003d$\u0026O\u003d$",
+      "revId": "c1e5487767f342bcfbc6c5782fb0eb34da6d36e5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e664e892_892e0ddf",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilterTest.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2017-11-20T09:46:47Z",
+      "side": 1,
+      "message": "It would get aggregated to\n/changes\ndue to the fact that javamelody aggregates parameters for endpoint anyway ;) I just wanted to have some arbitrary test for change id triplet but reality is that there is no single endpoint that uses it apart from querying for it (which as I have explained is aggregated anyway) - I am going to remove that pattern from string as using I would have to either name all possible prefixes (e.g. \u0027q\u003d\u0027 etc. which are skipped anyway) or use \u0027(.+)\u0027 pattern that will eat everything upfront the project anyway ;)",
+      "parentUuid": "b7b5dc74_f77a5d3a",
       "revId": "c1e5487767f342bcfbc6c5782fb0eb34da6d36e5",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
