@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "c9b605b1_f830bf04",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilter.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2017-11-20T09:54:22Z",
+      "side": 1,
+      "message": "No? Check this file name in this change:\n\n  src%2Fmain%2Fjava%2Fcom%2Fgooglesource%2Fgerrit%2Fplugins%2Fjavamelody%2FGerritMonitoringFilter.java\n\nThe whole url:\n\n  https://gerrit-review.googlesource.com/changes/plugins%2Fjavamelody~142191/revisions/c1e5487767f342bcfbc6c5782fb0eb34da6d36e5/files/src%2Fmain%2Fjava%2Fcom%2Fgooglesource%2Fgerrit%2Fplugins%2Fjavamelody%2FGerritMonitoringFilter.java/diff?context\u003dALL\u0026intraline\u0026whitespace\u003dIGNORE_NONE\n\nOtherwise, how would RestApiServlet be able to resolve the view (diff in that case)?",
+      "parentUuid": "34c23035_7b4abb6a",
+      "range": {
+        "startLine": 92,
+        "startChar": 25,
+        "endLine": 92,
+        "endChar": 30
+      },
+      "revId": "c1e5487767f342bcfbc6c5782fb0eb34da6d36e5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6bd92935_225f724e",
         "filename": "src/test/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilterTest.java",
         "patchSetId": 6
