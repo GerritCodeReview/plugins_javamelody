@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c090cfe0_bef4e1ce",
+        "filename": "BUILD",
+        "patchSetId": 8
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2017-11-20T15:32:15Z",
+      "side": 1,
+      "message": "Typo: javamelody",
+      "range": {
+        "startLine": 45,
+        "startChar": 13,
+        "endLine": 45,
+        "endChar": 24
+      },
+      "revId": "eba329c4a5e9b926db929db718edbf4a840cb164",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c82fbd0d_92b6f1a6",
+        "filename": "BUILD",
+        "patchSetId": 8
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2017-11-20T15:32:15Z",
+      "side": 1,
+      "message": "This should be: PLUGIN_DEPS, also:\n\n  exports \u003d PLUGIN_DEPS + PLUGIN_TEST_DEPS + [\n\nYou would need to extend load(\"//tools/bzl:plugin.bzl\", ...) above and export PLUGIN_DEPS.\n\nCheck https://gerrit.googlesource.com/plugins/high-availability/+/master/BUILD as example.",
+      "range": {
+        "startLine": 46,
+        "startChar": 11,
+        "endLine": 46,
+        "endChar": 32
+      },
+      "revId": "eba329c4a5e9b926db929db718edbf4a840cb164",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3d7e9c50_0d7b6adc",
+        "filename": "BUILD",
+        "patchSetId": 8
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2017-11-20T15:32:15Z",
+      "side": 1,
+      "message": "Swap the order (we try to run buildifier, but I don\u0027t remember whether or not this was done already on stable-2.14).",
+      "range": {
+        "startLine": 47,
+        "startChar": 8,
+        "endLine": 48,
+        "endChar": 29
+      },
+      "revId": "eba329c4a5e9b926db929db718edbf4a840cb164",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4539e7e4_78eb3882",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilterTest.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2017-11-20T15:32:15Z",
+      "side": 1,
+      "message": "Please, add a comment why we are using these match flags.",
+      "range": {
+        "startLine": 26,
+        "startChar": 10,
+        "endLine": 26,
+        "endChar": 44
+      },
+      "revId": "eba329c4a5e9b926db929db718edbf4a840cb164",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "214b4ae8_cac729cf",
+        "filename": "tools/eclipse/BUILD",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2017-11-20T15:32:15Z",
+      "side": 1,
+      "message": "Unused?",
+      "range": {
+        "startLine": 2,
+        "startChar": 46,
+        "endLine": 2,
+        "endChar": 64
+      },
+      "revId": "eba329c4a5e9b926db929db718edbf4a840cb164",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
