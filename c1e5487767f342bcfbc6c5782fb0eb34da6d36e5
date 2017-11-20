@@ -97,6 +97,30 @@
     },
     {
       "key": {
+        "uuid": "87ed36f2_c9e8602a",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilter.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2017-11-20T10:36:16Z",
+      "side": 1,
+      "message": "Fixed also for projects/accounts",
+      "parentUuid": "c8d1c187_0c47b03b",
+      "range": {
+        "startLine": 92,
+        "startChar": 25,
+        "endLine": 92,
+        "endChar": 30
+      },
+      "revId": "c1e5487767f342bcfbc6c5782fb0eb34da6d36e5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6bd92935_225f724e",
         "filename": "src/test/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilterTest.java",
         "patchSetId": 6
