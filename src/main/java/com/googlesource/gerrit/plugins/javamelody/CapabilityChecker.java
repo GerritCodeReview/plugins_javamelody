@@ -25,18 +25,15 @@ public class CapabilityChecker {
   private final String capabilityName;
 
   @Inject
-  CapabilityChecker(Provider<CurrentUser> userProvider,
-      @PluginName String pluginName) {
+  CapabilityChecker(Provider<CurrentUser> userProvider, @PluginName String pluginName) {
     this.userProvider = userProvider;
-    this.capabilityName =
-        String.format("%s-%s", pluginName, MonitoringCapability.ID);
+    this.capabilityName = String.format("%s-%s", pluginName, MonitoringCapability.ID);
   }
 
   public boolean canMonitor() {
     if (userProvider.get().isIdentifiedUser()) {
       CapabilityControl ctl = userProvider.get().getCapabilities();
-      return ctl.canAdministrateServer()
-          || ctl.canPerform(capabilityName);
+      return ctl.canAdministrateServer() || ctl.canPerform(capabilityName);
     }
     return false;
   }
