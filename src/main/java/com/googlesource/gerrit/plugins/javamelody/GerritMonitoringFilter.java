@@ -14,14 +14,19 @@
 
 package com.googlesource.gerrit.plugins.javamelody;
 
+import com.google.common.base.Strings;
 import com.google.gerrit.extensions.annotations.PluginData;
+import com.google.gerrit.extensions.annotations.PluginName;
 import com.google.gerrit.httpd.AllRequestFilter;
+import com.google.gerrit.server.config.PluginConfig;
+import com.google.gerrit.server.config.PluginConfigFactory;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Optional;
 import java.util.StringJoiner;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -36,6 +41,7 @@ import org.slf4j.LoggerFactory;
 
 @Singleton
 class GerritMonitoringFilter extends AllRequestFilter {
+  private static final Logger log = LoggerFactory.getLogger(GerritMonitoringFilter.class);
   private final JavamelodyFilter monitoring;
   private final CapabilityChecker capabilityChecker;
 
@@ -81,7 +87,6 @@ class GerritMonitoringFilter extends AllRequestFilter {
   }
 
   static class JavamelodyFilter extends MonitoringFilter {
-    private static final Logger log = LoggerFactory.getLogger(JavamelodyFilter.class);
     private static final String JAVAMELODY_PREFIX = "javamelody";
     private static final String HTTP_TRANSFORM_PATTERN = "http-transform-pattern";
     private static final String GLOBAL_HTTP_TRANSFORM_PATTERN =
@@ -104,20 +109,27 @@ class GerritMonitoringFilter extends AllRequestFilter {
             .add("\\d+") // various ids e.g. change id
             .toString();
 
+    private final PluginConfig cfg;
     private final Path defaultDataDir;
 
     @Inject
-    JavamelodyFilter(@PluginData Path defaultDataDir) {
+    JavamelodyFilter(
+        PluginConfigFactory cfgFactory,
+        @PluginName String pluginName,
+        @PluginData Path defaultDataDir) {
       this.defaultDataDir = defaultDataDir;
+      this.cfg = cfgFactory.getFromGerritConfig(pluginName);
     }
 
     @Override
     public void init(FilterConfig config) throws ServletException {
-      if (isPropertyUndefined(config, HTTP_TRANSFORM_PATTERN, GLOBAL_HTTP_TRANSFORM_PATTERN)) {
-        System.setProperty(GLOBAL_HTTP_TRANSFORM_PATTERN, GERRIT_GROUPING);
+      if (isPropertyInPluginConfig(HTTP_TRANSFORM_PATTERN)
+          || isPropertyUndefined(config, HTTP_TRANSFORM_PATTERN, GLOBAL_HTTP_TRANSFORM_PATTERN)) {
+        System.setProperty(GLOBAL_HTTP_TRANSFORM_PATTERN, getTransformPattern());
       }
 
-      if (isPropertyUndefined(config, STORAGE_DIR, GLOBAL_STORAGE_DIR)) {
+      if (isPropertyInPluginConfig(STORAGE_DIR)
+          || isPropertyUndefined(config, STORAGE_DIR, GLOBAL_STORAGE_DIR)) {
         System.setProperty(GLOBAL_STORAGE_DIR, getStorageDir());
       }
 
@@ -128,23 +140,34 @@ class GerritMonitoringFilter extends AllRequestFilter {
       return getMonitoringUrl(httpRequest);
     }
 
+    private String getTransformPattern() {
+      return cfg.getString(HTTP_TRANSFORM_PATTERN, GERRIT_GROUPING);
+    }
+
     private String getStorageDir() {
       // default to old path for javamelody storage-directory if it exists
       final Path tmp = Paths.get(System.getProperty("java.io.tmpdir")).resolve(JAVAMELODY_PREFIX);
       if (Files.isDirectory(tmp)) {
+        log.warn("Javamelody data exists in 'tmp' [{}]. Configuration (if any) will be ignored.", tmp);
         return tmp.toString();
       }
 
-      // put javamelody data in default plugin data dir
-      if (!Files.isDirectory(defaultDataDir)) {
+      // plugin config has the highest priority
+      Path storageDir =
+          Optional.ofNullable(cfg.getString(STORAGE_DIR)).map(Paths::get).orElse(defaultDataDir);
+      if (!Files.isDirectory(storageDir)) {
         try {
-          Files.createDirectories(defaultDataDir);
+          Files.createDirectories(storageDir);
         } catch (IOException e) {
-          log.error("Creation of javamelody data dir [{}] failed.", defaultDataDir, e);
+          log.error("Creation of javamelody data dir [{}] failed.", storageDir, e);
           throw new RuntimeException(e);
         }
       }
-      return defaultDataDir.toString();
+      return storageDir.toString();
+    }
+
+    private boolean isPropertyInPluginConfig(String name) {
+      return !Strings.isNullOrEmpty(cfg.getString(name));
     }
 
     private boolean isPropertyUndefined(FilterConfig config, String name, String globalName) {
