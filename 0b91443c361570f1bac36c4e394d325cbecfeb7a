@@ -139,6 +139,30 @@
     },
     {
       "key": {
+        "uuid": "8407b06a_17cd251e",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/Module.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2017-11-21T10:07:09Z",
+      "side": 1,
+      "message": "defaulted to \u003csite_dir\u003e/data/\u003cplugin\u003e dir",
+      "parentUuid": "65439f24_e8a09a13",
+      "range": {
+        "startLine": 43,
+        "startChar": 23,
+        "endLine": 43,
+        "endChar": 30
+      },
+      "revId": "0b91443c361570f1bac36c4e394d325cbecfeb7a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6652a023_cbcb57ed",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/Module.java",
         "patchSetId": 1
@@ -150,6 +174,30 @@
       "writtenOn": "2017-06-13T06:05:36Z",
       "side": 1,
       "message": "How it\u0027s default javamelody storage-directory? You mentioned in the commit message javamelody defaults to /tmp/javamelody/\u003capp\u003e_\u003chostname\u003e, what you are here not doing. I think it\u0027s not needed to intercept javamelody behavior. We read the plugin config value and set it or not.",
+      "range": {
+        "startLine": 56,
+        "startChar": 5,
+        "endLine": 57,
+        "endChar": 73
+      },
+      "revId": "0b91443c361570f1bac36c4e394d325cbecfeb7a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ecdf6606_a0e15b00",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/Module.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2017-11-21T10:07:09Z",
+      "side": 1,
+      "message": "javamelody appends \u003ccontext\u003e_\u003chostname\u003e dir itself to the storage dir",
+      "parentUuid": "6652a023_cbcb57ed",
       "range": {
         "startLine": 56,
         "startChar": 5,
@@ -185,6 +233,30 @@
     },
     {
       "key": {
+        "uuid": "85fe5fca_5cf2abf7",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/Module.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2017-11-21T10:07:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "812469eb_98d04a28",
+      "range": {
+        "startLine": 58,
+        "startChar": 4,
+        "endLine": 58,
+        "endChar": 9
+      },
+      "revId": "0b91443c361570f1bac36c4e394d325cbecfeb7a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4a37e7e3_baf70433",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/Module.java",
         "patchSetId": 1
@@ -196,6 +268,30 @@
       "writtenOn": "2017-06-13T06:05:36Z",
       "side": 1,
       "message": "Always use camelCaseVarNames and not_underscore_var_names.",
+      "range": {
+        "startLine": 59,
+        "startChar": 15,
+        "endLine": 59,
+        "endChar": 32
+      },
+      "revId": "0b91443c361570f1bac36c4e394d325cbecfeb7a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "02dd50d3_c4a57ae5",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/Module.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2017-11-21T10:07:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4a37e7e3_baf70433",
       "range": {
         "startLine": 59,
         "startChar": 15,
@@ -231,6 +327,30 @@
     },
     {
       "key": {
+        "uuid": "dd789c37_e594866a",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/Module.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2017-11-21T10:07:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f8861bb_5a39c860",
+      "range": {
+        "startLine": 66,
+        "startChar": 4,
+        "endLine": 66,
+        "endChar": 71
+      },
+      "revId": "0b91443c361570f1bac36c4e394d325cbecfeb7a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5e8db7c5_9554b4e6",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/Module.java",
         "patchSetId": 1
@@ -242,6 +362,30 @@
       "writtenOn": "2017-06-13T06:05:36Z",
       "side": 1,
       "message": "Conceptually the plugin name can be changed to anything else, but unless i misread Javamelody code, it is always using javamelody.storage-directory, right? In which case, we should stick to hard coded string.",
+      "range": {
+        "startLine": 67,
+        "startChar": 27,
+        "endLine": 67,
+        "endChar": 37
+      },
+      "revId": "0b91443c361570f1bac36c4e394d325cbecfeb7a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "57ae2a1d_d8ea2062",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/Module.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2017-11-21T10:07:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5e8db7c5_9554b4e6",
       "range": {
         "startLine": 67,
         "startChar": 27,
