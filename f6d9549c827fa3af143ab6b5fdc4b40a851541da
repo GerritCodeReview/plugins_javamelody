@@ -22,6 +22,30 @@
       "revId": "f6d9549c827fa3af143ab6b5fdc4b40a851541da",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f97791a7_ed7c0428",
+        "filename": "BUILD",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2017-11-21T23:18:14Z",
+      "side": 1,
+      "message": "Hmm, buildifier doesn\u0027t remove this.  And if I manually remove it, buildifier doesn\u0027t put it back.\n\nI would say just leave it as it is.",
+      "parentUuid": "2fd1b937_d3c6f8fd",
+      "range": {
+        "startLine": 7,
+        "startChar": 22,
+        "endLine": 7,
+        "endChar": 23
+      },
+      "revId": "f6d9549c827fa3af143ab6b5fdc4b40a851541da",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
