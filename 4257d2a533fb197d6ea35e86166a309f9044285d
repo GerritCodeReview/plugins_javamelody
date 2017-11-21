@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "49305638_191ce42a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2017-11-21T13:14:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e942c94_ee67beac",
+      "range": {
+        "startLine": 25,
+        "startChar": 55,
+        "endLine": 25,
+        "endChar": 58
+      },
+      "revId": "4257d2a533fb197d6ea35e86166a309f9044285d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cbe6159a_4fa3323d",
         "filename": "src/main/resources/Documentation/config.md",
         "patchSetId": 2
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "7fcecc6a_2ecdfe12",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2017-11-21T13:14:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cbe6159a_4fa3323d",
+      "range": {
+        "startLine": 48,
+        "startChar": 24,
+        "endLine": 48,
+        "endChar": 33
+      },
+      "revId": "4257d2a533fb197d6ea35e86166a309f9044285d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "33f8dc86_4920d4e7",
         "filename": "src/main/resources/Documentation/config.md",
         "patchSetId": 2
@@ -59,6 +107,30 @@
       "writtenOn": "2017-11-21T12:33:45Z",
       "side": 1,
       "message": "Remove?",
+      "range": {
+        "startLine": 50,
+        "startChar": 2,
+        "endLine": 50,
+        "endChar": 4
+      },
+      "revId": "4257d2a533fb197d6ea35e86166a309f9044285d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dbaf08e1_091c6e3b",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2017-11-21T13:14:11Z",
+      "side": 1,
+      "message": "added commas to make it a little clearer - would let natives to fix it :D",
+      "parentUuid": "33f8dc86_4920d4e7",
       "range": {
         "startLine": 50,
         "startChar": 2,
