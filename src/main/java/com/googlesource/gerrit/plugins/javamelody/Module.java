@@ -29,19 +29,17 @@ public class Module extends AbstractModule {
   private final PluginConfig cfg;
 
   @Inject
-  public Module(PluginConfigFactory cfgFactory,
-      @PluginName String pluginName) {
+  public Module(PluginConfigFactory cfgFactory, @PluginName String pluginName) {
     this.cfg = cfgFactory.getFromGerritConfig(pluginName);
   }
 
   @Override
   protected void configure() {
     bind(CapabilityDefinition.class)
-      .annotatedWith(Exports.named(MonitoringCapability.ID))
-      .to(MonitoringCapability.class);
+        .annotatedWith(Exports.named(MonitoringCapability.ID))
+        .to(MonitoringCapability.class);
     if (cfg.getBoolean("allowTopMenu", true)) {
-      DynamicSet.bind(binder(), TopMenu.class)
-        .to(MonitoringTopMenu.class);
+      DynamicSet.bind(binder(), TopMenu.class).to(MonitoringTopMenu.class);
     }
   }
 }
