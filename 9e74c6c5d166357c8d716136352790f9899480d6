@@ -22,6 +22,30 @@
       "revId": "9e74c6c5d166357c8d716136352790f9899480d6",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c5000ab6_4346e70c",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilter.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2017-11-21T14:34:51Z",
+      "side": 1,
+      "message": "+1, should have read map method API doc :D",
+      "parentUuid": "e4358617_99a1b538",
+      "range": {
+        "startLine": 157,
+        "startChar": 10,
+        "endLine": 166,
+        "endChar": 21
+      },
+      "revId": "9e74c6c5d166357c8d716136352790f9899480d6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
