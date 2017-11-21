@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2c65b15a_b568be87",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilter.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2017-11-21T12:21:06Z",
+      "side": 1,
+      "message": "add warning that configuration is ignored in this case",
+      "range": {
+        "startLine": 151,
+        "startChar": 8,
+        "endLine": 151,
+        "endChar": 30
+      },
+      "revId": "bc266947dac46d22301f99625bb564112b18799c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
