@@ -75,9 +75,9 @@ class GerritMonitoringFilter extends AllRequestFilter {
   }
 
   static class JavamelodyFilter extends MonitoringFilter {
-    private static String HTTP_TRANSFORM_PATTERN = "http-transform-pattern";
-    private static String GLOBAL_HTTP_TRANSFORM_PATTERN = "javamelody." + HTTP_TRANSFORM_PATTERN;
-    static String GERRIT_GROUPING =
+    private static final String HTTP_TRANSFORM_PATTERN = "http-transform-pattern";
+    private static final String GLOBAL_HTTP_TRANSFORM_PATTERN = "javamelody." + HTTP_TRANSFORM_PATTERN;
+    static final String GERRIT_GROUPING =
         new StringJoiner("|")
             .add("[0-9a-f]{64}") // Long SHA for LFS
             .add("[0-9a-f]{40}") // SHA-1
