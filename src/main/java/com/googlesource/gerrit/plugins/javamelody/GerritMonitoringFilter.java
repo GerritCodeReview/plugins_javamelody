@@ -148,7 +148,8 @@ class GerritMonitoringFilter extends AllRequestFilter {
       // default to old path for javamelody storage-directory if it exists
       final Path tmp = Paths.get(System.getProperty("java.io.tmpdir")).resolve(JAVAMELODY_PREFIX);
       if (Files.isDirectory(tmp)) {
-        log.warn("Javamelody data exists in 'tmp' [{}]. Configuration (if any) will be ignored.", tmp);
+        log.warn(
+            "Javamelody data exists in 'tmp' [{}]. Configuration (if any) will be ignored.", tmp);
         return tmp.toString();
       }
 
