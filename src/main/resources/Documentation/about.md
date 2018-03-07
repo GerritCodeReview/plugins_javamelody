@@ -8,3 +8,8 @@ granted the 'Javamelody Monitoring' capability (provided by this plugin)
 or the 'Administrate Server' capability.
 
 It adds top menu item "Monitoring" to access java melody page.
+
+Gerrit own metrics can be accessed from within Javamelody monitorng page,
+through page: `<gerrit_host_url>/monitoring?part=mbeans`. The pre-requisite
+for this is JMX metrics plugin that must be also installed:
+[metrics-reporter-jmx](https://gerrit.googlesource.com/plugins/metrics-reporter-jmx).
