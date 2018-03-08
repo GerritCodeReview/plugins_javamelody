@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "b3dd5fce_869b86ca",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2018-03-08T05:55:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "57fccd55_6261c6cc",
+      "range": {
+        "startLine": 7,
+        "startChar": 42,
+        "endLine": 7,
+        "endChar": 46
+      },
+      "revId": "ce937211829f9417d05a37784eaf0a0cf0bb413c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8d35d503_fadc56a0",
         "filename": "src/main/resources/Documentation/about.md",
         "patchSetId": 1
@@ -71,6 +95,54 @@
     },
     {
       "key": {
+        "uuid": "754f29d8_13fbd5e2",
+        "filename": "src/main/resources/Documentation/about.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2018-03-08T05:55:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a609b0d1_f845c323",
+      "range": {
+        "startLine": 12,
+        "startChar": 58,
+        "endLine": 12,
+        "endChar": 67
+      },
+      "revId": "ce937211829f9417d05a37784eaf0a0cf0bb413c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "33df158c_33728f9e",
+        "filename": "src/main/resources/Documentation/about.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2018-03-08T05:55:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8d35d503_fadc56a0",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 6
+      },
+      "revId": "ce937211829f9417d05a37784eaf0a0cf0bb413c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1aef63ce_2e300656",
         "filename": "src/main/resources/Documentation/about.md",
         "patchSetId": 1
@@ -82,6 +154,30 @@
       "writtenOn": "2018-03-07T23:57:30Z",
       "side": 1,
       "message": "Put the hyperlink here instead of repeating \u0027metrics-reporter-jmx\u0027",
+      "range": {
+        "startLine": 14,
+        "startChar": 12,
+        "endLine": 14,
+        "endChar": 30
+      },
+      "revId": "ce937211829f9417d05a37784eaf0a0cf0bb413c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "868c7687_96ac8328",
+        "filename": "src/main/resources/Documentation/about.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2018-03-08T05:55:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aef63ce_2e300656",
       "range": {
         "startLine": 14,
         "startChar": 12,
