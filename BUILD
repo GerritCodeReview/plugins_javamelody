@@ -21,7 +21,7 @@ gerrit_plugin(
         "Implementation-URL: https://gerrit-review.googlesource.com/#/admin/projects/plugins/javamelody",
     ],
     resources = glob(["src/main/resources/**/*"]),
-    deps = ["@javamelody_lib//jar:neverlink"],
+    deps = ["@javamelody-core//jar:neverlink"],
 )
 
 java_binary(
@@ -35,8 +35,8 @@ java_library(
     srcs = ["src/main/java/com/googlesource/gerrit/plugins/javamelody/MonitoringDataSourceInterceptor.java"],
     visibility = ["//visibility:public"],
     deps = PLUGIN_DEPS_NEVERLINK + [
-        "@javamelody_lib//jar",
-        "@jrobin_lib//jar",
+        "@javamelody-core//jar",
+        "@jrobin//jar",
     ],
 )
 
@@ -55,6 +55,6 @@ java_library(
     visibility = ["//visibility:public"],
     exports = PLUGIN_DEPS + PLUGIN_TEST_DEPS + [
         ":javamelody__plugin",
-        "@javamelody_lib//jar",
+        "@javamelody-core//jar",
     ],
 )
