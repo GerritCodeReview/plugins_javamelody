@@ -3,7 +3,7 @@ workspace(name = "javamelody")
 load("//:bazlets.bzl", "load_bazlets")
 
 load_bazlets(
-    commit = "42bffc66c0e92753133e4cea2debe65abc359c4d",
+    commit = "7ce9a3f58f030635b3a1229b7fb4c62ee7979bc8",
     #local_path = "/home/<user>/projects/bazlets",
 )
 
