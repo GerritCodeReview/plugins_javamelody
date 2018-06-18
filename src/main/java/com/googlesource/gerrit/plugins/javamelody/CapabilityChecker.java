@@ -45,7 +45,7 @@ public class CapabilityChecker {
   public boolean canMonitor() {
     try {
       permissionBackend
-          .user(userProvider)
+          .user(userProvider.get())
           .checkAny(
               ImmutableSet.of(
                   GlobalPermission.ADMINISTRATE_SERVER,
