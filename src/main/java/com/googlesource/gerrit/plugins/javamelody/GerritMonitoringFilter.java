@@ -137,7 +137,7 @@ class GerritMonitoringFilter extends AllRequestFilter {
     }
 
     public String getJavamelodyUrl(HttpServletRequest httpRequest) {
-      return getMonitoringUrl(httpRequest);
+      return (isPrometheusFormatRequest(httpRequest) ? "/a" : "") + getMonitoringUrl(httpRequest);
     }
 
     private String getTransformPattern() {
@@ -175,6 +175,25 @@ class GerritMonitoringFilter extends AllRequestFilter {
       return System.getProperty(globalName) == null
           && config.getServletContext().getInitParameter(globalName) == null
           && config.getInitParameter(name) == null;
+    }
+
+    @Override
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+        throws IOException, ServletException {
+      if (isPrometheusFormatRequest(request)) {
+        super.doFilter(
+            new JavamelodyMonitoringRequestWrapper(
+                (HttpServletRequest) request, getMonitoringUrl((HttpServletRequest) request)),
+            response,
+            chain);
+      } else {
+        super.doFilter(request, response, chain);
+      }
+    }
+
+    private boolean isPrometheusFormatRequest(ServletRequest request) {
+      return Strings.nullToEmpty(request.getParameter("format")).equals("prometheus")
+          && request instanceof HttpServletRequest;
     }
   }
 }
