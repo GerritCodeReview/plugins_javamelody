@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "90935da5_6fc026ad",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilter.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2018-08-09T22:41:06Z",
+      "side": 1,
+      "message": "This should now include the \u0027/a/\u0027 case as well.",
+      "range": {
+        "startLine": 83,
+        "startChar": 8,
+        "endLine": 83,
+        "endChar": 84
+      },
+      "revId": "67d22c385c8f44cd6b843b8b5821e86235b578a3",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
