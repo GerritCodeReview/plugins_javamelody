@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "774fdbcf_45bf9b58",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilter.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2018-08-09T21:05:19Z",
+      "side": 1,
+      "message": "Monitoring implementation is based on AllRequestFilter filter. That means that every request is going through this filter.\n\nUsually basic auth is not required. Prometheus integration is currently the only use case that needs that. That why I tend to protect that indirection with extra configuration option. How about to add something like:\n\n  this.supportBasicAuth \u003d cfg.getBoolean(SUPPORT_BASIC_AUTH, false);\n\nto the ctor and the add that check here, something like: [1]?\n\nMuch cleaner approach would be to bind to a different class in Guice depending on requested basic auth support. But, given that MonitoringFilter is a cass and not an interface, this cannot be done?\n\nI mean something like:\n\n  JavamelodyFilter implements MonitoringFilter {...\n\nvs.\n\n  JavamelodyFilterWithBasicAuthSupport implements MonitoringFilter {...\n\n* [1] http://paste.openstack.org/show/727771",
+      "range": {
+        "startLine": 180,
+        "startChar": 4,
+        "endLine": 192,
+        "endChar": 5
+      },
+      "revId": "08be55a716e769f14ea4ed82cba6c6a12563191e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
