@@ -176,5 +176,20 @@ class GerritMonitoringFilter extends AllRequestFilter {
           && config.getServletContext().getInitParameter(globalName) == null
           && config.getInitParameter(name) == null;
     }
+
+    @Override
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+        throws IOException, ServletException {
+      if (request.getParameter("format").equals("prometheus")
+          && request instanceof HttpServletRequest) {
+        super.doFilter(
+            new JavamelodyMonitoringRequestWrapper(
+                (HttpServletRequest) request, getMonitoringUrl((HttpServletRequest) request)),
+            response,
+            chain);
+      } else {
+        super.doFilter(request, response, chain);
+      }
+    }
   }
 }
