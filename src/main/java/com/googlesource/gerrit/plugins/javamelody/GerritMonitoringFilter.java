@@ -85,7 +85,12 @@ class GerritMonitoringFilter extends AllRequestFilter {
     private static final String STORAGE_DIR = "storage-directory";
     private static final String GLOBAL_STORAGE_DIR =
         String.format("%s.%s", JAVAMELODY_PREFIX, STORAGE_DIR);
+    private static final String PROMETHEUS_BEARER_TOKEN = "prometheusToken";
+    private static final String FORMAT_PARAMETER = "format";
+    private static final String FORMAT_PROMETHEUS = "prometheus";
+    private static final String AUTHENTICATION_HEADER = "Authorization";
     private final CapabilityChecker capabilityChecker;
+    private final boolean enablePrometheus;
 
     static final String GERRIT_GROUPING =
         new StringJoiner("|")
@@ -113,6 +118,7 @@ class GerritMonitoringFilter extends AllRequestFilter {
       this.defaultDataDir = defaultDataDir;
       this.cfg = cfgFactory.getFromGerritConfig(pluginName);
       this.capabilityChecker = capabilityChecker;
+      this.enablePrometheus = isPropertyInPluginConfig(PROMETHEUS_BEARER_TOKEN);
     }
 
     @Override
@@ -173,9 +179,21 @@ class GerritMonitoringFilter extends AllRequestFilter {
 
     boolean canMonitor(HttpServletRequest httpRequest) {
       if (httpRequest.getRequestURI().equals(getJavamelodyUrl(httpRequest))) {
+        if (enablePrometheus
+            && httpRequest.getHeader(AUTHENTICATION_HEADER) != null
+            && Strings.nullToEmpty(httpRequest.getParameter(FORMAT_PARAMETER))
+                .equals(FORMAT_PROMETHEUS)) {
+          return canMonitorFromPrometheus(httpRequest);
+        }
         return capabilityChecker.canMonitor();
       }
       return true;
+    }
+
+    private boolean canMonitorFromPrometheus(HttpServletRequest httpRequest) {
+      return httpRequest
+          .getHeader(AUTHENTICATION_HEADER)
+          .equals("Bearer " + cfg.getString(PROMETHEUS_BEARER_TOKEN));
     }
   }
 }

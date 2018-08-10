@@ -23,6 +23,15 @@ parameter e.g.:
 : Whether it is allowed to show top menu in Gerrit UI.
   By default true.
 
+<a id="prometheusToken">
+`plugin.@PLUGIN@.prometheusToken`
+: Bearer token for allowing Prometheus to query JavaMelody data
+  through its scraper.
+  See <a href="https://github.com/javamelody/javamelody/wiki/UserGuideAdvanced#exposing-metrics-to-prometheus">JavaMelody-Prometheus</a>
+  configuration for more details on how to configure the integration with
+  Prometheus.
+  By default undefined.
+
 <a id="storage-directory">
 `plugin.@PLUGIN@.storage-directory`
 : The directory in which to store data files. Javamelody, by default,
