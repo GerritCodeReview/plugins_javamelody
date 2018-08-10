@@ -23,6 +23,20 @@ parameter e.g.:
 : Whether it is allowed to show top menu in Gerrit UI.
   By default true.
 
+<a id="prometheusBearerToken">
+`plugin.@PLUGIN@.prometheusBearerToken`
+: Bearer token for allowing Prometheus to query JavaMelody data
+  through its scraper.
+  When defined, access to the /monitoring?format=prometheus URL
+  does not require any authentication and do not check any ACL related
+  to the ViewMetrics global capability. Any access to the other monitoring
+  screen and URLs will still require standard authentication and authorization checks.
+  See <a href="https://github.com/javamelody/javamelody/wiki/UserGuideAdvanced#exposing-metrics-to-prometheus">JavaMelody-Prometheus</a>
+  configuration for more details and
+  <a href="https://prometheus.io/docs/prometheus/latest/configuration/configuration/">Prometheus documentation</a>
+  for how to configure the integration with Prometheus.
+  By default undefined.
+
 <a id="storage-directory">
 `plugin.@PLUGIN@.storage-directory`
 : The directory in which to store data files. Javamelody, by default,
