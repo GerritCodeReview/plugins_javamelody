@@ -84,6 +84,9 @@ class GerritMonitoringFilter extends AllRequestFilter {
         String.format("%s.%s", JAVAMELODY_PREFIX, Parameter.HTTP_TRANSFORM_PATTERN.getCode());
     private static final String GLOBAL_STORAGE_DIR =
         String.format("%s.%s", JAVAMELODY_PREFIX, Parameter.STORAGE_DIRECTORY.getCode());
+    private static final String JAVAMELODY_MONITORING_PATH_AUTHENTICATED =
+        String.format(
+            "%s.%s", JAVAMELODY_PREFIX, Parameter.MONITORING_PATH_AUTHENTICATED.getCode());
     private final CapabilityChecker capabilityChecker;
 
     static final String GERRIT_GROUPING =
@@ -116,6 +119,9 @@ class GerritMonitoringFilter extends AllRequestFilter {
 
     @Override
     public void init(FilterConfig config) throws ServletException {
+      System.setProperty(
+          JAVAMELODY_MONITORING_PATH_AUTHENTICATED, "/a" + Parameter.MONITORING_PATH.getValue());
+
       if (isPropertyInPluginConfig(Parameter.HTTP_TRANSFORM_PATTERN.getCode())
           || isPropertyUndefined(
               config, Parameter.HTTP_TRANSFORM_PATTERN.getCode(), GLOBAL_HTTP_TRANSFORM_PATTERN)) {
