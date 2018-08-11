@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "0fa3aff6_2a16f7ee",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2018-08-11T12:25:09Z",
+      "side": 1,
+      "message": "I went ahead and implemented my previous suggestions.\n\nJavamelody core upstream was extended here:[1] to support custom prefixes for Monitoring URL detection. I also created and published Javamelody-core release (based on most recent Javamelody-core release 1.73.1) with this PR included: [2].\n\nUser authentication for filters that rely on AllRequestFilter filter in Gerrit core was fixed in this CL: [3].\n\nLast but not least, in this CL: [4] I bumped Javamelody-core consumption from my GH Javamelody release page: [2] with this PR included: [1].\n\nWith all these fixes in place, scraping the Javamelody metrics using Basic Authentication from Prometheus works like a charm, and all that without changing any line of code in Javamelody plugin itself ;-)\n\n* [1] https://github.com/javamelody/javamelody/pull/766\n* [2] https://github.com/davido/javamelody/releases/tag/javamelody-core-1.73.2\n* [3] https://gerrit-review.googlesource.com/c/gerrit/+/192430\n* [4] https://gerrit-review.googlesource.com/c/plugins/javamelody/+/192431",
+      "parentUuid": "76d906e0_87177c78",
+      "revId": "2b90003581793f40ff571f3342e9d86c5b890a30",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e6a9d8ec_28e2df90",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
