@@ -36,6 +36,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import net.bull.javamelody.MonitoringFilter;
+import net.bull.javamelody.Parameter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -94,6 +95,9 @@ class GerritMonitoringFilter extends AllRequestFilter {
     private static final String STORAGE_DIR = "storage-directory";
     private static final String GLOBAL_STORAGE_DIR =
         String.format("%s.%s", JAVAMELODY_PREFIX, STORAGE_DIR);
+    private static final String JAVAMELODY_MONITORING_PATH_AUTHENTICATED =
+        String.format(
+            "%s.%s", JAVAMELODY_PREFIX, Parameter.MONITORING_PATH_AUTHENTICATED.getCode());
 
     static final String GERRIT_GROUPING =
         new StringJoiner("|")
@@ -123,6 +127,9 @@ class GerritMonitoringFilter extends AllRequestFilter {
 
     @Override
     public void init(FilterConfig config) throws ServletException {
+      System.setProperty(
+          JAVAMELODY_MONITORING_PATH_AUTHENTICATED, "/a" + Parameter.MONITORING_PATH.getValue());
+
       if (isPropertyInPluginConfig(HTTP_TRANSFORM_PATTERN)
           || isPropertyUndefined(config, HTTP_TRANSFORM_PATTERN, GLOBAL_HTTP_TRANSFORM_PATTERN)) {
         System.setProperty(GLOBAL_HTTP_TRANSFORM_PATTERN, getTransformPattern());
