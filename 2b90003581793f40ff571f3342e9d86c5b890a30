@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8433725b_11661ef3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2018-08-11T06:20:52Z",
+      "side": 1,
+      "message": "\u003e Mention that basic auth doesn\u0027t work atm and that a bearer token auth is the only supported, known to work way for Prometheus scrapping of javameldoy metrics.\n\nSure.\n\n\u003e That still raises the question, why basic auth doesn\u0027t actually work for javamelody integration, but (hopefully) works as claimed in metrics-reporter-prometheus plugin with basic auth, using?\n\u003e \n\u003e   GET http://gerrit.mycompany.com/a/plugins/metrics-reporter-prometheus/metrics\n\nThe metrics-reporter for Prometheus is a Servlet and not a Filter. That\u0027s the reason why it can use Gerrit auth whilst the JavaMelody filter can\u0027t.\n\nAt the end of the day, the JavaMelody filter needs to track *every request* even the ones failing for authentication denied.\n\n\u003e As discussed in another change that got abandoned, do you think, that patching Javamelody core (yes, I hate to patch third party libraries), like this would solve all our problems: [1]?\n\u003e \n\u003e Old:\n\u003e \n\u003e   if (httpRequest.getRequestURI().equals(getMonitoringUrl(httpRequest))) {\n\u003e   [...]\n\u003e \n\u003e New:\n\u003e \n\u003e   if (httpRequest.getRequestURI().endsWith(getMonitoringUrl(httpRequest))) {\n\u003e   [...]\n\nNope, that would never work because we cannot condition the execution of the JavaMelody filter to the ProjectBasicAuth filter.\n\n\u003e In other words, I am fine with that change and with going with Prometheus bearer token authentication only for now, but I would prefer to explain that preference in the commit message and also state that basic auth doesn\u0027t work yet.\n\u003e \n\u003e [1] https://github.com/javamelody/javamelody/blob/master/javamelody-core/src/main/java/net/bull/javamelody/MonitoringFilter.java#L205\n\nSure, will do.",
+      "parentUuid": "29647652_962cc716",
+      "revId": "2b90003581793f40ff571f3342e9d86c5b890a30",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e6a9d8ec_28e2df90",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
@@ -30,6 +48,30 @@
       "writtenOn": "2018-08-11T06:12:44Z",
       "side": 1,
       "message": "Please explicitly mention that no plugin own ViewMetrics capability checks take place on the user level in this scenario.",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 15
+      },
+      "revId": "2b90003581793f40ff571f3342e9d86c5b890a30",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ca27573f_3703f65d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2018-08-11T06:20:52Z",
+      "side": 1,
+      "message": "\u003e Please explicitly mention that no plugin own ViewMetrics capability checks take place on the user level in this scenario.\n\nSure, will do.",
+      "parentUuid": "e6a9d8ec_28e2df90",
       "range": {
         "startLine": 12,
         "startChar": 0,
@@ -62,6 +104,30 @@
       "revId": "2b90003581793f40ff571f3342e9d86c5b890a30",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "46e0bf28_81749ee0",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2018-08-11T06:20:52Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "10cd8ce7_4dbc3972",
+      "range": {
+        "startLine": 88,
+        "startChar": 59,
+        "endLine": 88,
+        "endChar": 74
+      },
+      "revId": "2b90003581793f40ff571f3342e9d86c5b890a30",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     },
     {
       "key": {
@@ -111,6 +177,30 @@
     },
     {
       "key": {
+        "uuid": "835a1c04_adc0c62c",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2018-08-11T06:20:52Z",
+      "side": 1,
+      "message": "Good catch, will do.",
+      "parentUuid": "d2c518a4_ad830336",
+      "range": {
+        "startLine": 186,
+        "startChar": 10,
+        "endLine": 186,
+        "endChar": 55
+      },
+      "revId": "2b90003581793f40ff571f3342e9d86c5b890a30",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "941e2d2e_9be5c720",
         "filename": "src/main/resources/Documentation/config.md",
         "patchSetId": 2
@@ -134,6 +224,30 @@
     },
     {
       "key": {
+        "uuid": "8865274c_0de70cca",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2018-08-11T06:20:52Z",
+      "side": 1,
+      "message": "Ack, will do.",
+      "parentUuid": "941e2d2e_9be5c720",
+      "range": {
+        "startLine": 28,
+        "startChar": 2,
+        "endLine": 29,
+        "endChar": 22
+      },
+      "revId": "2b90003581793f40ff571f3342e9d86c5b890a30",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6dc548e8_33debdd5",
         "filename": "src/main/resources/Documentation/config.md",
         "patchSetId": 2
@@ -145,6 +259,30 @@
       "writtenOn": "2018-08-11T06:12:44Z",
       "side": 1,
       "message": "Can you also add a link where bearer_token or bearer_token_file configuration options are described on Prometheus side, e.g.:\n\n[1] https://prometheus.io/docs/prometheus/latest/configuration/configuration/",
+      "range": {
+        "startLine": 30,
+        "startChar": 2,
+        "endLine": 30,
+        "endChar": 136
+      },
+      "revId": "2b90003581793f40ff571f3342e9d86c5b890a30",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bdaaff72_821df019",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2018-08-11T06:20:52Z",
+      "side": 1,
+      "message": "Ack, will do.",
+      "parentUuid": "6dc548e8_33debdd5",
       "range": {
         "startLine": 30,
         "startChar": 2,
