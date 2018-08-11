@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "76d906e0_87177c78",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2018-08-11T08:09:45Z",
+      "side": 1,
+      "message": "\u003e \u003e Mention that basic auth doesn\u0027t work atm and that a bearer token auth is the only supported, known to work way for Prometheus scrapping of javameldoy metrics.\n\u003e \n\u003e Sure.\n\u003e \n\u003e \u003e That still raises the question, why basic auth doesn\u0027t actually work for javamelody integration, but (hopefully) works as claimed in metrics-reporter-prometheus plugin with basic auth, using?\n\u003e \u003e \n\u003e \u003e   GET http://gerrit.mycompany.com/a/plugins/metrics-reporter-prometheus/metrics\n\u003e \n\u003e The metrics-reporter for Prometheus is a Servlet and not a Filter. That\u0027s the reason why it can use Gerrit auth whilst the JavaMelody filter can\u0027t.\n\u003e \n\u003e At the end of the day, the JavaMelody filter needs to track *every request* even the ones failing for authentication denied.\n\u003e \n\u003e \u003e As discussed in another change that got abandoned, do you think, that patching Javamelody core (yes, I hate to patch third party libraries), like this would solve all our problems: [1]?\n\u003e \u003e \n\u003e \u003e Old:\n\u003e \u003e \n\u003e \u003e   if (httpRequest.getRequestURI().equals(getMonitoringUrl(httpRequest))) {\n\u003e \u003e   [...]\n\u003e \u003e \n\u003e \u003e New:\n\u003e \u003e \n\u003e \u003e   if (httpRequest.getRequestURI().endsWith(getMonitoringUrl(httpRequest))) {\n\u003e \u003e   [...]\n\u003e \n\u003e Nope, that would never work because we cannot condition the execution of the JavaMelody filter to the ProjectBasicAuth filter.\n\nThis is not Filter vs. Servlet issue, but has only to do with the order of filters declaration. This is a known issue, and Viktor Kaufman was trying to fix that in this change: [1]. I also provided a deep analysis in this comment: [2] fo why the authentication is working from the UI and not working from out side of the gerrit. Moreover I also provided a minimal invasive workaround to re-order the filter declarations and swpat the order between:\n\n* AllRequestFilter\n* GitOverHttpModule\n\nhere: [3].\n\nSo again, my assumption, that with these two patches:\n\n* Patch for Gerrit core: [3]\n* Patch to Javamelody core:\n\n  if (httpRequest.getRequestURI().endsWith(getMonitoringUrl(httpRequest)))\n  [...]\n\nBasic auth access from the Prometheus side would just work. Can you confirm that assumption, or do you want me to patch javamelody and upload that patch?\n\nOne reason, to try really hard to fix basic auth here, is because with this patch that took Prometheus-bearer-token route, the same Prometheus instance cannot use basic auth for another endpoint, that is exposed by the metrics-reporter-prometheus plugin:\n\n  GET http://gerrit.mycompany.com/a/plugins/metrics-reporter-prometheus/metrics\n\nright? But, there would a lot of value to be able to scrap both metrics from the *same* Prometheus side: Javamelody and the Gerrit core ones.\n\n@Sasha, Viktor: Even thouhg the review of that hange was staled, have we reached any consensus among the maintainers about swapping the order and fixing authentication in AllRequestFilter, when the request is coming not from the UI?\n\n@Luca, Please, add this above information to the commit message and explain why this plugin, that is currently based on the broken AllRequestFilter\u0027s authentication machinery cannot access user information, when the request is coming not from the UI, and also add a reference to Viktor\u0027s pending change that trying to fix that.\n\n[1] https://gerrit-review.googlesource.com/c/gerrit/+/164991\n[2] https://gerrit-review.googlesource.com/c/gerrit/+/164991/2//COMMIT_MSG#12\n[3] http://paste.openstack.org/show/705146",
+      "parentUuid": "8433725b_11661ef3",
+      "revId": "2b90003581793f40ff571f3342e9d86c5b890a30",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e6a9d8ec_28e2df90",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
