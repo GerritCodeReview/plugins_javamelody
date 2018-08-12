@@ -167,6 +167,29 @@
     },
     {
       "key": {
+        "uuid": "7f4bc266_4426d597",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1003873
+      },
+      "writtenOn": "2018-08-12T20:56:41Z",
+      "side": 1,
+      "message": "AUTHORIZATION",
+      "range": {
+        "startLine": 91,
+        "startChar": 32,
+        "endLine": 91,
+        "endChar": 46
+      },
+      "revId": "2b90003581793f40ff571f3342e9d86c5b890a30",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d6dfcc39_e2af2dc2",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilter.java",
         "patchSetId": 2
