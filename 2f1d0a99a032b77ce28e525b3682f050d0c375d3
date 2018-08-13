@@ -22,6 +22,30 @@
       "revId": "2f1d0a99a032b77ce28e525b3682f050d0c375d3",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "786958ee_58e4f582",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/GerritMonitoringFilter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2018-08-13T07:59:31Z",
+      "side": 0,
+      "message": "Right, I realized that after doing all those changes, that this would be more cleaner and less intrusive way.",
+      "parentUuid": "a1a6fe74_044dd3c7",
+      "range": {
+        "startLine": 82,
+        "startChar": 57,
+        "endLine": 82,
+        "endChar": 81
+      },
+      "revId": "2f1d0a99a032b77ce28e525b3682f050d0c375d3",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
