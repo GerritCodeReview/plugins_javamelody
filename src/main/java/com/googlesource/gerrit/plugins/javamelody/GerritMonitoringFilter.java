@@ -36,6 +36,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import net.bull.javamelody.MonitoringFilter;
+import net.bull.javamelody.Parameter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -79,12 +80,10 @@ class GerritMonitoringFilter extends AllRequestFilter {
 
   static class JavamelodyFilter extends MonitoringFilter {
     private static final String JAVAMELODY_PREFIX = "javamelody";
-    private static final String HTTP_TRANSFORM_PATTERN = "http-transform-pattern";
     private static final String GLOBAL_HTTP_TRANSFORM_PATTERN =
-        String.format("%s.%s", JAVAMELODY_PREFIX, HTTP_TRANSFORM_PATTERN);
-    private static final String STORAGE_DIR = "storage-directory";
+        String.format("%s.%s", JAVAMELODY_PREFIX, Parameter.HTTP_TRANSFORM_PATTERN.getCode());
     private static final String GLOBAL_STORAGE_DIR =
-        String.format("%s.%s", JAVAMELODY_PREFIX, STORAGE_DIR);
+        String.format("%s.%s", JAVAMELODY_PREFIX, Parameter.STORAGE_DIRECTORY.getCode());
     private final CapabilityChecker capabilityChecker;
 
     static final String GERRIT_GROUPING =
@@ -117,13 +116,15 @@ class GerritMonitoringFilter extends AllRequestFilter {
 
     @Override
     public void init(FilterConfig config) throws ServletException {
-      if (isPropertyInPluginConfig(HTTP_TRANSFORM_PATTERN)
-          || isPropertyUndefined(config, HTTP_TRANSFORM_PATTERN, GLOBAL_HTTP_TRANSFORM_PATTERN)) {
+      if (isPropertyInPluginConfig(Parameter.HTTP_TRANSFORM_PATTERN.getCode())
+          || isPropertyUndefined(
+              config, Parameter.HTTP_TRANSFORM_PATTERN.getCode(), GLOBAL_HTTP_TRANSFORM_PATTERN)) {
         System.setProperty(GLOBAL_HTTP_TRANSFORM_PATTERN, getTransformPattern());
       }
 
-      if (isPropertyInPluginConfig(STORAGE_DIR)
-          || isPropertyUndefined(config, STORAGE_DIR, GLOBAL_STORAGE_DIR)) {
+      if (isPropertyInPluginConfig(Parameter.STORAGE_DIRECTORY.getCode())
+          || isPropertyUndefined(
+              config, Parameter.STORAGE_DIRECTORY.getCode(), GLOBAL_STORAGE_DIR)) {
         System.setProperty(GLOBAL_STORAGE_DIR, getStorageDir());
       }
 
@@ -135,7 +136,7 @@ class GerritMonitoringFilter extends AllRequestFilter {
     }
 
     private String getTransformPattern() {
-      return cfg.getString(HTTP_TRANSFORM_PATTERN, GERRIT_GROUPING);
+      return cfg.getString(Parameter.HTTP_TRANSFORM_PATTERN.getCode(), GERRIT_GROUPING);
     }
 
     private String getStorageDir() {
@@ -149,7 +150,9 @@ class GerritMonitoringFilter extends AllRequestFilter {
 
       // plugin config has the highest priority
       Path storageDir =
-          Optional.ofNullable(cfg.getString(STORAGE_DIR)).map(Paths::get).orElse(defaultDataDir);
+          Optional.ofNullable(cfg.getString(Parameter.STORAGE_DIRECTORY.getCode()))
+              .map(Paths::get)
+              .orElse(defaultDataDir);
       if (!Files.isDirectory(storageDir)) {
         try {
           Files.createDirectories(storageDir);
