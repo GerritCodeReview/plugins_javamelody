@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e5afd804_4e13dcd5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2018-08-13T15:34:22Z",
+      "side": 1,
+      "message": "Shall we park this until the PR [1] gets merged? Otherwise, the JavaMelody plugin build would have to include a custom build step pulling the PR.",
+      "range": {
+        "startLine": 16,
+        "startChar": 39,
+        "endLine": 17,
+        "endChar": 17
+      },
+      "revId": "9522ff50b0c9bd762a7d822ed935dd63f54f2015",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "64df5776_7efda08d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2018-08-13T15:34:22Z",
+      "side": 1,
+      "message": "Actually, when you configure the scraping of metrics, NOT having to define a user with the associated password and ACLs is a good thing. Monitoring should *always work* even when the system is misbehaving.\n\nThe less \"moving parts\" and dependencies on Gerrit you have, the better is for the ability to get data *as much as possible*.\n\nMonitoring is good when things are working, but it is even more useful when things aren\u0027t working at all.",
+      "range": {
+        "startLine": 27,
+        "startChar": 9,
+        "endLine": 27,
+        "endChar": 39
+      },
+      "revId": "9522ff50b0c9bd762a7d822ed935dd63f54f2015",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "954dce2c_9c5e1f70",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2018-08-13T15:34:22Z",
+      "side": 1,
+      "message": "Let me propose a change on that plugin to support Bearer authentication as well, which could be a good idea IMHO.",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 34
+      },
+      "revId": "9522ff50b0c9bd762a7d822ed935dd63f54f2015",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b230ef95_1b3c568d",
+        "filename": "external_plugin_deps.bzl",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2018-08-13T15:34:22Z",
+      "side": 1,
+      "message": "Would be best to wait for the PR to be merged and they rely on the standard build IMHO.",
+      "range": {
+        "startLine": 9,
+        "startChar": 6,
+        "endLine": 9,
+        "endChar": 112
+      },
+      "revId": "9522ff50b0c9bd762a7d822ed935dd63f54f2015",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
