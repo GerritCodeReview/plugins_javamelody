@@ -36,6 +36,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import net.bull.javamelody.MonitoringFilter;
+import net.bull.javamelody.internal.common.HttpParameter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -43,12 +44,10 @@ import org.slf4j.LoggerFactory;
 class GerritMonitoringFilter extends AllRequestFilter {
   private static final Logger log = LoggerFactory.getLogger(GerritMonitoringFilter.class);
   private final JavamelodyFilter monitoring;
-  private final CapabilityChecker capabilityChecker;
 
   @Inject
-  GerritMonitoringFilter(JavamelodyFilter monitoring, CapabilityChecker capabilityChecker) {
+  GerritMonitoringFilter(JavamelodyFilter monitoring) {
     this.monitoring = monitoring;
-    this.capabilityChecker = capabilityChecker;
   }
 
   @Override
@@ -62,7 +61,7 @@ class GerritMonitoringFilter extends AllRequestFilter {
     HttpServletResponse httpResponse = (HttpServletResponse) response;
     HttpServletRequest httpRequest = (HttpServletRequest) request;
 
-    if (canMonitor(httpRequest)) {
+    if (monitoring.canMonitor(httpRequest)) {
       monitoring.doFilter(request, response, chain);
     } else {
       httpResponse.sendError(HttpServletResponse.SC_FORBIDDEN, "Forbidden access");
@@ -79,13 +78,6 @@ class GerritMonitoringFilter extends AllRequestFilter {
     monitoring.destroy();
   }
 
-  private boolean canMonitor(HttpServletRequest httpRequest) {
-    if (httpRequest.getRequestURI().equals(monitoring.getJavamelodyUrl(httpRequest))) {
-      return capabilityChecker.canMonitor();
-    }
-    return true;
-  }
-
   static class JavamelodyFilter extends MonitoringFilter {
     private static final String JAVAMELODY_PREFIX = "javamelody";
     private static final String HTTP_TRANSFORM_PATTERN = "http-transform-pattern";
@@ -94,6 +86,11 @@ class GerritMonitoringFilter extends AllRequestFilter {
     private static final String STORAGE_DIR = "storage-directory";
     private static final String GLOBAL_STORAGE_DIR =
         String.format("%s.%s", JAVAMELODY_PREFIX, STORAGE_DIR);
+    private static final String PROMETHEUS_BEARER_TOKEN = "prometheusBearerToken";
+    private static final String FORMAT_PROMETHEUS = "prometheus";
+    private static final String AUTHORIZATION_HEADER = "Authorization";
+    private final CapabilityChecker capabilityChecker;
+    private final boolean useBearerTokenForPrometheus;
 
     static final String GERRIT_GROUPING =
         new StringJoiner("|")
@@ -116,9 +113,12 @@ class GerritMonitoringFilter extends AllRequestFilter {
     JavamelodyFilter(
         PluginConfigFactory cfgFactory,
         @PluginName String pluginName,
-        @PluginData Path defaultDataDir) {
+        @PluginData Path defaultDataDir,
+        CapabilityChecker capabilityChecker) {
       this.defaultDataDir = defaultDataDir;
       this.cfg = cfgFactory.getFromGerritConfig(pluginName);
+      this.capabilityChecker = capabilityChecker;
+      this.useBearerTokenForPrometheus = isPropertyInPluginConfig(PROMETHEUS_BEARER_TOKEN);
     }
 
     @Override
@@ -175,6 +175,29 @@ class GerritMonitoringFilter extends AllRequestFilter {
       return System.getProperty(globalName) == null
           && config.getServletContext().getInitParameter(globalName) == null
           && config.getInitParameter(name) == null;
+    }
+
+    boolean canMonitor(HttpServletRequest httpRequest) {
+      if (httpRequest.getRequestURI().equals(getJavamelodyUrl(httpRequest))) {
+        /* Exception when access to metrics for Prometheus using Bearer Token
+         * without going through any Gerrit Authentication step.
+         * Enable to access the Prometheus metrics ONLY and nothing else, skipping
+         * any authentication and ACL check.
+         */
+        if (useBearerTokenForPrometheus
+            && httpRequest.getHeader(AUTHORIZATION_HEADER) != null
+            && FORMAT_PROMETHEUS.equals(HttpParameter.FORMAT.getParameterFrom(httpRequest))) {
+          return canMonitorFromPrometheusUsingBearerToken(httpRequest);
+        }
+        return capabilityChecker.canMonitor();
+      }
+      return true;
+    }
+
+    private boolean canMonitorFromPrometheusUsingBearerToken(HttpServletRequest httpRequest) {
+      return httpRequest
+          .getHeader(AUTHORIZATION_HEADER)
+          .equals("Bearer " + cfg.getString(PROMETHEUS_BEARER_TOKEN));
     }
   }
 }
