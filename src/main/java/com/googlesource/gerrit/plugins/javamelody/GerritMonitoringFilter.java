@@ -38,6 +38,7 @@ import javax.servlet.http.HttpServletResponse;
 import net.bull.javamelody.MonitoringFilter;
 import net.bull.javamelody.Parameter;
 import net.bull.javamelody.internal.common.HttpParameter;
+import net.bull.javamelody.internal.common.Parameters;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -109,6 +110,7 @@ class GerritMonitoringFilter extends AllRequestFilter {
 
     private final PluginConfig cfg;
     private final Path defaultDataDir;
+    private String authenticatedMonitoringUrl;
 
     @Inject
     JavamelodyFilter(
@@ -139,6 +141,24 @@ class GerritMonitoringFilter extends AllRequestFilter {
 
     public String getJavamelodyUrl(HttpServletRequest httpRequest) {
       return getMonitoringUrl(httpRequest);
+    }
+
+    @Override
+    protected String getMonitoringUrl(HttpServletRequest httpRequest) {
+      if (authenticatedMonitoringUrl == null) {
+        authenticatedMonitoringUrl =
+            httpRequest.getContextPath() + "/a" + Parameters.getMonitoringPath();
+      }
+
+      // for Gerrit auth, if the URI of the request is "/a/monitoring"
+      // (like in "http://gerrit/a/monitoring?format=prometheus"),
+      // we accept it as the monitoring URL for this time
+      if (httpRequest.getRequestURI().equals(authenticatedMonitoringUrl)) {
+        return authenticatedMonitoringUrl;
+      }
+
+      // otherwise the monitoring URL is the classic one "/monitoring"
+      return super.getMonitoringUrl(httpRequest);
     }
 
     private String getTransformPattern() {
