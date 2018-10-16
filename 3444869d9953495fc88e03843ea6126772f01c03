@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "82ec8e2f_959d6513",
+        "filename": "WORKSPACE",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2018-10-16T22:55:36Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this still be using the snapshot API?",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 12
+      },
+      "revId": "3444869d9953495fc88e03843ea6126772f01c03",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
