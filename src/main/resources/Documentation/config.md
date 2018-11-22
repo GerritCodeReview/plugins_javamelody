@@ -18,14 +18,14 @@ parameter e.g.:
     javaOptions = -Djavamelody.log=true
 ```
 
-<a id="allowTopMenu">
-`plugin.@PLUGIN@.allowTopMenu`
-: Whether it is allowed to show top menu in Gerrit UI.
+- <a id="allowTopMenu"> `plugin.@PLUGIN@.allowTopMenu`
+
+  Whether it is allowed to show top menu in Gerrit UI.
   By default true.
 
-<a id="prometheusBearerToken">
-`plugin.@PLUGIN@.prometheusBearerToken`
-: Bearer token for allowing Prometheus to query JavaMelody data
+- <a id="prometheusBearerToken"> `plugin.@PLUGIN@.prometheusBearerToken`
+
+  Bearer token for allowing Prometheus to query JavaMelody data
   through its scraper.
   When defined, access to the /monitoring?format=prometheus URL
   does not require any authentication and do not check any ACL related
@@ -37,9 +37,9 @@ parameter e.g.:
   for how to configure the integration with Prometheus.
   By default undefined.
 
-<a id="storage-directory">
-`plugin.@PLUGIN@.storage-directory`
-: The directory in which to store data files. Javamelody, by default,
+- <a id="storage-directory"> `plugin.@PLUGIN@.storage-directory`
+
+  The directory in which to store data files. Javamelody, by default,
   stores data under `/tmp/javamelody` directory but it gets wiped out
   upon system restart. Therefore for fresh install (or when it was just
   wiped out after restart) it is defaulted to `GERRIT_SITE/data/@PLUGIN@`.
@@ -48,9 +48,8 @@ parameter e.g.:
   it has lower priority than `plugin.@PLUGIN@.storage-directory` but higher
   than default.
 
-<a id="http-transform-pattern">
-`plugin.@PLUGIN@.http-transform-pattern`
-: Grouping pattern for HTTP requests statistics. Without groupping pattern
+- <a id="http-transform-pattern"> `plugin.@PLUGIN@.http-transform-pattern`
+  Grouping pattern for HTTP requests statistics. Without groupping pattern
   javamelody treats each HTTP requests as distinctive therefore it is not
   possible to deduct overal site performance and what is more, on busy server,
   it may lead to
