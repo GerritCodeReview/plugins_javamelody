@@ -23,30 +23,6 @@ The output is created in
   bazel-genfiles/@PLUGIN@.jar
 ```
 
-Then to build the plugin dependencies execute:
-
-```
-bazel build @PLUGIN@-deps_deploy.jar
-```
-
-The output is created in
-
-```
-  bazel-bin/@PLUGIN@-deps_deploy.jar
-```
-
-Given the @PLUGIN@.jar does not contains the plugin dependencies, the @PLUGIN@.jar
-should be deployed to the `gerrit_site/plugins` folder as usual and the bazel-bin/@PLUGIN@-deps_deploy.jar should be deployed to the `gerrit_site/lib`
-folder:
-
-```
-cp bazel-genfiles/plugins/@PLUGIN@/@PLUGIN@.jar `$gerrit_site/plugins`
-cp bazel-bin/plugins/@PLUGIN@/@PLUGIN@-deps_deploy.jar `$gerrit_site/lib`
-```
-
-To enable the plugin database interception capabilities follow the instructions
-in [database monitoring](database-monitoring.md) page.
-
 To package the plugin sources run:
 
 ```
@@ -89,35 +65,11 @@ Then issue
   bazel build plugins/javamelody:javamelody
 ```
 
-Note, that the plugin dependencies with [database interception](database-monitoring.md)
-are built separately. To do that, issue this command:
-
-```
-  bazel build plugins/javamelody:javamelody-deps_deploy.jar
-```
-
-The output from the former target is:
-
-```
-  bazel-genfiles/plugins/javamelody/javamelody.jar
-```
-
-The output from the latter targets are:
-
-```
-  bazel-bin/plugins/javamelody/javamelody-deps_deploy.jar
-```
-
 To execute the tests run:
 
 ```
   bazel test plugins/@PLUGIN@:@PLUGIN@_tests
 ```
-
-[IMPORTANT]
-Both targets above are required and must be deployed to the right
-locations: `javamelody.jar` to `<gerrit_site>/plugins` directory
-and `javamelody-deps_deploy.jar` to `<gerrit_site>/lib` directory.
 
 This project can be imported into the Eclipse IDE.
 Add the plugin name to the `CUSTOM_PLUGINS` and to the

@@ -2,17 +2,13 @@ load("//tools/bzl:junit.bzl", "junit_tests")
 load(
     "//tools/bzl:plugin.bzl",
     "PLUGIN_DEPS",
-    "PLUGIN_DEPS_NEVERLINK",
     "PLUGIN_TEST_DEPS",
     "gerrit_plugin",
 )
 
 gerrit_plugin(
     name = "javamelody",
-    srcs = glob(
-        ["src/main/java/**/*.java"],
-        exclude = ["src/main/java/com/googlesource/gerrit/plugins/javamelody/MonitoringDataSourceInterceptor.java"],
-    ),
+    srcs = glob(["src/main/java/**/*.java"]),
     manifest_entries = [
         "Gerrit-PluginName: javamelody",
         "Gerrit-Module: com.googlesource.gerrit.plugins.javamelody.Module",
@@ -21,20 +17,7 @@ gerrit_plugin(
         "Implementation-URL: https://gerrit-review.googlesource.com/#/admin/projects/plugins/javamelody",
     ],
     resources = glob(["src/main/resources/**/*"]),
-    deps = ["@javamelody-core//jar:neverlink"],
-)
-
-java_binary(
-    name = "javamelody-deps",
-    main_class = "Dummy",
-    runtime_deps = [":javamelody-datasource-interceptor-lib"],
-)
-
-java_library(
-    name = "javamelody-datasource-interceptor-lib",
-    srcs = ["src/main/java/com/googlesource/gerrit/plugins/javamelody/MonitoringDataSourceInterceptor.java"],
-    visibility = ["//visibility:public"],
-    deps = PLUGIN_DEPS_NEVERLINK + [
+    deps = [
         "@javamelody-core//jar",
         "@jrobin//jar",
     ],
