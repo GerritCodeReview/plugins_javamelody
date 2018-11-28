@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a2257f5c_3b1825b8",
+        "filename": "BUILD",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2018-11-28T02:38:59Z",
+      "side": 1,
+      "message": "Unused now.",
+      "range": {
+        "startLine": 5,
+        "startChar": 4,
+        "endLine": 5,
+        "endChar": 28
+      },
+      "revId": "1a1d1e59a56aef6770a7c6d359aa8d523b0a6fcd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
