@@ -5,6 +5,6 @@ classpath_collector(
     name = "main_classpath_collect",
     testonly = 1,
     deps = PLUGIN_DEPS + PLUGIN_TEST_DEPS + [
-        "//:javamelody-datasource-interceptor-lib",
+        "//:javamelody__plugin",
     ],
 )
