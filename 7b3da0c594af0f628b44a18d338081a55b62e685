@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c13976f9_dddd575f",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/MonitoringTopMenu.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2018-12-03T11:55:13Z",
+      "side": 1,
+      "message": "Would this break the GWT top-menu for v2.15/v2.16?\nDo all the other plugin need to be ajusted?",
+      "range": {
+        "startLine": 32,
+        "startChar": 82,
+        "endLine": 32,
+        "endChar": 83
+      },
+      "revId": "7b3da0c594af0f628b44a18d338081a55b62e685",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
