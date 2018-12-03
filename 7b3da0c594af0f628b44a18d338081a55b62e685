@@ -46,6 +46,30 @@
       "revId": "7b3da0c594af0f628b44a18d338081a55b62e685",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "87a784ed_9252019c",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/MonitoringTopMenu.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2018-12-03T21:37:20Z",
+      "side": 1,
+      "message": "Verified, that both UIs are working as expected with this change (on stable-2.16).",
+      "parentUuid": "56f56bbe_e01d616e",
+      "range": {
+        "startLine": 32,
+        "startChar": 82,
+        "endLine": 32,
+        "endChar": 83
+      },
+      "revId": "7b3da0c594af0f628b44a18d338081a55b62e685",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
