@@ -22,6 +22,30 @@
       "revId": "7b3da0c594af0f628b44a18d338081a55b62e685",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "56f56bbe_e01d616e",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/javamelody/MonitoringTopMenu.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2018-12-03T12:06:31Z",
+      "side": 1,
+      "message": "I havn\u0027t checked GWT UI for Javamelody plugin yet. However, I checked plugin-manager and there relative path prefix is included and it works as expected for both UIs.",
+      "parentUuid": "c13976f9_dddd575f",
+      "range": {
+        "startLine": 32,
+        "startChar": 82,
+        "endLine": 32,
+        "endChar": 83
+      },
+      "revId": "7b3da0c594af0f628b44a18d338081a55b62e685",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
