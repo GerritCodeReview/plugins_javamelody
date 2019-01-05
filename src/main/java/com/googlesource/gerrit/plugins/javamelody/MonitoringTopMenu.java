@@ -29,7 +29,7 @@ public class MonitoringTopMenu implements TopMenu {
     if (capabilityChecker.canMonitor()) {
       menuEntries.add(
           new MenuEntry(
-              "Monitoring", Collections.singletonList(new MenuItem("JavaMelody", "monitoring"))));
+              "Monitoring", Collections.singletonList(new MenuItem("JavaMelody", "/monitoring"))));
     }
   }
 
