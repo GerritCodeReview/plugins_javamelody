@@ -15,6 +15,7 @@
 package com.googlesource.gerrit.plugins.javamelody;
 
 import com.google.common.base.Strings;
+import com.google.common.flogger.FluentLogger;
 import com.google.gerrit.extensions.annotations.PluginData;
 import com.google.gerrit.extensions.annotations.PluginName;
 import com.google.gerrit.httpd.AllRequestFilter;
@@ -39,12 +40,10 @@ import net.bull.javamelody.MonitoringFilter;
 import net.bull.javamelody.Parameter;
 import net.bull.javamelody.internal.common.HttpParameter;
 import net.bull.javamelody.internal.common.Parameters;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 @Singleton
 class GerritMonitoringFilter extends AllRequestFilter {
-  private static final Logger log = LoggerFactory.getLogger(GerritMonitoringFilter.class);
+  private static final FluentLogger log = FluentLogger.forEnclosingClass();
   private final JavamelodyFilter monitoring;
 
   @Inject
@@ -165,8 +164,8 @@ class GerritMonitoringFilter extends AllRequestFilter {
       // default to old path for javamelody storage-directory if it exists
       final Path tmp = Paths.get(System.getProperty("java.io.tmpdir")).resolve(JAVAMELODY_PREFIX);
       if (Files.isDirectory(tmp)) {
-        log.warn(
-            "Javamelody data exists in 'tmp' [{}]. Configuration (if any) will be ignored.", tmp);
+        log.atWarning().log(
+            "Javamelody data exists in 'tmp' [%s]. Configuration (if any) will be ignored.", tmp);
         return tmp.toString();
       }
 
@@ -177,7 +176,8 @@ class GerritMonitoringFilter extends AllRequestFilter {
         try {
           Files.createDirectories(storageDir);
         } catch (IOException e) {
-          log.error("Creation of javamelody data dir [{}] failed.", storageDir, e);
+          log.atSevere().withCause(e).log(
+              "Creation of javamelody data dir [%s] failed.", storageDir);
           throw new RuntimeException(e);
         }
       }
