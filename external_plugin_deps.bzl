@@ -3,8 +3,8 @@ load("//tools/bzl:maven_jar.bzl", "maven_jar")
 def external_plugin_deps():
     maven_jar(
         name = "javamelody-core",
-        artifact = "net.bull.javamelody:javamelody-core:1.76.0",
-        sha1 = "fc10686295d168a45ffef476e2d949dc19fe7a90",
+        artifact = "net.bull.javamelody:javamelody-core:1.77.0",
+        sha1 = "a2b2dd1d39f21d185ea3215830661002445664a4",
     )
 
     maven_jar(
