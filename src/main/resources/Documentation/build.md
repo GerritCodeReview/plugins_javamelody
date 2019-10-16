@@ -20,7 +20,7 @@ To build the plugin, issue the following command:
 The output is created in
 
 ```
-  bazel-genfiles/@PLUGIN@.jar
+  bazel-bin/@PLUGIN@.jar
 ```
 
 Then to build the plugin dependencies execute:
@@ -40,7 +40,7 @@ should be deployed to the `gerrit_site/plugins` folder as usual and the bazel-bi
 folder:
 
 ```
-cp bazel-genfiles/plugins/@PLUGIN@/@PLUGIN@.jar `$gerrit_site/plugins`
+cp bazel-bin/plugins/@PLUGIN@/@PLUGIN@.jar `$gerrit_site/plugins`
 cp bazel-bin/plugins/@PLUGIN@/@PLUGIN@-deps_deploy.jar `$gerrit_site/lib`
 ```
 
@@ -99,7 +99,7 @@ are built separately. To do that, issue this command:
 The output from the former target is:
 
 ```
-  bazel-genfiles/plugins/javamelody/javamelody.jar
+  bazel-bin/plugins/javamelody/javamelody.jar
 ```
 
 The output from the latter targets are:
