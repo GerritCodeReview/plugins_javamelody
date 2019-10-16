@@ -32,7 +32,7 @@ cp bazel-bin/plugins/javamelody/javamelody-deps_deploy.jar `$gerrit_site/lib`
 Deploy the plugin without dependencies:
 
 ```
-cp bazel-genfiles/plugins/javamelody/javamelody.jar `$gerrit_site/plugins`
+cp bazel-bin/plugins/javamelody/javamelody.jar `$gerrit_site/plugins`
 ```
 
 Run Gerrit@Jetty and enjoy SQL statistics, a lá:
