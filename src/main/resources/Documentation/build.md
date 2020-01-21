@@ -108,10 +108,11 @@ The output from the latter targets are:
   bazel-bin/plugins/javamelody/javamelody-deps_deploy.jar
 ```
 
-To execute the tests run:
-
+To execute the tests run either one of:
+	
 ```
   bazel test plugins/@PLUGIN@:@PLUGIN@_tests
+  bazel test --test_tag_filters=@PLUGIN@ //...
 ```
 
 [IMPORTANT]
