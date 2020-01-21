@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4dfaa2f4_7ea9e780",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1012732
+      },
+      "writtenOn": "2020-01-21T21:35:11Z",
+      "side": 1,
+      "message": "Would insert this line above line 114, to match with the other plugins.",
+      "revId": "131fdfb3541f8bc40e4dbd6f28191f61f6dc6169",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
