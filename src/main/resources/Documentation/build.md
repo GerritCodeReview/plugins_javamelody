@@ -62,7 +62,7 @@ The output is created in:
 To execute the tests run:
 
 ```
-  bazel test @PLUGIN@_tests
+  bazel test //...
 ```
 
 This project can be imported into the Eclipse IDE:
@@ -108,9 +108,10 @@ The output from the latter targets are:
   bazel-bin/plugins/javamelody/javamelody-deps_deploy.jar
 ```
 
-To execute the tests run:
+To execute the tests run either one of:
 
 ```
+  bazel test --test_tag_filters=@PLUGIN@ //...
   bazel test plugins/@PLUGIN@:@PLUGIN@_tests
 ```
 
