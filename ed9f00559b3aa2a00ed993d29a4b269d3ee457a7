@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "236b0985_4b52897b",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1012732
+      },
+      "writtenOn": "2020-01-23T16:53:14Z",
+      "side": 1,
+      "message": "Missing from the commit message.",
+      "range": {
+        "startLine": 65,
+        "startChar": 13,
+        "endLine": 65,
+        "endChar": 18
+      },
+      "revId": "ed9f00559b3aa2a00ed993d29a4b269d3ee457a7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
