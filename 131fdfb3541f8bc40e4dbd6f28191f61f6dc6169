@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f312c2b_363e6f62",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1083195
+      },
+      "writtenOn": "2020-01-23T00:37:33Z",
+      "side": 1,
+      "message": "Standard way works, will replace it with standard to be consistent with other plugins.",
+      "parentUuid": "06bc77cb_c7ff898a",
+      "range": {
+        "startLine": 65,
+        "startChar": 13,
+        "endLine": 65,
+        "endChar": 27
+      },
+      "revId": "131fdfb3541f8bc40e4dbd6f28191f61f6dc6169",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4dfaa2f4_7ea9e780",
         "filename": "src/main/resources/Documentation/build.md",
         "patchSetId": 2
@@ -39,6 +63,24 @@
       "revId": "131fdfb3541f8bc40e4dbd6f28191f61f6dc6169",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5f85090f_ea2167e5",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1083195
+      },
+      "writtenOn": "2020-01-23T00:37:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4dfaa2f4_7ea9e780",
+      "revId": "131fdfb3541f8bc40e4dbd6f28191f61f6dc6169",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
