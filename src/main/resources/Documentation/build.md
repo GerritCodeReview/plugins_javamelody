@@ -38,7 +38,7 @@ The output is created in:
 To execute the tests run:
 
 ```
-  bazel test @PLUGIN@_tests
+  bazel test //...
 ```
 
 This project can be imported into the Eclipse IDE:
@@ -68,6 +68,7 @@ Then issue
 To execute the tests run:
 
 ```
+  bazel test --test_tag_filters=@PLUGIN@ //...
   bazel test plugins/@PLUGIN@:@PLUGIN@_tests
 ```
 
