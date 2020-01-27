@@ -80,32 +80,32 @@ the Gerrit /plugins directory, replacing the existing empty one.
 ```
   cd gerrit/plugins
   rm external_plugin_deps.bzl
-  ln -s javamelody/external_plugin_deps.bzl .
+  ln -s @PLUGIN@/external_plugin_deps.bzl .
 ```
 
 Then issue
 
 ```
-  bazel build plugins/javamelody:javamelody
+  bazel build plugins/@PLUGIN@:@PLUGIN@
 ```
 
 Note, that the plugin dependencies with [database interception](database-monitoring.md)
 are built separately. To do that, issue this command:
 
 ```
-  bazel build plugins/javamelody:javamelody-deps_deploy.jar
+  bazel build plugins/@PLUGIN@:@PLUGIN@-deps_deploy.jar
 ```
 
 The output from the former target is:
 
 ```
-  bazel-bin/plugins/javamelody/javamelody.jar
+  bazel-bin/plugins/@PLUGIN@/@PLUGIN@.jar
 ```
 
 The output from the latter targets are:
 
 ```
-  bazel-bin/plugins/javamelody/javamelody-deps_deploy.jar
+  bazel-bin/plugins/@PLUGIN@/@PLUGIN@-deps_deploy.jar
 ```
 
 To execute the tests run either one of:
