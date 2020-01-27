@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "061a1f94_68f05bde",
+        "filename": "tools/BUILD",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2020-01-27T14:56:37Z",
+      "side": 1,
+      "message": "Not needed new line?",
+      "revId": "119ffb5f72a2c2db2d6612c2a6f75237ed5f5e4a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
