@@ -34,6 +34,24 @@
       "revId": "119ffb5f72a2c2db2d6612c2a6f75237ed5f5e4a",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "248b94f9_f3475fc0",
+        "filename": "tools/BUILD",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2020-01-27T16:01:49Z",
+      "side": 1,
+      "message": "Better description, used in other places?\n\n  # Empty file - bazel treat directories with BUILD file as a package",
+      "parentUuid": "245ab99b_cc6d00a5",
+      "revId": "119ffb5f72a2c2db2d6612c2a6f75237ed5f5e4a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
