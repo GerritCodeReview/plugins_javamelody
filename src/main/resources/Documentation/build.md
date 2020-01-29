@@ -56,16 +56,16 @@ the Gerrit /plugins directory, replacing the existing empty one.
 ```
   cd gerrit/plugins
   rm external_plugin_deps.bzl
-  ln -s javamelody/external_plugin_deps.bzl .
+  ln -s @PLUGIN@/external_plugin_deps.bzl .
 ```
 
 Then issue
 
 ```
-  bazel build plugins/javamelody:javamelody
+  bazel build plugins/@PLUGIN@:@PLUGIN@
 ```
 
-To execute the tests run:
+To execute the tests run either one of:
 
 ```
   bazel test --test_tag_filters=@PLUGIN@ //...
