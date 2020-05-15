@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a6992514_d1e3f8ed",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2020-05-15T02:51:39Z",
+      "side": 0,
+      "message": "The .jar suffix is still needed. Attempting to build without the suffix fails.\n\n ERROR: no such target \u0027//:javamelody-deps_deploy\u0027: target \u0027javamelody-deps_deploy\u0027 not declared in package \u0027\u0027 (did you mean \u0027javamelody-deps_deploy.jar\u0027?) defined by /Users/dpursehouse/git/gerrit-plugins/javamelody/BUILD",
+      "range": {
+        "startLine": 29,
+        "startChar": 32,
+        "endLine": 29,
+        "endChar": 36
+      },
+      "revId": "d6537eefc5e90060ed03871d1f0b8a1d6e500361",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
