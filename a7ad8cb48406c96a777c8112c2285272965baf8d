@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4a8a91d1_226bc717",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2020-06-30T06:07:39Z",
+      "side": 1,
+      "message": "\u003e Meanwhile we mostly rely on gerrit-monitoring running on k8s, only for a few javamelody features javamelody we still don\u0027t have a solution in gerrit-monitoring. E.g. a quick way to get a thread dump without having to open a ssh connection to the server.\n\nMay be we should better advertise this not very good known Javamelody feature?\n",
+      "revId": "a7ad8cb48406c96a777c8112c2285272965baf8d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
