@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ddea6524_740c8793",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1012732
+      },
+      "writtenOn": "2020-07-02T01:04:13Z",
+      "side": 1,
+      "message": "NODE_FAILURE, likely transient; re-running.",
+      "revId": "b959ccbaa8f419d2030e74801eb915f83e4cd21a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
