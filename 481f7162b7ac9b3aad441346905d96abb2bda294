@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e62783f_8039272b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2020-07-15T14:18:19Z",
+      "side": 1,
+      "message": "James, we are seeing again NODE_FAILURE build breakage, in patch set 1: [1]. I will try to re-trigger the build.\n\n[1] https://ci.gerritcodereview.com/t/gerrit/buildset/f40c94f3684e4ab19e8d376879388c9b\n\n\n",
+      "revId": "481f7162b7ac9b3aad441346905d96abb2bda294",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
