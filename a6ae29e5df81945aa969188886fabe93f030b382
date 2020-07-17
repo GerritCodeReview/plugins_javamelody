@@ -1,11 +1,13 @@
 {
   "checks": {
     "zuul-check:plugins_javamelody": {
-      "state": "RUNNING",
-      "message": "Jobs have started running",
+      "state": "SUCCESSFUL",
+      "message": "Change passed all voting jobs",
+      "url": "https://ci.gerritcodereview.com/t/gerrit/buildset/07af82b1ced84764a856abdc2523da60",
       "started": "2020-07-17T14:08:24Z",
+      "finished": "2020-07-17T14:26:27Z",
       "created": "2020-07-17T14:08:24Z",
-      "updated": "2020-07-17T14:08:33Z"
+      "updated": "2020-07-17T14:26:27Z"
     }
   }
 }
