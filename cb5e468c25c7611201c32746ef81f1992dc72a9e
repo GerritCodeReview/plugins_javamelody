@@ -1,0 +1,12 @@
+{
+  "checks": {
+    "zuul-check:plugins_javamelody": {
+      "state": "SCHEDULED",
+      "message": "Change has been enqueued in check",
+      "url": "https://ci.gerritcodereview.com/t/gerrit/status/change/290096,1",
+      "started": "2020-11-26T16:38:40Z",
+      "created": "2020-11-26T16:38:40Z",
+      "updated": "2020-11-26T16:38:40Z"
+    }
+  }
+}
