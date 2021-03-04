@@ -16,6 +16,24 @@
       "message": "@davido Could you create a stable-3.2 branch, since the master branch is now built against the 3.3 API?",
       "revId": "046a261d7d25d0ce3e9cd58f5c450042974bce82",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "50b17f2c_25bb727e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2021-03-04T08:12:44Z",
+      "side": 1,
+      "message": "Created stable-3.2 branch from the parent commit: cb5e468c25c7611201c32746ef81f1992dc72a9e.\n\nDone.",
+      "parentUuid": "aa256150_a3078832",
+      "revId": "046a261d7d25d0ce3e9cd58f5c450042974bce82",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
