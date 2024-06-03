@@ -1,12 +1,12 @@
 {
   "checks": {
     "zuul-check:plugins_javamelody": {
-      "state": "SCHEDULED",
-      "message": "Change has been enqueued in check",
+      "state": "RUNNING",
+      "message": "Jobs have started running",
       "url": "https://ci.gerritcodereview.com/t/gerrit/status/change/428137,2",
       "started": "2024-06-03T10:11:57Z",
       "created": "2024-06-02T07:45:14Z",
-      "updated": "2024-06-03T10:11:58Z"
+      "updated": "2024-06-03T10:12:02Z"
     }
   }
 }
