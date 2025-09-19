@@ -14,11 +14,13 @@
 
 package com.googlesource.gerrit.plugins.javamelody;
 
+import com.google.common.base.MoreObjects;
 import com.google.common.base.Strings;
 import com.google.common.flogger.FluentLogger;
 import com.google.gerrit.extensions.annotations.PluginData;
 import com.google.gerrit.extensions.annotations.PluginName;
 import com.google.gerrit.httpd.AllRequestFilter;
+import com.google.gerrit.server.config.GerritServerConfig;
 import com.google.gerrit.server.config.PluginConfig;
 import com.google.gerrit.server.config.PluginConfigFactory;
 import com.google.inject.Inject;
@@ -27,6 +29,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.StringJoiner;
 import javax.servlet.FilterChain;
@@ -40,6 +43,7 @@ import net.bull.javamelody.MonitoringFilter;
 import net.bull.javamelody.Parameter;
 import net.bull.javamelody.internal.common.HttpParameter;
 import net.bull.javamelody.internal.common.Parameters;
+import org.eclipse.jgit.lib.Config;
 
 @Singleton
 class GerritMonitoringFilter extends AllRequestFilter {
@@ -109,18 +113,23 @@ class GerritMonitoringFilter extends AllRequestFilter {
 
     private final PluginConfig cfg;
     private final Path defaultDataDir;
+    private final Config gerritServerConfig;
     private String authenticatedMonitoringUrl;
+    private String pluginName;
 
     @Inject
     JavamelodyFilter(
         PluginConfigFactory cfgFactory,
+        @GerritServerConfig Config gerritServerConfig,
         @PluginName String pluginName,
         @PluginData Path defaultDataDir,
         CapabilityChecker capabilityChecker) {
       this.defaultDataDir = defaultDataDir;
       this.cfg = cfgFactory.getFromGerritConfig(pluginName);
+      this.gerritServerConfig = gerritServerConfig;
       this.capabilityChecker = capabilityChecker;
       this.useBearerTokenForPrometheus = isPropertyInPluginConfig(PROMETHEUS_BEARER_TOKEN);
+      this.pluginName = pluginName;
     }
 
     @Override
@@ -185,7 +194,7 @@ class GerritMonitoringFilter extends AllRequestFilter {
     }
 
     private boolean isPropertyInPluginConfig(String name) {
-      return !Strings.isNullOrEmpty(cfg.getString(name));
+      return !Strings.isNullOrEmpty(cfg.getString(name)) && !Strings.isNullOrEmpty(gerritServerConfig.getString("plugin", pluginName, name));
     }
 
     private boolean isPropertyUndefined(FilterConfig config, String name, String globalName) {
@@ -214,7 +223,11 @@ class GerritMonitoringFilter extends AllRequestFilter {
     private boolean canMonitorFromPrometheusUsingBearerToken(HttpServletRequest httpRequest) {
       return httpRequest
           .getHeader(AUTHORIZATION_HEADER)
-          .equals("Bearer " + cfg.getString(PROMETHEUS_BEARER_TOKEN));
+          .equals("Bearer " + getBearerToken());
+    }
+
+    private String getBearerToken() {
+      return MoreObjects.firstNonNull(gerritServerConfig.getString("plugin", pluginName, PROMETHEUS_BEARER_TOKEN),cfg.getString(PROMETHEUS_BEARER_TOKEN));
     }
   }
 }
