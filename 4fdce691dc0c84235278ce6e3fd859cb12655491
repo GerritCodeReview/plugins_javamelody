@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8b2a247d_ac4d5cd9",
+        "filename": "BUILD",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2026-04-15T09:50:20Z",
+      "side": 1,
+      "message": "Buildifier suggests to swap the order here:\n\n```\n-    \"gerrit_plugin_tests\",\n     \"gerrit_plugin_dependency_tests\",\n+    \"gerrit_plugin_tests\",\n```",
+      "revId": "4fdce691dc0c84235278ce6e3fd859cb12655491",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
