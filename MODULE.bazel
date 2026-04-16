@@ -31,7 +31,7 @@ use_repo(maven, "external_plugin_deps")
 maven.install(
     name = "javamelody_plugin_deps",
     artifacts = [
-        "net.bull.javamelody:javamelody-core:1.99.3",
+        "net.bull.javamelody:javamelody-core:1.99.4",
         "org.jrobin:jrobin:1.5.9",
     ],
     duplicate_version_warning = "error",
