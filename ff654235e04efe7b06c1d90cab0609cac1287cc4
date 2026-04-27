@@ -48,6 +48,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b56ecd27_df7515b3",
+        "filename": "BUILD",
+        "patchSetId": 6
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2026-04-27T11:53:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2102696c_ffd7616e",
+      "range": {
+        "startLine": 13,
+        "startChar": 16,
+        "endLine": 13,
+        "endChar": 35
+      },
+      "revId": "ff654235e04efe7b06c1d90cab0609cac1287cc4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f48ed444_275cd4c2",
@@ -97,6 +121,24 @@
       "side": 1,
       "message": "In that case, the removal of unused dependency shall be decoupled from the rewrite of the BUILD.",
       "parentUuid": "1588f443_cc20074e",
+      "revId": "ff654235e04efe7b06c1d90cab0609cac1287cc4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "79ed12fd_a1e31af6",
+        "filename": "BUILD",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2026-04-27T11:53:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07a9d178_1e57833a",
       "revId": "ff654235e04efe7b06c1d90cab0609cac1287cc4",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
