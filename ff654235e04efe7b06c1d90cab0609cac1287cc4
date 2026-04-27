@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2102696c_ffd7616e",
+        "filename": "BUILD",
+        "patchSetId": 6
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2026-04-27T09:20:16Z",
+      "side": 1,
+      "message": "Because tests don\u0027t use it. We could restore as it was before.\n\nFor oauth plugin we have also split the set of dependencies that actually needed gor tests.",
+      "parentUuid": "1fe84d1b_b8c65a62",
+      "range": {
+        "startLine": 13,
+        "startChar": 16,
+        "endLine": 13,
+        "endChar": 35
+      },
+      "revId": "ff654235e04efe7b06c1d90cab0609cac1287cc4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f48ed444_275cd4c2",
         "filename": "BUILD",
         "patchSetId": 6
@@ -37,6 +61,24 @@
       "writtenOn": "2026-04-27T08:48:24Z",
       "side": 1,
       "message": "the `org.jrobin:jrobin` was in the `deps` list before this change, but now it is removed?",
+      "revId": "ff654235e04efe7b06c1d90cab0609cac1287cc4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1588f443_cc20074e",
+        "filename": "BUILD",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2026-04-27T09:20:16Z",
+      "side": 1,
+      "message": "Apparently `jrobin` is not used in tests. It is graph library for visualization.",
+      "parentUuid": "f48ed444_275cd4c2",
       "revId": "ff654235e04efe7b06c1d90cab0609cac1287cc4",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
