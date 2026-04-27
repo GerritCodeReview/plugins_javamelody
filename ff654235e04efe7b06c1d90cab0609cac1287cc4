@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1fe84d1b_b8c65a62",
+        "filename": "BUILD",
+        "patchSetId": 6
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1003873
+      },
+      "writtenOn": "2026-04-27T08:48:24Z",
+      "side": 1,
+      "message": "why is this also not included in the `EXT_DEP` list?",
+      "range": {
+        "startLine": 13,
+        "startChar": 16,
+        "endLine": 13,
+        "endChar": 35
+      },
+      "revId": "ff654235e04efe7b06c1d90cab0609cac1287cc4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f48ed444_275cd4c2",
+        "filename": "BUILD",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1003873
+      },
+      "writtenOn": "2026-04-27T08:48:24Z",
+      "side": 1,
+      "message": "the `org.jrobin:jrobin` was in the `deps` list before this change, but now it is removed?",
+      "revId": "ff654235e04efe7b06c1d90cab0609cac1287cc4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
