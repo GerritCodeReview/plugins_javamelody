@@ -81,6 +81,24 @@
       "parentUuid": "f48ed444_275cd4c2",
       "revId": "ff654235e04efe7b06c1d90cab0609cac1287cc4",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "07a9d178_1e57833a",
+        "filename": "BUILD",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1003873
+      },
+      "writtenOn": "2026-04-27T10:44:15Z",
+      "side": 1,
+      "message": "In that case, the removal of unused dependency shall be decoupled from the rewrite of the BUILD.",
+      "parentUuid": "1588f443_cc20074e",
+      "revId": "ff654235e04efe7b06c1d90cab0609cac1287cc4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
