@@ -17,3 +17,8 @@ local_path_override(
 )
 
 use_repo(maven, "javamelody_plugin_deps")
+
+# The EE11 flavour twin and its tests resolve the jakarta javamelody-core 2.x
+# line from this isolated repo. In-tree plugin BUILD files are main-repo
+# packages, so the repo must be visible from the root module as well.
+use_repo(maven, "javamelody-ee11_plugin_deps")
