@@ -1,0 +1,13 @@
+{
+  "checks": {
+    "zuul-check:plugins_javamelody": {
+      "state": "FAILED",
+      "message": "Change failed",
+      "url": "https://ci.gerritcodereview.com/t/gerrit/buildset/dbd6c6e549a8460186b893f8b006fb78",
+      "started": "2026-06-30T05:22:16Z",
+      "finished": "2026-06-30T05:22:16Z",
+      "created": "2026-06-30T05:22:17Z",
+      "updated": "2026-06-30T05:22:17Z"
+    }
+  }
+}
