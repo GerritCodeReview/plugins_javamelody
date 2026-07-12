@@ -31,27 +31,6 @@ gerrit_plugin(
     resources = RESOURCES,
 )
 
-# EE10 (jakarta.servlet) flavour. The shared bazlets `flavour = "ee10"` rewrites
-# the plugin's javax.servlet imports to jakarta.servlet, injects
-# `Gerrit-Flavour: ee10`, compiles against the jakarta plugin API
-# (in-tree: //plugins:plugin-lib-neverlink), and wraps the target in a
-# flavour=ee10 transition -- so building :javamelody-ee10 self-selects the
-# jakarta config with no command-line flag. External deps resolve from the
-# jakarta javamelody-core 2.x repo, which is induced from the target name:
-# ext_repo defaults to "javamelody-ee10_plugin_deps". Build with:
-#   bazelisk build //plugins/javamelody:javamelody-ee10
-# (or both flavours at once: `bazelisk build //plugins/javamelody:javamelody //plugins/javamelody:javamelody-ee10`).
-# `dir_name = "javamelody"` keeps stamping/versioning shared with the default jar.
-gerrit_plugin(
-    name = "javamelody-ee10",
-    srcs = SRCS,
-    dir_name = "javamelody",
-    ext_deps = EXT_DEPS,
-    flavour = "ee10",
-    manifest_entries = MANIFEST_ENTRIES,
-    resources = RESOURCES,
-)
-
 gerrit_plugin_tests(
     srcs = glob(["src/test/java/**/*.java"]),
     ext_deps = EXT_DEPS,

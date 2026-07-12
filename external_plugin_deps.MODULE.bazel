@@ -16,4 +16,8 @@ local_path_override(
     path = "plugins/javamelody",
 )
 
-use_repo(maven, "javamelody_plugin_deps")
+use_repo(
+    maven,
+    "javamelody-ee10_plugin_deps",
+    "javamelody_plugin_deps",
+)
