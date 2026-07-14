@@ -17,8 +17,3 @@ local_path_override(
 )
 
 use_repo(maven, "javamelody_plugin_deps")
-
-# The legacy EE8 twin and its tests resolve the javax javamelody-core 1.x
-# line from this isolated repo. In-tree plugin BUILD files are main-repo
-# packages, so the repo must be visible from the root module as well.
-use_repo(maven, "javamelody-ee8_plugin_deps")

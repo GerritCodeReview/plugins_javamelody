@@ -48,24 +48,3 @@ maven.install(
     version_conflict_policy = "pinned",
 )
 use_repo(maven, "javamelody_plugin_deps")
-
-# EE8 (javax.servlet) legacy flavour: the javamelody-core 1.x line, consumed
-# by the generated :javamelody-ee8 twin and its tests. Isolated in its own
-# repo so the two cores never share a resolution.
-maven.install(
-    name = "javamelody-ee8_plugin_deps",
-    artifacts = [
-        "net.bull.javamelody:javamelody-core:1.99.4",
-        "org.jrobin:jrobin:1.5.9",
-    ],
-    duplicate_version_warning = "error",
-    fail_if_repin_required = True,
-    fail_on_missing_checksum = True,
-    fetch_sources = True,
-    lock_file = "javamelody-ee8_plugin_deps.lock.json",
-    repositories = [
-        "https://repo1.maven.org/maven2",
-    ],
-    version_conflict_policy = "pinned",
-)
-use_repo(maven, "javamelody-ee8_plugin_deps")

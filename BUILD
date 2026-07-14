@@ -45,45 +45,13 @@ gerrit_plugin(
     resources = RESOURCES,
 )
 
-# The -ee8 jar is the legacy flavour: generated through the shared bazlets
-# `to_javax` transform, stamping `Gerrit-Flavour: ee8` and compiling
-# against the javax plugin API and the javamelody-core 1.x (javax) line
-# from the repo induced from the target name (ext_repo defaults to
-# "javamelody-ee8_plugin_deps"). Guarded to the ee8 configuration.
-# `dir_name = "javamelody"` keeps stamping/versioning shared with the
-# default jar.
-gerrit_plugin(
-    name = "javamelody-ee8",
-    srcs = SRCS,
-    canonical = "jakarta",
-    dir_name = "javamelody",
-    ext_deps = EXT_DEPS,
-    flavour = "ee8",
-    manifest_entries = MANIFEST_ENTRIES,
-    resources = RESOURCES,
-)
-
-# EE11 tests for the unsuffixed jar: the canonical test sources compiled
-# directly, executed against :javamelody__plugin, the jakarta plugin API
-# and the javamelody-core 2.x repo. A test target cannot self-transition
-# the flavour, so each flavour's tests are guarded to their configuration
-# and run under the matching wildcard pass.
+# Tests: the canonical test sources compiled directly, executed against
+# :javamelody__plugin, the jakarta plugin API and the javamelody-core 2.x
+# repo, guarded to the ee11 configuration -- the only flavour.
 gerrit_plugin_tests(
     srcs = glob(["src/test/java/**/*.java"]),
     canonical = "jakarta",
     ext_deps = EXT_DEPS,
     flavour = "ee11",
     plugin = PLUGIN,
-)
-
-# EE8 tests for the legacy jar: the canonical test sources through the
-# `to_javax` transform, executed against the generated
-# :javamelody-ee8__plugin and javamelody-core 1.x, guarded to the ee8
-# configuration.
-gerrit_plugin_tests(
-    srcs = glob(["src/test/java/**/*.java"]),
-    canonical = "jakarta",
-    ext_deps = EXT_DEPS,
-    flavour = "ee8",
-    plugin = "javamelody-ee8",
 )
