@@ -1,14 +1,18 @@
 module(name = "gerrit-javamelody")
 
+bazel_dep(name = "platforms", version = "1.0.0")
 bazel_dep(name = "rules_jvm_external", version = "6.10")
 bazel_dep(name = "com_googlesource_gerrit_bazlets")
 git_override(
     module_name = "com_googlesource_gerrit_bazlets",
-    commit = "3595bd7d62725bd3f9a0c0fed362896db3d9b7a8",
+    commit = "b13c81265c40ba9283eb1a9f7292ec35b94ba47d",
     remote = "https://gerrit.googlesource.com/bazlets",
 )
 
-GERRIT_API_VERS = "3.13.3"
+# The jakarta.servlet plugin API line. Until it is released to Maven
+# Central, resolve the locally staged SNAPSHOT (m2local); flip to the
+# released version when landing.
+GERRIT_API_VERS = "3.15.0-SNAPSHOT"
 
 gerrit_api_version = use_repo_rule("@com_googlesource_gerrit_bazlets//:gerrit_api_version.bzl", "gerrit_api_version")
 
@@ -24,6 +28,11 @@ maven.install(
     artifacts = [
         "com.google.gerrit:gerrit-plugin-api:" + GERRIT_API_VERS,
         "com.google.gerrit:gerrit-acceptance-framework:" + GERRIT_API_VERS,
+    ],
+    fail_on_missing_checksum = False,
+    repositories = [
+        "m2local",
+        "https://repo1.maven.org/maven2",
     ],
 )
 use_repo(maven, "external_plugin_deps")
