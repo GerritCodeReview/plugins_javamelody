@@ -27,10 +27,14 @@ maven.install(
     ],
 )
 use_repo(maven, "external_plugin_deps")
+# The unsuffixed repo is the EE11 default since the flip: javamelody-core
+# 2.x is the jakarta.servlet line. Consumed by the unsuffixed :javamelody
+# target and its tests -- unsuffixed means jakarta, mirroring the Maven
+# naming scheme.
 maven.install(
     name = "javamelody_plugin_deps",
     artifacts = [
-        "net.bull.javamelody:javamelody-core:1.99.4",
+        "net.bull.javamelody:javamelody-core:2.8.0",
         "org.jrobin:jrobin:1.5.9",
     ],
     duplicate_version_warning = "error",
@@ -45,24 +49,23 @@ maven.install(
 )
 use_repo(maven, "javamelody_plugin_deps")
 
-# EE11 (jakarta.servlet) flavour. javamelody-core 2.x is the jakarta.servlet line
-# (1.x is javax.servlet). The :javamelody-ee11 target and its test twin consume
-# this repo; the default :javamelody target keeps the 1.x javax core above.
-# Isolated in its own repo so the two cores never share a resolution.
+# EE8 (javax.servlet) legacy flavour: the javamelody-core 1.x line, consumed
+# by the generated :javamelody-ee8 twin and its tests. Isolated in its own
+# repo so the two cores never share a resolution.
 maven.install(
-    name = "javamelody-ee11_plugin_deps",
+    name = "javamelody-ee8_plugin_deps",
     artifacts = [
-        "net.bull.javamelody:javamelody-core:2.8.0",
+        "net.bull.javamelody:javamelody-core:1.99.4",
         "org.jrobin:jrobin:1.5.9",
     ],
     duplicate_version_warning = "error",
     fail_if_repin_required = True,
     fail_on_missing_checksum = True,
     fetch_sources = True,
-    lock_file = "javamelody-ee11_plugin_deps.lock.json",
+    lock_file = "javamelody-ee8_plugin_deps.lock.json",
     repositories = [
         "https://repo1.maven.org/maven2",
     ],
     version_conflict_policy = "pinned",
 )
-use_repo(maven, "javamelody-ee11_plugin_deps")
+use_repo(maven, "javamelody-ee8_plugin_deps")
