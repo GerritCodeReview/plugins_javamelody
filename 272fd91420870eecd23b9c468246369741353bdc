@@ -1,12 +1,13 @@
 {
   "checks": {
     "zuul-check:plugins_javamelody": {
-      "state": "SCHEDULED",
-      "message": "Change has been enqueued in check",
-      "url": "https://ci.gerritcodereview.com/t/gerrit/status/change/606566,1",
+      "state": "FAILED",
+      "message": "Change failed",
+      "url": "https://ci.gerritcodereview.com/t/gerrit/buildset/3bc233cea35e4e328465ab495b5be2b6",
       "started": "2026-07-19T07:09:09Z",
+      "finished": "2026-07-19T07:09:25Z",
       "created": "2026-07-19T07:09:10Z",
-      "updated": "2026-07-19T07:09:10Z"
+      "updated": "2026-07-19T07:09:28Z"
     }
   }
 }
