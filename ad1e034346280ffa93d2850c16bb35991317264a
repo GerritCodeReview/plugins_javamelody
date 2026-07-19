@@ -3,10 +3,10 @@
     "zuul-check:plugins_javamelody": {
       "state": "SCHEDULED",
       "message": "Change has been enqueued in check",
-      "url": "https://ci.gerritcodereview.com/t/gerrit/status/change/609563,1",
-      "started": "2026-07-19T07:08:24Z",
+      "url": "https://ci.gerritcodereview.com/t/gerrit/status/change/606644,1",
+      "started": "2026-07-19T07:09:43Z",
       "created": "2026-07-19T07:08:25Z",
-      "updated": "2026-07-19T07:08:25Z"
+      "updated": "2026-07-19T07:09:46Z"
     }
   }
 }
